@@ -12,12 +12,15 @@ import java.util.Objects;
 
 public class App extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader loader = FXMLLoader.load(getClass().getResource("demo2.fxml"));
+    public void start(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("demo2.fxml"));
         System.out.println(loader);
         Parent root = loader.load();
 
-        Scene scene = new Scene(root,300,300);
+        // This is a controller object I think
+        GUIController controller = loader.getController();
+
+        Scene scene = new Scene(root,1050,800);
         stage.setScene(scene);
         stage.show();
 
