@@ -7,6 +7,17 @@ public class SyllabusData {
     String value;
     ArrayList<SyllabusData> children;
 
+    public SyllabusData() {
+        this.name = "";
+        this.value = "";
+        this.children = new ArrayList<>();
+    }
+
+    public SyllabusData(String name, String value, ArrayList<SyllabusData> children) {
+        this.name = name;
+        this.value = value;
+        this.children = children;
+    }
 
     public String getName() {
         return name;

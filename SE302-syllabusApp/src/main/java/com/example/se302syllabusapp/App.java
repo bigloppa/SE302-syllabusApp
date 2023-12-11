@@ -14,12 +14,12 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("demo2.fxml"));
-        System.out.println(loader);
         Parent root = loader.load();
 
-        // This is a controller object I think
+        // FXML controller has been set.
         GUIController controller = loader.getController();
 
+        // The width and height can be changed.
         Scene scene = new Scene(root,1050,800);
         stage.setScene(scene);
         stage.show();

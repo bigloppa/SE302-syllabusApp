@@ -26,7 +26,8 @@ public class FileManager {
     }
 
 
-    public void read(){
+    public SyllabusData read(){
 
+        return new SyllabusData();
     }
 }
