@@ -10,7 +10,7 @@
               "Fall": "",
               "Spring": "",
               "Theory": "",
-              "Application/Lab": "",
+              "Application-Lab": "",
               "Local-Credits": "",
               "ECTS": ""
             }
@@ -140,7 +140,7 @@
       "A": []
     },
     {
-      "ECTS/WT": [
+      "ECTS-WT": [
         {
           "Course-Hours":
           {
@@ -150,7 +150,7 @@
           }
         },
         {
-          "L/AH":
+          "L-AH":
           {
             "Number": "",
             "Duration": "",
@@ -174,7 +174,7 @@
           }
         },
         {
-          "Q/SC":
+          "Q-SC":
           {
             "Number": "",
             "Duration": "",
@@ -182,7 +182,7 @@
           }
         },
         {
-          "H/A":
+          "H-A":
           {
             "Number": "",
             "Duration": "",
@@ -190,7 +190,7 @@
           }
         },
         {
-          "P/J":
+          "P-J":
           {
             "Number": "",
             "Duration": "",
@@ -214,7 +214,7 @@
           }
         },
         {
-          "S/W":
+          "S-W":
           {
             "Number": "",
             "Duration": "",
@@ -251,7 +251,7 @@
       ]
     },
     {
-      "C/POM": [
+      "C-POM": [
         {
           "Outcome Number": "",
           "Contribution Level": ""
