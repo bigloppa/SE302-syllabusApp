@@ -1,5 +1,9 @@
 package com.example.se302syllabusapp;
 
+import java.io.File;
+import org.json.simple.parser.*;
+
+
 public class FileManager {
     SyllabusData syllabusData1;
     SyllabusData syllabusData2;
@@ -26,7 +30,14 @@ public class FileManager {
     }
 
 
+    // This function reads JSON files and translate into SyllabusData object.
+    // Also, reads Text files that are related with JSON file, for descriptions.
     public SyllabusData read(){
+
+        // TODO: We have to figure it out how to pass paths of JSON and TXT files!
+        String filepath = "fake_path";
+        // Take JSON file
+        JSONParser parser = new JSONParser();
 
         return new SyllabusData();
     }
