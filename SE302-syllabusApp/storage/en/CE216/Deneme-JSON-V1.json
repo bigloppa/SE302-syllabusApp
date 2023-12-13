@@ -61,7 +61,7 @@
           "sub1": [
             {
               "subject": "",
-              "req"
+              "req": ""
             }
           ]
         },
@@ -76,7 +76,7 @@
     {
       "ECTS/WT": [
         {
-          "Course-Hours":
+          "Course-Hours": ""
         }
       ]
     },
