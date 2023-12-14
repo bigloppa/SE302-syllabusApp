@@ -5,26 +5,26 @@
         {
           "sub1": [
             {
-              "Course-Name": "",
-              "Code": "",
-              "Fall": "",
-              "Spring": "",
-              "Theory": "",
-              "Application-Lab": "",
-              "Local-Credits": "",
-              "ECTS": ""
+              "Course-Name": "a",
+              "Code": "b",
+              "Fall": "c",
+              "Spring": "d",
+              "Theory": "e",
+              "Application-Lab": "f",
+              "Local-Credits": "g",
+              "ECTS": "h"
             }
           ]
         },
         {
           "sub2": [
             {
-              "Prerequisites": "",
-              "Course-Language": "",
-              "Course-Type": "",
-              "Course-Level": "",
-              "Mode-of-Delivery": "",
-              "TMT": ""
+              "Prerequisites": "j",
+              "Course-Language": "k",
+              "Course-Type": "l",
+              "Course-Level": "m",
+              "Mode-of-Delivery": "n",
+              "TMT": "o"
             }
           ]
         },
@@ -47,11 +47,11 @@
           ]
         },
         {
-          "sub5":
+          "sub5": [
             {
               "Course-Category": ""
             }
-
+          ]
         }
       ]
     },
@@ -77,7 +77,7 @@
             },
             {
               "subject": "",
-              "requiredMaterials": ""
+              "requiredMaterials": "harun"
             },
             {
               "subject": "",
@@ -102,15 +102,17 @@
             {
               "subject": "",
               "requiredMaterials": ""
-            },            {
+            },
+            {
               "subject": "",
               "requiredMaterials": ""
             },
             {
               "subject": "",
               "requiredMaterials": ""
-            },            {
-              "subject": "",
+            },
+            {
+              "subject": "aliii",
               "requiredMaterials": ""
             },
             {
@@ -127,9 +129,7 @@
         {
           "sub2": [
             {
-              "courseNotes-textbooks": ""
-            },
-            {
+              "courseNotes-textbooks": "",
               "suggestedReading-materials": ""
             }
           ]
@@ -142,169 +142,185 @@
     {
       "ECTS-WT": [
         {
-          "Course-Hours":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "Course-Hours": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "L-AH":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "L-AH": [
+            {
+              "Number": "",
+              "Duration": "ege",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "SHOOC":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "SHOOC": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "Field-Work":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "Field-Work": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "Q-SC":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "Q-SC": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "H-A":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "H-A": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "P-J":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "P-J": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "Project":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "Project": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "Portfolio":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "Portfolio": [
+            {
+              "Number": "nihan",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "S-W":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "S-W": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "Oral-Exam":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "Oral-Exam": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": "beyza"
+            }
+          ]
         },
         {
-          "Midterm":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "Midterm": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "Final-Exam":
-          {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+          "Final-Exam": [
+            {
+              "Number": "",
+              "Duration": "",
+              "Workload": ""
+            }
+          ]
         },
         {
-          "Total": ""
+          "Total": "ali"
         }
       ]
     },
     {
       "C-POM": [
         {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
+          "sub1": [
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            },
+            {
+              "Outcome Number": "",
+              "Contribution Level": ""
+            }
+          ]
         }
-
       ]
     }
   ]
