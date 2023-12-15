@@ -1,6 +1,7 @@
 module com.example.se302syllabusapp {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.graphics;
     requires json.simple;
     requires org.glassfish.java.json;
 

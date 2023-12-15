@@ -124,7 +124,7 @@ public class FileManager {
                             if (sub3.keySet().toString().split("[\\[\\]]")[1].isEmpty())
                                 subObject2.setName(sub3.keySet().toString().split("[\\[\\]]")[1]);
 
-                            System.out.println(sub3.keySet().toString().split("[\\[\\]]")[1]);
+                            //System.out.println(sub3.keySet().toString().split("[\\[\\]]")[1]);
 
                             for (Object kName: sub3.keySet().toArray()) {
                                 SyllabusData subObject3 = new SyllabusData();
