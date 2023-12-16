@@ -13,7 +13,7 @@ import java.util.Objects;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("demo2.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("demo4.fxml"));
         Parent root = loader.load();
 
         // FXML controller has been set.
@@ -23,6 +23,10 @@ public class App extends Application {
         Scene scene = new Scene(root,1050,800);
         stage.setScene(scene);
         stage.show();
+
+        FileManager fileManager = new FileManager();
+
+        fileManager.read();
 
     }
 

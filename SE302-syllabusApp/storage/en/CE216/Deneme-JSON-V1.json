@@ -5,53 +5,53 @@
         {
           "sub1": [
             {
-              "Course-Name": "",
-              "Code": "",
-              "Fall": "",
-              "Spring": "",
-              "Theory": "",
-              "Application-Lab": "",
-              "Local-Credits": "",
-              "ECTS": ""
+              "Course-Name": "school",
+              "Code": "gfgfdg",
+              "Fall": "dfdfhdfh",
+              "Spring": "fgjfjf",
+              "Theory": "xfdffg",
+              "Application-Lab": "gjfgjfg",
+              "Local-Credits": "ggfgjfjg",
+              "ECTS": "dggdjg"
             }
           ]
         },
         {
           "sub2": [
             {
-              "Prerequisites": "",
-              "Course-Language": "",
-              "Course-Type": "",
-              "Course-Level": "",
-              "Mode-of-Delivery": "",
-              "TMT": ""
+              "Prerequisites": "dfdf",
+              "Course-Language": "f",
+              "Course-Type": "f",
+              "Course-Level": "a",
+              "Mode-of-Delivery": "a",
+              "TMT": "a"
             }
           ]
         },
         {
           "sub3": [
             {
-              "Course-Coordinator": "",
-              "Course-Lecturers": "",
-              "Assistants": ""
+              "Course-Coordinator": "a",
+              "Course-Lecturers": "a",
+              "Assistants": "a"
             }
           ]
         },
         {
           "sub4": [
             {
-              "Course-Objectives": "",
-              "Learning-Outcomes": "",
-              "Course-Description": ""
+              "Course-Objectives": "a",
+              "Learning-Outcomes": "a",
+              "Course-Description": "a"
             }
           ]
         },
         {
-          "sub5":
+          "sub5":[
             {
-              "Course-Category": ""
+              "Course-Category": "lol"
             }
-
+          ]
         }
       ]
     },
@@ -60,66 +60,66 @@
         {
           "sub1": [
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "lol",
+              "requiredMaterials": "lok"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "k",
+              "requiredMaterials": "o"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "o",
+              "requiredMaterials": "k"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "k",
+              "requiredMaterials": "o"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "k",
+              "requiredMaterials": "oj"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "jı",
+              "requiredMaterials": "hu"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "hu",
+              "requiredMaterials": "hu"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "yu",
+              "requiredMaterials": "uy"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "yu",
+              "requiredMaterials": "yu"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "yu",
+              "requiredMaterials": "yuy"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "yu",
+              "requiredMaterials": "yu"
             },            {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "yuy",
+              "requiredMaterials": "yuy"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "uyu",
+              "requiredMaterials": "uyu"
             },            {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "uyu",
+              "requiredMaterials": "uyu"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "kof",
+              "requiredMaterials": "uhu"
             },
             {
-              "subject": "",
-              "requiredMaterials": ""
+              "subject": "uyu",
+              "requiredMaterials": "uhu"
             }
 
           ]
@@ -127,10 +127,10 @@
         {
           "sub2": [
             {
-              "courseNotes-textbooks": ""
+              "courseNotes-textbooks": "huh"
             },
             {
-              "suggestedReading-materials": ""
+              "suggestedReading-materials": "huh"
             }
           ]
         }
@@ -142,167 +142,163 @@
     {
       "ECTS-WT": [
         {
-          "Course-Hours":
+          "Course-Hours":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "huh",
+            "Duration": "huh",
+            "Workload": "huh"
           }
+          ]
         },
         {
-          "L-AH":
+          "L-AH":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "huh",
+            "Duration": "hu",
+            "Workload": "hu"
           }
+          ]
         },
         {
-          "SHOOC":
+          "SHOOC":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "uı",
+            "Duration": "ıuı",
+            "Workload": "ıuıu"
           }
+          ]
         },
         {
-          "Field-Work":
+          "Field-Work":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "uıu",
+            "Duration": "uıu",
+            "Workload": "uıu"
           }
+          ]
         },
         {
-          "Q-SC":
+          "Q-SC":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "uıu",
+            "Duration": "uıu",
+            "Workload": "ıuı"
           }
+          ]
         },
         {
-          "H-A":
+          "H-A":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "uıu",
+            "Duration": "uıu",
+            "Workload": "uıu"
           }
+          ]
         },
         {
-          "P-J":
+          "P-J":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "uıu",
+            "Duration": "uıu",
+            "Workload": "uıu"
           }
+          ]
         },
         {
-          "Project":
+          "Project":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "uıu",
+            "Duration": "uıu",
+            "Workload": "uıu"
           }
+          ]
         },
         {
-          "Portfolio":
+          "Portfolio":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "uıu",
+            "Duration": "uıu",
+            "Workload": "uıu"
           }
+          ]
         },
         {
-          "S-W":
+          "S-W":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "uıu",
+            "Duration": "uıu",
+            "Workload": "uıu"
           }
+          ]
         },
         {
-          "Oral-Exam":
+          "Oral-Exam":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
-          }
+            "Number": "ıuı",
+            "Duration": "uıu",
+            "Workload": "uıu"
+          }]
         },
         {
-          "Midterm":
+          "Midterm":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "uıu",
+            "Duration": "uıu",
+            "Workload": "uıu"
           }
+          ]
         },
         {
-          "Final-Exam":
+          "Final-Exam":[
           {
-            "Number": "",
-            "Duration": "",
-            "Workload": ""
+            "Number": "uıu",
+            "Duration": "uıu",
+            "Workload": "uıu"
           }
+          ]
         },
         {
-          "Total": ""
+          "Total": [
+            {
+              "Total": "dur"
+            }
+          ]
         }
       ]
     },
     {
       "C-POM": [
         {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
-        },
-        {
-          "Outcome Number": "",
-          "Contribution Level": ""
+          "A":[
+            {
+              "Outcome Number 1": "opo",
+              "Contribution Level 1": "opo",
+              "Outcome Number 2": "pop",
+              "Contribution Level 2": "opo",
+              "Outcome Number 3": "opo",
+              "Contribution Level 3": "opo",
+              "Outcome Number 4": "opo",
+              "Contribution Level 4": "opo",
+              "Outcome Number 5": "opo",
+              "Contribution Level 5": "opo",
+              "Outcome Number 6": "opo",
+              "Contribution Level 6": "opo",
+              "Outcome Number 7": "ıpı",
+              "Contribution Level 7": "ıpı",
+              "Outcome Number 8": "ıpı",
+              "Contribution Level 8": "ıpı",
+              "Outcome Number 9": "ıpı",
+              "Contribution Level 9": "ıpı",
+              "Outcome Number 10": "ıpı",
+              "Contribution Level 10": "ıpı",
+              "Outcome Number 11": "ıpı",
+              "Contribution Level 11": "ıpı",
+              "Outcome Number 12": "ıpı",
+              "Contribution Level 12": "ıpı",
+              "Outcome Number 13": "ıpı",
+              "Contribution Level 13": "ıpı"
+            }
+          ]
         }
 
       ]
