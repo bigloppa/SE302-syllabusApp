@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/resources/com/example/se302syllabusapp/Demo4.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/resources/com/example/se302syllabusapp/Demo4.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,9 +51,20 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2ZOXRQtQ53ksizMF3Y4Bq9AXbLb" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -64,8 +72,11 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Gradle.SE302-syllabusApp [run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -104,7 +115,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -126,6 +137,14 @@
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-249ae16d76d6-36550cda" />
+        <option value="jdk-19.0.2-corretto-19.0.2-8336523bb0d9-b81783ad" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
