@@ -20,8 +20,11 @@ public class App extends Application {
 
         // FXML controller has been set.
         GUIController controller = loader.getController();
-        FileManager fileManager = new FileManager();
-        SyllabusData syllabusData = fileManager.read();
+        Controllers controllers = new Controllers();
+
+
+        controllers.fileImport("tr","CE345");
+
 
         controller.setPrimaryStage(stage);
 

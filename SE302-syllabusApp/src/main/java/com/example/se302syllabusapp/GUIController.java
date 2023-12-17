@@ -40,8 +40,7 @@ public class GUIController implements Initializable {
 
     public void importSyllabus(ActionEvent event){
 
-        // File Dialog here
-        //getClass().getPackage().get
+
         File storagePath = new File("storage");
         if (!storagePath.exists()) {
             System.out.println("Storage file does not exist!");
