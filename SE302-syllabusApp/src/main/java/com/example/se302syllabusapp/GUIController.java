@@ -23,7 +23,6 @@ public class GUIController implements Initializable {
     @FXML
     private VBox parentVBox;
     @FXML
-    private HBox parentHBox;
     Stage popup = new Stage();
 
 
@@ -83,10 +82,10 @@ public class GUIController implements Initializable {
         try {
             Node syllabusSheet = syllabusLoader.load();
 
-            if (!parentHBox.getChildren().isEmpty())
-                parentHBox.getChildren().remove(0);
+            if (!parentVBox.getChildren().isEmpty())
+                parentVBox.getChildren().remove(1);
 
-            parentHBox.getChildren().add(syllabusSheet);
+            parentVBox.getChildren().add(syllabusSheet);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -96,6 +95,7 @@ public class GUIController implements Initializable {
 
     public void compareVersions(){
         if (popup != null) {
+            System.out.println(popup.getTitle());
             popup.close();
         }
         FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("ComparePage.fxml"));

@@ -70,24 +70,10 @@
     </children>
     <children>
       <BorderPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-         <right>
-            <AnchorPane style="-fx-background-color: rgb(204,204,204);" BorderPane.alignment="CENTER">
-               <children>
-                  <Button layoutX="122.0" layoutY="541.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Save" />
-                  <TextArea layoutX="7.0" layoutY="90.0" prefHeight="428.0" prefWidth="202.0" promptText="Write descriptions about changes. "/>
-                   <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0">
-                       Description
-                       <font>
-                           <Font size="15"/>
-                       </font>
-                   </Text>
-               </children>
-            </AnchorPane>
-         </right>
          <center>
             <ScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="5000.0" vvalue="1.0" BorderPane.alignment="TOP_CENTER" fitToHeight="true">
                <content>
-                  <HBox fx:id="parentHBox" prefHeight="200.0" prefWidth="200.0" alignment="TOP_CENTER" style="-fx-background-color: rgb(170,170,170);" >
+                  <HBox prefHeight="200.0" prefWidth="200.0" alignment="TOP_CENTER" style="-fx-background-color: rgb(170,170,170);" >
                      <VBox spacing="5.0" alignment="CENTER">
                         <Text style="-fx-fill: black;">
                            Open or start a new JSON file.
