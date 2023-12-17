@@ -6,9 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Popup;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,12 +21,21 @@ import java.util.ResourceBundle;
 
 public class GUIController implements Initializable {
     @FXML
+    private VBox parentVBox;
+    @FXML
     private HBox parentHBox;
+    Stage popup = new Stage();
+
+
+
     FileManager fileManager;
     // Todo bunlari dosyala
-    Parent root;
+    private Stage primaryStage;
     Controllers controllers;
     VersionController versionController;
+
+    public GUIController(){
+    }
 
 
 
@@ -81,6 +94,46 @@ public class GUIController implements Initializable {
 
     }
 
+    public void compareVersions(){
+        if (popup != null) {
+            popup.close();
+        }
+        FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("ComparePage.fxml"));
+        System.out.println(parentVBox);
+
+        try {
+            Node comparePage = compareLoader.load();
+
+            if (!parentVBox.getChildren().isEmpty())
+                parentVBox.getChildren().remove(1);
+
+            parentVBox.getChildren().add(comparePage);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void compareVersionsPopup(){
+        FXMLLoader popCompare = new FXMLLoader(getClass().getResource("comparePopup.fxml"));
+        try {
+            Parent comparePopup = popCompare.load();
+            popup.initOwner(getPrimaryStage());
+            popup.initModality(Modality.APPLICATION_MODAL);
+            popup.setTitle("Compare Versions");
+            popup.setResizable(false);
+            popup.setScene(new Scene(comparePopup));
+
+
+            popup.showAndWait();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
 
 
 
@@ -93,13 +146,7 @@ public class GUIController implements Initializable {
         this.fileManager = fileManager;
     }
     // Todo bunlari dosyala
-    public Parent getRoot() {
-        return root;
-    }
 
-    public void setRoot(Parent root) {
-        this.root = root;
-    }
 
     public Controllers getControllers() {
         return controllers;
@@ -119,5 +166,13 @@ public class GUIController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    public void setPrimaryStage(Stage primaryStage) {
+        this.primaryStage = primaryStage;
     }
 }

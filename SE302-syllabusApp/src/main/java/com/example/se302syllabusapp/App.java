@@ -23,8 +23,11 @@ public class App extends Application {
         FileManager fileManager = new FileManager();
         SyllabusData syllabusData = fileManager.read();
 
+        controller.setPrimaryStage(stage);
+
+
         // The width and height can be changed.
-        Scene scene = new Scene(root,1050,800);
+        Scene scene = new Scene(root,1500,800);
         stage.setScene(scene);
         stage.show();
 

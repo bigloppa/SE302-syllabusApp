@@ -45,8 +45,30 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.text.Font?>
-<VBox prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.se302syllabusapp.GUIController" xmlns:fx="http://javafx.com/fxml/1">
-  <children>
+<VBox
+        fx:id="parentVBox" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.se302syllabusapp.GUIController" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar prefHeight="0.0" prefWidth="1130.0" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New" onAction="#addingSyllabus"/>
+                        <MenuItem mnemonicParsing="false" text="Open" onAction="#importSyllabus"/>
+                        <MenuItem mnemonicParsing="false" text="Compare" onAction="#compareVersionsPopup"/>
+                        <MenuItem mnemonicParsing="false" text="Delete" onAction="#compareVersions"/>
+                        <MenuItem mnemonicParsing="false" text="Export" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Help" />
+                        <MenuItem mnemonicParsing="false" text="About Syllabus App" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+    <children>
       <BorderPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
          <right>
             <AnchorPane style="-fx-background-color: rgb(204,204,204);" BorderPane.alignment="CENTER">
@@ -82,27 +104,6 @@
                </content>
             </ScrollPane>
          </center>
-         <top>
-          <MenuBar prefHeight="0.0" prefWidth="1130.0" BorderPane.alignment="CENTER">
-            <menus>
-              <Menu mnemonicParsing="false" text="File">
-                <items>
-                  <MenuItem mnemonicParsing="false" text="New" onAction="#addingSyllabus"/>
-                  <MenuItem mnemonicParsing="false" text="Open" onAction="#importSyllabus"/>
-                  <MenuItem mnemonicParsing="false" text="Compare" />
-                  <MenuItem mnemonicParsing="false" text="Delete" />
-                  <MenuItem mnemonicParsing="false" text="Export" />
-                </items>
-              </Menu>
-              <Menu mnemonicParsing="false" text="Help">
-                <items>
-                  <MenuItem mnemonicParsing="false" text="Help" />
-                        <MenuItem mnemonicParsing="false" text="About Syllabus App" />
-                </items>
-              </Menu>
-            </menus>
-          </MenuBar>
-         </top>
       </BorderPane>
   </children>
 </VBox>
