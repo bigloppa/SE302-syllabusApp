@@ -71,7 +71,7 @@
     <children>
       <BorderPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
          <center>
-            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="5000.0" vvalue="1.0" BorderPane.alignment="TOP_CENTER" fitToHeight="true">
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" hmax="5000.0" vvalue="1.0"  BorderPane.alignment="TOP_CENTER" fitToHeight="true">
                <content>
                   <HBox prefHeight="200.0" prefWidth="200.0" alignment="TOP_CENTER" style="-fx-background-color: rgb(170,170,170);" >
                      <VBox spacing="5.0" alignment="CENTER">

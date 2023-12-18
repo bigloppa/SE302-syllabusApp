@@ -10,12 +10,12 @@
 <?import javafx.scene.text.Text?>
 
 
-<BorderPane xmlns="http://javafx.com/javafx/19" fx:controller="com.example.se302syllabusapp.GUIController" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="syllabusParent" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.se302syllabusapp.GUIController" xmlns:fx="http://javafx.com/fxml/1">
     <right>
         <AnchorPane style="-fx-background-color: rgb(204,204,204);" BorderPane.alignment="CENTER">
             <children>
-                <Button layoutX="122.0" layoutY="541.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Save" />
-                <TextArea layoutX="7.0" layoutY="90.0" prefHeight="428.0" prefWidth="202.0" promptText="Write descriptions about changes. "/>
+                <Button fx:id="saveButton" layoutX="122.0" layoutY="541.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Save" onAction="#saveButtonFunctionality" />
+                <TextArea fx:id="descriptionValue" layoutX="7.0" layoutY="90.0" prefHeight="428.0" prefWidth="202.0" promptText="Write descriptions about changes. "/>
                 <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0">
                     Description
                     <font>
@@ -31,7 +31,7 @@
                 <HBox fx:id="parentHBox" minWidth="1000.0" alignment="TOP_CENTER" style="-fx-background-color: rgb(170,170,170);" >
                     <VBox alignment="TOP_CENTER" fillWidth="false" prefWidth="700.0" spacing="10.0">
                         <children>
-                            <VBox alignment="TOP_CENTER" maxWidth="1200.0" prefHeight="710.0" prefWidth="600.0">
+                            <VBox fx:id="page1" alignment="TOP_CENTER" maxWidth="1200.0" prefHeight="710.0" prefWidth="600.0">
                                 <children>
                                     <AnchorPane maxWidth="1.7976931348623157E308" prefWidth="600.0" style="-fx-background-color: rgb(255,255,255);" VBox.vgrow="ALWAYS">
                                         <children>
@@ -353,7 +353,7 @@
                                     </AnchorPane>
                                 </children>
                             </VBox>
-                            <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="620.0" prefWidth="600.0">
+                            <VBox fx:id="page2" alignment="TOP_CENTER" fillWidth="false" prefHeight="620.0" prefWidth="600.0">
                                 <children>
                                     <AnchorPane prefWidth="600.0" style="-fx-background-color: rgb(255,255,255);" VBox.vgrow="ALWAYS">
                                         <children>
@@ -674,7 +674,7 @@
                                     </AnchorPane>
                                 </children>
                             </VBox>
-                            <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="168.0" layoutY="1432.0" prefHeight="610.0" prefWidth="600.0">
+                            <VBox fx:id="page3" alignment="TOP_CENTER" fillWidth="false" layoutX="168.0" layoutY="1432.0" prefHeight="610.0" prefWidth="600.0">
                                 <children>
                                     <AnchorPane prefWidth="600.0" style="-fx-background-color: rgb(255,255,255);" VBox.vgrow="ALWAYS">
                                         <children>
@@ -1227,7 +1227,7 @@
                                     </AnchorPane>
                                 </children>
                             </VBox>
-                            <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="168.0" layoutY="721.0" prefHeight="535.0" prefWidth="600.0">
+                            <VBox fx:id="page4" alignment="TOP_CENTER" fillWidth="false" layoutX="168.0" layoutY="721.0" prefHeight="535.0" prefWidth="600.0">
                                 <children>
                                     <AnchorPane prefWidth="600.0" style="-fx-background-color: rgb(255,255,255);" VBox.vgrow="ALWAYS">
                                         <children>
@@ -1453,7 +1453,7 @@
                                     </AnchorPane>
                                 </children>
                             </VBox>
-                            <VBox alignment="TOP_CENTER" layoutX="168.0" layoutY="695.0" maxWidth="1200.0" prefHeight="1430.0" prefWidth="600.0">
+                            <VBox fx:id="page5" alignment="TOP_CENTER" layoutX="168.0" layoutY="695.0" maxWidth="1200.0" prefHeight="1430.0" prefWidth="600.0">
                                 <children>
                                     <AnchorPane maxWidth="1.7976931348623157E308" prefWidth="600.0" style="-fx-background-color: rgb(255,255,255);" VBox.vgrow="ALWAYS">
                                         <children>
