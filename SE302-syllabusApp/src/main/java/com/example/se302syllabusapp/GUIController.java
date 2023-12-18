@@ -1,12 +1,15 @@
 package com.example.se302syllabusapp;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
@@ -21,9 +24,12 @@ import java.util.ResourceBundle;
 
 public class GUIController implements Initializable {
     @FXML
+    public Button compareButton;
+    @FXML
     private VBox parentVBox;
     @FXML
-    Stage popup = new Stage();
+    private HBox parentHBox;
+    private Stage popup;
 
 
 
@@ -55,7 +61,27 @@ public class GUIController implements Initializable {
         );
         File selectedFile = chooser.showOpenDialog(new Popup());
 
-        controllers.fileImport("en","CE45",selectedFile);
+        // Buralar deneme amacli yazildi kod calisiyor ama duzenlenmesi gerek
+        SyllabusData syllabusData = new SyllabusData();
+
+        if (selectedFile != null) {
+            setControllers(new Controllers(new SyllabusData(),new SyllabusData()));
+            getControllers().setJsonFile(new File(selectedFile.getAbsolutePath()));
+            getControllers().fileImport("en","315",selectedFile);
+
+            if (getControllers().getSyllabusData1() != null) {
+                syllabusData = getControllers().getSyllabusData1();
+            }
+        }
+
+        System.out.println(syllabusData.getName());
+
+
+//        System.out.println(syllabusData.name);
+
+        //getFileManager().setJsonFile(new File(""));
+
+        //SyllabusData syllabusData = getFileManager().read();
 
     }
 
@@ -77,45 +103,34 @@ public class GUIController implements Initializable {
 
     }
 
-    public void compareVersions(){
+    public void compareVersions() {
         if (popup != null) {
             System.out.println(popup.getTitle());
             popup.close();
         }
         FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("ComparePage.fxml"));
-        System.out.println(parentVBox);
+        //System.out.println(parentVBox);
 
-        try {
-            Node comparePage = compareLoader.load();
-
-            if (!parentVBox.getChildren().isEmpty())
-                parentVBox.getChildren().remove(1);
-
-            parentVBox.getChildren().add(comparePage);
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
     }
 
+    // TODO bunu dosyaya eklemeyı unutma
     public void compareVersionsPopup(){
         FXMLLoader popCompare = new FXMLLoader(getClass().getResource("comparePopup.fxml"));
         try {
             Parent comparePopup = popCompare.load();
+            setPopup(new Stage());
             popup.initOwner(getPrimaryStage());
             popup.initModality(Modality.APPLICATION_MODAL);
             popup.setTitle("Compare Versions");
             popup.setResizable(false);
             popup.setScene(new Scene(comparePopup));
 
-
             popup.showAndWait();
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
 
@@ -130,7 +145,13 @@ public class GUIController implements Initializable {
         this.fileManager = fileManager;
     }
     // Todo bunlari dosyala
+    public Stage getPopup() {
+        return popup;
+    }
 
+    public void setPopup(Stage popup) {
+        this.popup = popup;
+    }
 
     public Controllers getControllers() {
         return controllers;

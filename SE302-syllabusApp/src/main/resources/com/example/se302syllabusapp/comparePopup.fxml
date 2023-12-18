@@ -78,7 +78,7 @@
    <bottom>
       <AnchorPane prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="511.0" layoutY="-12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Button" onAction="#compareVersions"/>
+            <Button fx:id="compareButton" layoutX="511.0" layoutY="-12.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" text="Button" onAction="#compareVersions"/>
          </children>
       </AnchorPane>
    </bottom>
