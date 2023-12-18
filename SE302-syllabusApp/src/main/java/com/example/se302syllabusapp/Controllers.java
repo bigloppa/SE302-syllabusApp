@@ -95,17 +95,8 @@ public class Controllers extends FileManager{
         }
     }
 
-    public void fileImport(String language,String lecture){
+    public void fileImport(String language,String lecture,File selectedFile){
 
-
-        FileChooser chooser = new FileChooser();
-        chooser.setTitle("Choose JSON File");
-
-        chooser.setInitialDirectory(new File("C:\\"));
-        chooser.getExtensionFilters().add(
-                new FileChooser.ExtensionFilter("JSON Files", "*.json")
-        );
-        File selectedFile = chooser.showOpenDialog(new Popup());
 
         String filepath = "storage/";
         filepath+= language;

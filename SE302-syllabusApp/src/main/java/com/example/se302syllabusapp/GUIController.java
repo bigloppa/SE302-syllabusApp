@@ -53,24 +53,9 @@ public class GUIController implements Initializable {
         chooser.getExtensionFilters().add(
                 new FileChooser.ExtensionFilter("JSON Files", "*.json")
         );
-        File seletcetFile = chooser.showOpenDialog(new Popup());
+        File selectedFile = chooser.showOpenDialog(new Popup());
 
-        // Buralar deneme amacli yazildi kod calisiyor ama duzenlenmesi gerek
-        setFileManager(new FileManager());
-        SyllabusData syllabusData = new SyllabusData();
-        if (seletcetFile != null) {
-            getFileManager().setJsonFile(new File(seletcetFile.getAbsolutePath()));
-            syllabusData = getFileManager().read();
-        }
-
-
-
-
-        System.out.println(syllabusData.name);
-
-        //getFileManager().setJsonFile(new File(""));
-
-        //SyllabusData syllabusData = getFileManager().read();
+        controllers.fileImport("en","CE45",selectedFile);
 
     }
 

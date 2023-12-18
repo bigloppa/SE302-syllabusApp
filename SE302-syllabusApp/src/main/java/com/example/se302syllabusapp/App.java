@@ -23,7 +23,7 @@ public class App extends Application {
         Controllers controllers = new Controllers();
 
 
-        controllers.fileImport("tr","CE345");
+
 
 
         controller.setPrimaryStage(stage);
