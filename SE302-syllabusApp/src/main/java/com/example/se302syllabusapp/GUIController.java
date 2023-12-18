@@ -145,6 +145,11 @@ public class GUIController implements Initializable {
     }
 
 
+    public void deleteSyllabus(){
+
+    }
+
+
 
 
 

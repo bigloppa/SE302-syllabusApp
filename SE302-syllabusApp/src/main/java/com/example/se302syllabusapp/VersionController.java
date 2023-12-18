@@ -15,8 +15,9 @@ public class VersionController extends FileManager {
         super(syllabusData1, syllabusData2);
     }
 
-
+    // TODO: 18.12.2023 this needs to be tested 
     public void compare(SyllabusData syllabusData1, SyllabusData syllabusData2){
+        int counter = 0;
         for (int i = 0; i < syllabusData1.getChildren().size(); i++) {
 
             ArrayList<SyllabusData> children1 = syllabusData1.getChildren().get(i).getChildren();
@@ -26,9 +27,11 @@ public class VersionController extends FileManager {
                 ArrayList<SyllabusData> grandChildren1 = children1.get(j).getChildren();
                 ArrayList<SyllabusData> grandChildren2 = children2.get(j).getChildren();
                 for (int k = 0; k < grandChildren1.size(); k++) {
+
                     if (!grandChildren1.get(k).getValue().equals(grandChildren2.get(k).getValue())){
-                        System.out.println(grandChildren1.get(k).getValue() + " --- " + grandChildren2.get(k).getValue() );
+                        System.out.println(counter+". " + grandChildren1.get(k).getValue() + " --- " + grandChildren2.get(k).getValue() );
                     }
+                    counter++;
 
                 }
             }
