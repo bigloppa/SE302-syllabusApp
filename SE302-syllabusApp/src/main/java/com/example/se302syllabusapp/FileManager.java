@@ -18,6 +18,7 @@ import org.json.simple.parser.*;
 
 
 public class FileManager {
+
     SyllabusData syllabusData1;
     SyllabusData syllabusData2;
     //TODO Add this object to the document
