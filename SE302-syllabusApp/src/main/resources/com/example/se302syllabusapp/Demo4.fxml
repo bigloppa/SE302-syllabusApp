@@ -82,8 +82,8 @@
                            </font>
                         </Text>
                         <HBox alignment="CENTER" spacing="15.0">
-                           <Button>Start New</Button>
-                           <Button>Open</Button>
+                           <Button onAction="#addingSyllabus">Start New</Button>
+                           <Button onAction="#importSyllabus">Open</Button>
                         </HBox>
                      </VBox>
                   </HBox>
