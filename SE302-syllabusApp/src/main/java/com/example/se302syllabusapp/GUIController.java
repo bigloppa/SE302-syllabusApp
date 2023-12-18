@@ -109,6 +109,17 @@ public class GUIController implements Initializable {
             popup.close();
         }
         FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("ComparePage.fxml"));
+        try {
+            Node syllabusSheet = compareLoader.load();
+
+            if (!parentVBox.getChildren().isEmpty())
+                parentVBox.getChildren().remove(1);
+
+            parentVBox.getChildren().add(syllabusSheet);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         //System.out.println(parentVBox);
 
 
