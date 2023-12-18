@@ -67,7 +67,7 @@ public class GUIController implements Initializable {
         if (selectedFile != null) {
             setControllers(new Controllers(new SyllabusData(),new SyllabusData()));
             getControllers().setJsonFile(new File(selectedFile.getAbsolutePath()));
-            getControllers().fileImport("en","315",selectedFile);
+
 
             if (getControllers().getSyllabusData1() != null) {
                 syllabusData = getControllers().getSyllabusData1();

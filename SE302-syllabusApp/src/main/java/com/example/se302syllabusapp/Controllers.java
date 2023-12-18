@@ -27,7 +27,7 @@ public class Controllers extends FileManager{
 
         ArrayList<File> files = new ArrayList<>();
 
-        Save(files,filepath);
+
 
     }
 
@@ -95,7 +95,10 @@ public class Controllers extends FileManager{
         }
     }
 
-    public void fileImport(String language,String lecture,File selectedFile){
+
+
+
+    public String createDir(String language,String lecture,File selectedFile){
 
 
         String filepath = "storage/";
@@ -116,17 +119,10 @@ public class Controllers extends FileManager{
 
         filepath += ("/V"+--counter+"/"+ selectedFile.getName());
 
-
-        Path source = Paths.get(selectedFile.getPath());
-        Path destination = Paths.get(filepath);
+        return filepath;
 
 
-        try {
 
-            Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
-        } catch (IOException e) {
-
-        }
 
 
     }
@@ -149,22 +145,22 @@ public class Controllers extends FileManager{
 
 
 
-    public void Save(ArrayList<File> files,String filePath){
-        for (File file: files){
-            String sourceFilePath = file.getPath();
+    public void save(File file,String filePath){
+
+        String sourceFilePath = file.getPath();
 
 
-            Path sourcePath = Paths.get(sourceFilePath);
-            Path destinationPath = Paths.get(filePath);
+        Path sourcePath = Paths.get(sourceFilePath);
+        Path destinationPath = Paths.get(filePath);
 
 
-            try {
-                Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
+        try {
+            Files.copy(sourcePath, destinationPath, StandardCopyOption.REPLACE_EXISTING);
 
-                System.out.println("File copied successfully to: " + filePath);
-            } catch (IOException e) {
-                System.out.println("An error occurred while copying the file: " + e.getMessage());
-            }
+            System.out.println("File copied successfully to: " + filePath);
+        } catch (IOException e) {
+            System.out.println("An error occurred while copying the file: " + e.getMessage());
         }
     }
+
 }
