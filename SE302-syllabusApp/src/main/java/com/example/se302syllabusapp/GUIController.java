@@ -358,19 +358,37 @@ public class GUIController implements Initializable {
 
     public void onCheckBoxClicked(ActionEvent event) {
 
-        HBox parent = (HBox) ((AnchorPane) ((CheckBox) event.getSource()).getParent()).getParent();
+        Parent parent = ((AnchorPane) ((CheckBox) event.getSource()).getParent()).getParent();
+        if (parent instanceof VBox) {
+            VBox parentVBox = (VBox) ((AnchorPane) ((CheckBox) event.getSource()).getParent()).getParent();
 
-        for (Node child: parent.getChildren()) {
-            if (child instanceof AnchorPane) {
-                for (Node checkBox: ((AnchorPane) child).getChildren()) {
-                    if (checkBox instanceof CheckBox) {
-                        if (((CheckBox) checkBox).isSelected() && event.getSource() != checkBox) {
-                            ((CheckBox) checkBox).setSelected(false);
+            for (Node child: parentVBox.getChildren()) {
+                if (child instanceof AnchorPane) {
+                    for (Node checkBox: ((AnchorPane) child).getChildren()) {
+                        if (checkBox instanceof CheckBox) {
+                            if (((CheckBox) checkBox).isSelected() && event.getSource() != checkBox) {
+                                ((CheckBox) checkBox).setSelected(false);
+                            }
                         }
                     }
                 }
             }
         }
+        else {
+            HBox parentHBox = (HBox) ((AnchorPane) ((CheckBox) event.getSource()).getParent()).getParent();
+            for (Node child: parentHBox.getChildren()) {
+                if (child instanceof AnchorPane) {
+                    for (Node checkBox: ((AnchorPane) child).getChildren()) {
+                        if (checkBox instanceof CheckBox) {
+                            if (((CheckBox) checkBox).isSelected() && event.getSource() != checkBox) {
+                                ((CheckBox) checkBox).setSelected(false);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
 
 
     }

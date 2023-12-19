@@ -142,9 +142,9 @@
                                                     </AnchorPane>
                                                     <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                         <children>
-                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="English " />
-                                                            <CheckBox layoutX="87.0" layoutY="4.0" mnemonicParsing="false" text="Turkish" />
-                                                            <CheckBox layoutX="169.0" layoutY="4.0" mnemonicParsing="false" text="Second Foreign Language" />
+                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="English" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox layoutX="87.0" layoutY="4.0" mnemonicParsing="false" text="Turkish" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox layoutX="169.0" layoutY="4.0" mnemonicParsing="false" text="Second Foreign Language" onAction="#onCheckBoxClicked"/>
                                                         </children>
                                                     </AnchorPane>
                                                 </children>
@@ -162,8 +162,8 @@
                                                     </AnchorPane>
                                                     <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                         <children>
-                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Required " />
-                                                            <CheckBox layoutX="87.0" layoutY="4.0" mnemonicParsing="false" text="Elective" />
+                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Required " onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox layoutX="87.0" layoutY="4.0" mnemonicParsing="false" text="Elective" onAction="#onCheckBoxClicked"/>
                                                         </children>
                                                     </AnchorPane>
                                                 </children>
@@ -181,10 +181,10 @@
                                                     </AnchorPane>
                                                     <AnchorPane prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                         <children>
-                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Short Cycle" />
-                                                            <CheckBox layoutX="87.0" layoutY="4.0" mnemonicParsing="false" text="First Cycle" />
-                                                            <CheckBox layoutX="168.0" layoutY="4.0" mnemonicParsing="false" text="Second Cycle" />
-                                                            <CheckBox layoutX="260.0" layoutY="4.0" mnemonicParsing="false" text="Third Cycle" />
+                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Short Cycle" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox layoutX="88.0" layoutY="4.0" mnemonicParsing="false" text="First Cycle" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox layoutX="169.0" layoutY="4.0" mnemonicParsing="false" text="Second Cycle" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox layoutX="261.0" layoutY="4.0" mnemonicParsing="false" text="Third Cycle" onAction="#onCheckBoxClicked"/>
                                                         </children>
                                                     </AnchorPane>
                                                 </children>
@@ -202,9 +202,9 @@
                                                     </AnchorPane>
                                                     <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                         <children>
-                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Face-to-Face" />
-                                                            <CheckBox layoutX="102.0" layoutY="4.0" mnemonicParsing="false" text="Online" />
-                                                            <CheckBox layoutX="168.0" layoutY="4.0" mnemonicParsing="false" text="Blended" />
+                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Face-to-Face" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox layoutX="102.0" layoutY="4.0" mnemonicParsing="false" text="Online" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox layoutX="168.0" layoutY="4.0" mnemonicParsing="false" text="Blended" onAction="#onCheckBoxClicked"/>
                                                         </children>
                                                     </AnchorPane>
                                                 </children>
@@ -322,27 +322,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                                 <children>
-                                                                    <RadioButton layoutX="8.0" layoutY="4.0" mnemonicParsing="false" text="Core Course" />
+                                                                    <CheckBox layoutX="8.0" layoutY="4.0" mnemonicParsing="false" text="Core Course" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                                 <children>
-                                                                    <RadioButton layoutX="8.0" layoutY="4.0" mnemonicParsing="false" text="Major Area Course" />
+                                                                    <CheckBox layoutX="8.0" layoutY="4.0" mnemonicParsing="false" text="Major Area Course" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                                 <children>
-                                                                    <RadioButton layoutX="9.0" layoutY="4.0" mnemonicParsing="false" text="Supportive Course" />
+                                                                    <CheckBox layoutX="9.0" layoutY="4.0" mnemonicParsing="false" text="Supportive Course" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                                 <children>
-                                                                    <RadioButton layoutX="9.0" layoutY="4.0" mnemonicParsing="false" text="Communication and Management Skills Course" />
+                                                                    <CheckBox layoutX="9.0" layoutY="4.0" mnemonicParsing="false" text="Communication and Management Skills Course" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                                 <children>
-                                                                    <RadioButton layoutX="8.0" layoutY="4.0" mnemonicParsing="false" text="Transferable Skill Course" />
+                                                                    <CheckBox layoutX="8.0" layoutY="4.0" mnemonicParsing="false" text="Transferable Skill Course" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -1575,27 +1575,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -1622,27 +1622,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -1669,27 +1669,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -1716,27 +1716,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -1763,27 +1763,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -1810,27 +1810,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="32.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="32.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="32.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="32.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="32.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -1857,27 +1857,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -1904,27 +1904,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="50.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -1951,27 +1951,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -1998,27 +1998,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -2045,27 +2045,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -2092,27 +2092,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="22.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="22.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="22.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="22.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="22.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
@@ -2139,27 +2139,27 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="1" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="2" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="50.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="3" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="90.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="4" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane layoutX="130.0" layoutY="10.0" prefHeight="25.0" prefWidth="40.0" style="-fx-border-color: black;">
                                                                 <children>
-                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" />
+                                                                    <CheckBox layoutX="11.0" layoutY="36.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="15.0" userData="5" onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                         </children>
