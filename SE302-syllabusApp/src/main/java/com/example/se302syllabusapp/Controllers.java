@@ -44,9 +44,9 @@ public class Controllers extends FileManager{
                     courseObject.put(syllabusData4.getName(), syllabusData4.getValue());
                     
                 }
-                
+
                 subObject.put(syllabusData3.getName(),courseObject);
-                
+
             }
 
             syllabus.add(subObject);

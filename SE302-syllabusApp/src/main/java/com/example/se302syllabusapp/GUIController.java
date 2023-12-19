@@ -293,9 +293,27 @@ public class GUIController implements Initializable {
         popup.showAndWait();
     }
 
+    public void deletePopup(){
+        FXMLLoader popDelete = new FXMLLoader(getClass().getResource("deletePage.fxml"));
+        try {
+            Parent comparePopup = popDelete.load();
+            setPopup(new Stage());
+            popup.initOwner(getPrimaryStage());
+            popup.initModality(Modality.APPLICATION_MODAL);
+            popup.setTitle("Select Version");
+            popup.setResizable(false);
+            popup.setScene(new Scene(comparePopup));
+
+            popup.showAndWait();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     public void deleteSyllabus(){
-
+        deletePopup();
     }
 
     public void saveButtonFunctionality() {
@@ -326,7 +344,7 @@ public class GUIController implements Initializable {
         } else if (node instanceof CheckBox) {
             System.out.println("CheckBox----------------");
             if (((CheckBox) node).isSelected()) {
-                System.out.println(((CheckBox) node).getText());
+                System.out.println(((CheckBox) node).getUserData());
             }
         } else {
             if (node instanceof Parent parent) {
@@ -337,6 +355,25 @@ public class GUIController implements Initializable {
             }
         }
     }
+
+    public void onCheckBoxClicked() {
+        CheckBox selectedCheckBox = (CheckBox) (checkBox1.isSelected() ? checkBox1 :
+                checkBox2.isSelected() ? checkBox2 :
+                        checkBox3.isSelected() ? checkBox3 : null);
+
+        if (selectedCheckBox != null) {
+            // Deselect other checkboxes if a checkbox is selected
+            if (selectedCheckBox == checkBox1) {
+                checkBox2.setSelected(false);
+                checkBox3.setSelected(false);
+            } else if (selectedCheckBox == checkBox2) {
+                checkBox1.setSelected(false);
+                checkBox3.setSelected(false);
+            } else if (selectedCheckBox == checkBox3) {
+                checkBox1.setSelected(false);
+                checkBox2.setSelected(false);
+            }
+        }
 
 
 
