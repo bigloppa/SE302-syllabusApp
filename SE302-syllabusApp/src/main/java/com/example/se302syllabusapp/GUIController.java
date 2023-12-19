@@ -356,25 +356,24 @@ public class GUIController implements Initializable {
         }
     }
 
-    public void onCheckBoxClicked() {
-        CheckBox selectedCheckBox = (CheckBox) (checkBox1.isSelected() ? checkBox1 :
-                checkBox2.isSelected() ? checkBox2 :
-                        checkBox3.isSelected() ? checkBox3 : null);
+    public void onCheckBoxClicked(ActionEvent event) {
 
-        if (selectedCheckBox != null) {
-            // Deselect other checkboxes if a checkbox is selected
-            if (selectedCheckBox == checkBox1) {
-                checkBox2.setSelected(false);
-                checkBox3.setSelected(false);
-            } else if (selectedCheckBox == checkBox2) {
-                checkBox1.setSelected(false);
-                checkBox3.setSelected(false);
-            } else if (selectedCheckBox == checkBox3) {
-                checkBox1.setSelected(false);
-                checkBox2.setSelected(false);
+        HBox parent = (HBox) ((AnchorPane) ((CheckBox) event.getSource()).getParent()).getParent();
+
+        for (Node child: parent.getChildren()) {
+            if (child instanceof AnchorPane) {
+                for (Node checkBox: ((AnchorPane) child).getChildren()) {
+                    if (checkBox instanceof CheckBox) {
+                        if (((CheckBox) checkBox).isSelected() && event.getSource() != checkBox) {
+                            ((CheckBox) checkBox).setSelected(false);
+                        }
+                    }
+                }
             }
         }
 
+
+    }
 
 
 

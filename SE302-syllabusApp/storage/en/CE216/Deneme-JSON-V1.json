@@ -5,26 +5,26 @@
         {
           "sub1": [
             {
-              "Course-Name": "a",
-              "Code": "b",
-              "Fall": "c",
-              "Spring": "d",
-              "Theory": "e",
-              "Application-Lab": "f",
-              "Local-Credits": "g",
-              "ECTS": "h"
+              "Course-Name": "",
+              "Code": "",
+              "Fall": "",
+              "Spring": "",
+              "Theory": "",
+              "Application-Lab": "",
+              "Local-Credits": "",
+              "ECTS": ""
             }
           ]
         },
         {
           "sub2": [
             {
-              "Prerequisites": "j",
-              "Course-Language": "k",
-              "Course-Type": "l",
-              "Course-Level": "m",
-              "Mode-of-Delivery": "n",
-              "TMT": "o"
+              "Prerequisites": "",
+              "Course-Language": "",
+              "Course-Type": "",
+              "Course-Level": "",
+              "Mode-of-Delivery": "",
+              "TMT": ""
             }
           ]
         },
@@ -112,7 +112,7 @@
               "requiredMaterials": ""
             },
             {
-              "subject": "aliii",
+              "subject": "",
               "requiredMaterials": ""
             },
             {
@@ -154,7 +154,7 @@
           "L-AH": [
             {
               "Number": "",
-              "Duration": "ege",
+              "Duration": "",
               "Workload": ""
             }
           ]
@@ -216,7 +216,7 @@
         {
           "Portfolio": [
             {
-              "Number": "nihan",
+              "Number": "",
               "Duration": "",
               "Workload": ""
             }
@@ -236,7 +236,7 @@
             {
               "Number": "",
               "Duration": "",
-              "Workload": "beyza"
+              "Workload": ""
             }
           ]
         },
@@ -259,7 +259,7 @@
           ]
         },
         {
-          "Total": "ali"
+          "Total": ""
         }
       ]
     },
