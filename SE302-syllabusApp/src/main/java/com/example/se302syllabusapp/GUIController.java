@@ -41,6 +41,9 @@ public class GUIController implements Initializable {
     public VBox page3;
     public VBox page4;
     public VBox page5;
+
+    @FXML
+    public TextArea versionDescriptions;
     @FXML
     private VBox parentVBox;
     @FXML
@@ -130,6 +133,7 @@ public class GUIController implements Initializable {
         }
         FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("ComparePage.fxml"));
         try {
+            // version numbers and description will be added
             Node syllabusSheet = compareLoader.load();
             System.out.println(parentVBox);
 
@@ -595,7 +599,7 @@ public class GUIController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        versionDescriptions = new TextArea();
     }
 
     public Stage getPrimaryStage() {
