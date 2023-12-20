@@ -5,6 +5,7 @@ import javafx.stage.Popup;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -146,7 +147,7 @@ public class Controllers extends FileManager{
     }
 
     public void saveFromUserEntry(ArrayList<String>syllabusData, String language){
-        String lecture = syllabusData.get(1);
+        String lecture = syllabusData.get(1).trim();
         int version = createDir(language,lecture);
         String filepath = "storage/" + language+ "/"+ lecture+ "/V"+ --version+"/"+ lecture+".json";
 
@@ -189,7 +190,7 @@ public class Controllers extends FileManager{
 
                             for (Object key: sub3.keySet()) {
                                 sub3.put(key,syllabusData.get(counter));
-                               counter++;
+                                counter++;
                             }
 
 
@@ -203,8 +204,11 @@ public class Controllers extends FileManager{
 
             }
 
+
+
             try (FileWriter file = new FileWriter(filepath)) {
-                file.write(jsonObject.toJSONString());
+
+                file.write(indentJson(jsonObject.toJSONString()));
                 System.out.println("Data successfully written");
             } catch (IOException e) {
                 e.printStackTrace();
@@ -215,6 +219,27 @@ public class Controllers extends FileManager{
 
 
 
+    }
+
+    private static String indentJson(String jsonString) {
+        StringBuilder indented = new StringBuilder();
+        int indentLevel = 0;
+        for (char c : jsonString.toCharArray()) {
+            if (c == '{' || c == '[') {
+                indented.append(c).append("\n").append(getIndentString(++indentLevel));
+            } else if (c == '}' || c == ']') {
+                indented.append("\n").append(getIndentString(--indentLevel)).append(c);
+            } else if (c == ',') {
+                indented.append(c).append("\n").append(getIndentString(indentLevel));
+            } else {
+                indented.append(c);
+            }
+        }
+        return indented.toString();
+    }
+
+    private static String getIndentString(int indentLevel) {
+        return "    ".repeat(Math.max(0, indentLevel));
     }
 
     public void save(File file,String filePath){

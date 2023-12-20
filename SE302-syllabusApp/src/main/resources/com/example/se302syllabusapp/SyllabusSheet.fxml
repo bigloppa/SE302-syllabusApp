@@ -10,11 +10,23 @@
 <?import javafx.scene.text.Text?>
 
 
+<?import javafx.scene.control.cell.ComboBoxListCell?>
+<?import javafx.collections.FXCollections?>
 <BorderPane fx:id="syllabusParent" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.se302syllabusapp.GUIController" xmlns:fx="http://javafx.com/fxml/1">
     <right>
         <AnchorPane style="-fx-background-color: rgb(204,204,204);" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="saveButton" layoutX="122.0" layoutY="541.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Save" onAction="#saveButtonFunctionality" />
+                <Button fx:id="saveButton" layoutX="122.0" layoutY="560" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Save" onAction="#saveButtonFunctionality" />
+                <ComboBox fx:id="comboBox" prefWidth="202.0" layoutX="9" layoutY="520.0" prefHeight="25.0"  >
+
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="English" />
+                            <String fx:value="Turkish" />
+
+                        </FXCollections>
+                    </items>
+                </ComboBox>
                 <TextArea fx:id="descriptionValue" layoutX="7.0" layoutY="90.0" prefHeight="428.0" prefWidth="202.0" promptText="Write descriptions about changes. "/>
                 <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0">
                     Description

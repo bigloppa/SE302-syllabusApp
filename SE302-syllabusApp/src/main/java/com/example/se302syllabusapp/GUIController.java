@@ -34,6 +34,8 @@ import java.util.ResourceBundle;
 public class GUIController implements Initializable {
     @FXML
     public Button compareButton;
+
+
     @FXML
     public BorderPane syllabusParent;
     public Button saveButton;
@@ -60,6 +62,8 @@ public class GUIController implements Initializable {
     VersionController versionController;
 
     ArrayList<String> syllabusData;
+    @FXML
+    private ComboBox<String> comboBox;
 
     public GUIController(){
         syllabusData = new ArrayList<>();
@@ -345,6 +349,9 @@ public class GUIController implements Initializable {
         centerVBox.getChildren().add( vBox2);
 
 
+        String selectedValue = comboBox.getValue();
+        if(selectedValue.equals("English")) {
+
 //        centerVBox.getChildren().add(centerAnchorPane);
 
         // Alt
@@ -388,22 +395,35 @@ public class GUIController implements Initializable {
 
     public void saveButtonFunctionality() {
 
-        String desc = ((TextArea) ((AnchorPane) syllabusParent.getChildren().get(0)).getChildren().get(1)).getText();
-        long start = System.nanoTime();
-
-
-        syllabusData.addAll(filterInput(page1));
-        syllabusData.addAll(filterInput(page2));
-        syllabusData.addAll(filterInput(page3));
-        syllabusData.addAll(filterInput(page4));
-        syllabusData.addAll(filterInput(page5));
+        //String desc = ((TextArea) ((AnchorPane) syllabusParent.getChildren().get(0)).getChildren().get(1)).getText();
 
 
 
-        controllers.saveFromUserEntry(syllabusData,"en");
-        controllers.read();
-        long end = System.nanoTime();
-        System.out.println(end-start);
+            syllabusData.addAll(filterInput(page1));
+            syllabusData.addAll(filterInput(page2));
+            syllabusData.addAll(filterInput(page3));
+            syllabusData.addAll(filterInput(page4));
+            syllabusData.addAll(filterInput(page5));
+
+
+
+            controllers.saveFromUserEntry(syllabusData,"en");
+        }else if (selectedValue.equals("Turkish")){
+            syllabusData.addAll(filterInput(page1));
+            syllabusData.addAll(filterInput(page2));
+            syllabusData.addAll(filterInput(page3));
+            syllabusData.addAll(filterInput(page4));
+            syllabusData.addAll(filterInput(page5));
+
+
+
+            controllers.saveFromUserEntry(syllabusData,"tr");
+        }
+
+
+
+
+
     }
 
     public ArrayList<String> filterInput(Node node) {
