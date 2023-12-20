@@ -30,6 +30,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
@@ -61,7 +62,11 @@ public class GUIController implements Initializable {
     Controllers controllers;
     VersionController versionController;
 
+    ArrayList<String> syllabusData;
+
     public GUIController(){
+        syllabusData = new ArrayList<>();
+        controllers = new Controllers();
     }
 
 
@@ -320,40 +325,45 @@ public class GUIController implements Initializable {
 
         String desc = ((TextArea) ((AnchorPane) syllabusParent.getChildren().get(0)).getChildren().get(1)).getText();
         long start = System.nanoTime();
-        filterInput(page1);
-        filterInput(page2);
-        filterInput(page3);
-        filterInput(page4);
-        filterInput(page5);
+
+
+        syllabusData.addAll(filterInput(page1));
+        syllabusData.addAll(filterInput(page2));
+        syllabusData.addAll(filterInput(page3));
+        syllabusData.addAll(filterInput(page4));
+        syllabusData.addAll(filterInput(page5));
+
+
+
+        controllers.saveFromUserEntry(syllabusData,"en","CE456");
         long end = System.nanoTime();
         System.out.println(end-start);
     }
 
-    public void filterInput(Node node) {
+    public ArrayList<String> filterInput(Node node) {
 
         if (node instanceof TextField || node instanceof TextArea) {
-            // Text values of TextAreas and TextFields.
             String textValues = ((TextInputControl) node).getText();
-//            System.out.println("TextValues----------------");
-//            System.out.println(textValues);
-        } else if (node instanceof RadioButton) {
-            System.out.println("RadioButtons----------------");
-            if (((RadioButton) node).isSelected()) {
-                System.out.println(((RadioButton) node).getText());
-            }
+            syllabusData.add(textValues);
+
         } else if (node instanceof CheckBox) {
-            System.out.println("CheckBox----------------");
-            if (((CheckBox) node).isSelected()) {
-                System.out.println(((CheckBox) node).getUserData());
+            String userData = "";
+            if (((CheckBox) node).isSelected()&& node.getUserData()!=null) {
+               userData = node.getUserData().toString();
+
             }
+            syllabusData.add(userData);
         } else {
             if (node instanceof Parent parent) {
                 // If the node is a Parent (e.g., VBox, HBox), recursively search its children
+
                 for (Node child : parent.getChildrenUnmodifiable()) {
                     filterInput(child); // Recursive call for each child
                 }
             }
         }
+
+        return syllabusData;
     }
 
     public void onCheckBoxClicked(ActionEvent event) {

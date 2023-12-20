@@ -5,6 +5,8 @@ import javafx.stage.Popup;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -12,6 +14,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class Controllers extends FileManager{
@@ -40,7 +43,7 @@ public class Controllers extends FileManager{
         for(SyllabusData syllabusData: syllabusData1.getChildren()){
             for (SyllabusData syllabusData3 : syllabusData.getChildren()){
                 for (SyllabusData syllabusData4 : syllabusData3.getChildren()){
-                    
+
                     courseObject.put(syllabusData4.getName(), syllabusData4.getValue());
                     
                 }
@@ -98,7 +101,7 @@ public class Controllers extends FileManager{
 
 
 
-    public String createDir(String language,String lecture,File selectedFile){
+    public int createDir(String language,String lecture){
 
 
         String filepath = "storage/";
@@ -117,9 +120,9 @@ public class Controllers extends FileManager{
 
         }
 
-        filepath += ("/V"+--counter+"/"+ selectedFile.getName());
 
-        return filepath;
+
+        return counter;
 
 
 
@@ -142,8 +145,76 @@ public class Controllers extends FileManager{
 
     }
 
+    public void saveFromUserEntry(ArrayList<String>syllabusData, String language, String lecture){
+        int version = createDir(language,lecture);
+        String filepath = "storage/" + language+ "/"+ lecture+ "/V"+ --version+"/"+ lecture+".json";
 
 
+        int counter = 0;
+        JSONParser parser = new JSONParser();
+        SyllabusData root = new SyllabusData();
+
+        try {
+            JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("base/base.json"));
+
+            Object keyName = jsonObject.keySet();
+            String[] name = keyName.toString().split("[\\[\\]]");
+
+            root.setName(name[1]);
+
+            JSONArray children = (JSONArray) jsonObject.get(name[1]);
+
+            for(Object sub: children) {
+                JSONObject jObj = (JSONObject) sub;
+                String subObjectName = jObj.keySet().toString().split("[\\[\\]]")[1];
+                JSONArray jA1 = (JSONArray) jObj.get(subObjectName);
+
+                for (Object sub1: jA1) {
+                    JSONObject jObj1 = (JSONObject) sub1;
+
+                    if (jObj1.isEmpty()) {
+                        continue;
+                    }
+
+                    String subObjectName1 = jObj1.keySet().toString().split("[\\[\\]]")[1];
+
+                    try {
+                        JSONArray sub2 = (JSONArray) jObj1.get(subObjectName1);
+
+                        for (Object sub2Elements: sub2) {
+
+                            JSONObject sub3 = (JSONObject) sub2Elements;
+
+
+                            for (Object key: sub3.keySet()) {
+                                sub3.put(key,syllabusData.get(counter));
+                               counter++;
+                            }
+
+
+                        }
+
+                    }catch (Exception e) {
+
+                    }
+
+                }
+
+            }
+
+            try (FileWriter file = new FileWriter(filepath)) {
+                file.write(jsonObject.toJSONString());
+                System.out.println("Data successfully written");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (IOException | ParseException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+    }
 
     public void save(File file,String filePath){
 

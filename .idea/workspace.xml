@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="CheckBox updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/resources/com/example/se302syllabusapp/SyllabusSheet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/resources/com/example/se302syllabusapp/SyllabusSheet.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/CE216/Deneme-JSON-V1.json" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/base/base.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,23 +28,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="SE302-syllabusApp" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="SE302-syllabusApp" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="SE302-syllabusApp" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -92,6 +77,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ege Deniz\Documents\GitHub\SE302-syllabusApp\SE302-syllabusApp" />
+      <recent name="C:\Users\Ege Deniz\Documents\GitHub\SE302-syllabusApp\SE302-syllabusApp\src\base" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.SE302-syllabusApp [run]">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.se302syllabusapp.HelloApplication" />
@@ -125,7 +116,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -209,5 +200,12 @@
     <MESSAGE value="GUIController.java is changed. Some FXML files updated." />
     <MESSAGE value="CheckBox updated" />
     <option name="LAST_COMMIT_MESSAGE" value="CheckBox updated" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
