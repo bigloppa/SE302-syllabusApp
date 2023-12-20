@@ -90,14 +90,15 @@ public class GUIController implements Initializable {
         if (selectedFile != null) {
             setControllers(new Controllers(new SyllabusData(),new SyllabusData()));
             getControllers().setJsonFile(new File(selectedFile.getAbsolutePath()));
+            syllabusData = getControllers().read();
 
 
-            if (getControllers().getSyllabusData1() != null) {
-                syllabusData = getControllers().getSyllabusData1();
-            }
+            assert syllabusData != null;
+            System.out.println(syllabusData.getName());
+
         }
 
-        System.out.println(syllabusData.getName());
+
 
 
 //        System.out.println(syllabusData.name);

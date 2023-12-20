@@ -30,6 +30,7 @@ public class App extends Application {
 
         // The width and height can be changed.
         Scene scene = new Scene(root,1400,750);
+        stage.setTitle("SyllabusApp");
         stage.setScene(scene);
         stage.show();
 

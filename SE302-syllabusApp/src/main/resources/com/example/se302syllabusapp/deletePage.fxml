@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302syllabusapp.GUIController">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.se302syllabusapp.GUIController">
    <center>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -59,7 +59,7 @@
    <bottom>
       <AnchorPane prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="compareButton" layoutX="511.0" layoutY="-12.0" mnemonicParsing="false" onAction="#compareVersions" prefHeight="25.0" prefWidth="69.0" text="Button" />
+            <Button fx:id="compareButton" layoutX="511.0" layoutY="-12.0" mnemonicParsing="false"  prefHeight="25.0" prefWidth="69.0" text="Button" />
          </children>
       </AnchorPane>
    </bottom>

@@ -76,7 +76,7 @@
                   <HBox prefHeight="200.0" prefWidth="200.0" alignment="TOP_CENTER" style="-fx-background-color: rgb(170,170,170);" >
                      <VBox spacing="5.0" alignment="CENTER">
                         <Text style="-fx-fill: black;">
-                           Open or start a new JSON file.
+                           Open or start a new Syllabus sheet.
                            <font>
                               <Font size="15.0"/>
                            </font>

@@ -80,7 +80,7 @@ public class FileManager {
         SyllabusData root = new SyllabusData();
 
         try {
-            JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("storage/en/CE456/V1/CE456.json"));
+            JSONObject jsonObject = (JSONObject) parser.parse(new FileReader(getJsonFile()));
 
             Object keyName = jsonObject.keySet();
             String[] name = keyName.toString().split("[\\[\\]]");
@@ -119,18 +119,20 @@ public class FileManager {
 
                         for (Object sub2Elements: sub2) {
 
-                            JSONObject sub3 = (JSONObject) sub2Elements;
+                            JSONObject jObj2 = (JSONObject) sub2Elements;
+
+                            System.out.println(jObj2.keySet());
 
                             SyllabusData subObject2 = new SyllabusData();
-                            if (sub3.keySet().toString().split("[\\[\\]]")[1].isEmpty())
-                                subObject2.setName(sub3.keySet().toString().split("[\\[\\]]")[1]);
+                            if (jObj2.keySet().toString().split("[\\[\\]]")[1].isEmpty())
+                                subObject2.setName(jObj2.keySet().toString().split("[\\[\\]]")[1]);
 
 
 
-                            for (Object kName: sub3.keySet().toArray()) {
+                            for (Object kName: jObj2.keySet().toArray()) {
                                 SyllabusData subObject3 = new SyllabusData();
                                 subObject3.setName(kName.toString());
-                                subObject3.setValue(sub3.get(kName.toString()).toString());
+                                subObject3.setValue(jObj2.get(kName).toString());
                                 subObject2.getChildren().add(subObject3);
 
                             }

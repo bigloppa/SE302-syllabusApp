@@ -5,13 +5,27 @@
         {
           "sub1": [
             {
-              "Course-Name": "",
-              "Code": "",
-              "Fall": "",
-              "Spring": "",
-              "Theory": "",
-              "Application-Lab": "",
-              "Local-Credits": "",
+              "Course Name": ""
+            },
+            {
+              "Code": ""
+            },
+            {
+              "Fall": ""
+            },
+            {
+              "Spring": ""
+            },
+            {
+              "Theory": ""
+            },
+            {
+              "Application Lab": ""
+            },
+            {
+              "Local Credits": ""
+            },
+            {
               "ECTS": ""
             }
           ]
@@ -19,11 +33,21 @@
         {
           "sub2": [
             {
-              "Prerequisites": "",
-              "Course-Language": "",
-              "Course-Type": "",
-              "Course-Level": "",
-              "Mode-of-Delivery": "",
+              "Prerequisites": ""
+            },
+            {
+              "Course Language": ""
+            },
+            {
+              "Course Type": ""
+            },
+            {
+              "Course Level": ""
+            },
+            {
+              "Mode of Delivery": ""
+            },
+            {
               "TMT": ""
             }
           ]
