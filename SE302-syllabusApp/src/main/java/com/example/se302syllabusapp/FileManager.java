@@ -80,7 +80,7 @@ public class FileManager {
         SyllabusData root = new SyllabusData();
 
         try {
-            JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("storage/en/CE216/Deneme-JSON-V1.json"));
+            JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("storage/en/CE456/V1/CE456.json"));
 
             Object keyName = jsonObject.keySet();
             String[] name = keyName.toString().split("[\\[\\]]");
@@ -125,14 +125,18 @@ public class FileManager {
                             if (sub3.keySet().toString().split("[\\[\\]]")[1].isEmpty())
                                 subObject2.setName(sub3.keySet().toString().split("[\\[\\]]")[1]);
 
-                            //System.out.println(sub3.keySet().toString().split("[\\[\\]]")[1]);
+
 
                             for (Object kName: sub3.keySet().toArray()) {
                                 SyllabusData subObject3 = new SyllabusData();
                                 subObject3.setName(kName.toString());
                                 subObject3.setValue(sub3.get(kName.toString()).toString());
                                 subObject2.getChildren().add(subObject3);
+
                             }
+
+
+
                             subObject1.getChildren().add(subObject2);
 
                         }

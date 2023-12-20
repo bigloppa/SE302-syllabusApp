@@ -145,7 +145,8 @@ public class Controllers extends FileManager{
 
     }
 
-    public void saveFromUserEntry(ArrayList<String>syllabusData, String language, String lecture){
+    public void saveFromUserEntry(ArrayList<String>syllabusData, String language){
+        String lecture = syllabusData.get(1);
         int version = createDir(language,lecture);
         String filepath = "storage/" + language+ "/"+ lecture+ "/V"+ --version+"/"+ lecture+".json";
 

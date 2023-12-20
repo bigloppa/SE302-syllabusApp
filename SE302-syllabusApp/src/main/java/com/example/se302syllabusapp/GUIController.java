@@ -335,7 +335,8 @@ public class GUIController implements Initializable {
 
 
 
-        controllers.saveFromUserEntry(syllabusData,"en","CE456");
+        controllers.saveFromUserEntry(syllabusData,"en");
+        controllers.read();
         long end = System.nanoTime();
         System.out.println(end-start);
     }
