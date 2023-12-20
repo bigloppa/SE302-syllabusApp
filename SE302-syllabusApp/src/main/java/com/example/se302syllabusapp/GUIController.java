@@ -50,6 +50,9 @@ public class GUIController implements Initializable {
     private HBox parentHBox;
     private Stage popup;
 
+    @FXML
+    private ComboBox<String> comboBox;
+
 
 
     FileManager fileManager;
@@ -500,22 +503,20 @@ public class GUIController implements Initializable {
 
     public void saveButtonFunctionality() {
 
-        String desc = ((TextArea) ((AnchorPane) syllabusParent.getChildren().get(0)).getChildren().get(1)).getText();
-        long start = System.nanoTime();
-
 
         syllabusData.addAll(filterInput(page1));
         syllabusData.addAll(filterInput(page2));
         syllabusData.addAll(filterInput(page3));
         syllabusData.addAll(filterInput(page4));
         syllabusData.addAll(filterInput(page5));
+        String selectedValue = comboBox.getValue();
+        if (selectedValue.equals("English")) {
+            controllers.saveFromUserEntry(syllabusData, "en");
+        }else if (selectedValue.equals("Turkish")){
+            controllers.saveFromUserEntry(syllabusData, "tr");
+        }
 
 
-
-        controllers.saveFromUserEntry(syllabusData,"en");
-        controllers.read();
-        long end = System.nanoTime();
-        System.out.println(end-start);
     }
 
     public ArrayList<String> filterInput(Node node) {
@@ -600,7 +601,8 @@ public class GUIController implements Initializable {
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        versionDescriptions = new TextArea();
+
+
     }
 
     public Stage getPrimaryStage() {

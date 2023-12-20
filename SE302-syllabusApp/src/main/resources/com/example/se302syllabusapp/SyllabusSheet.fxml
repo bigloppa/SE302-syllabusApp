@@ -17,13 +17,12 @@
         <AnchorPane style="-fx-background-color: rgb(204,204,204);" BorderPane.alignment="CENTER">
             <children>
                 <Button fx:id="saveButton" layoutX="122.0" layoutY="560" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Save" onAction="#saveButtonFunctionality" />
-                <ComboBox fx:id="comboBox" prefWidth="202.0" layoutX="9" layoutY="520.0" prefHeight="25.0"  >
+                <ComboBox fx:id="comboBox" prefWidth="202.0" layoutX="9" layoutY="520.0" prefHeight="25.0" >
 
                     <items>
                         <FXCollections fx:factory="observableArrayList">
                             <String fx:value="English" />
                             <String fx:value="Turkish" />
-
                         </FXCollections>
                     </items>
                 </ComboBox>
