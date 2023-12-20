@@ -13,13 +13,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
@@ -370,37 +367,20 @@ public class GUIController implements Initializable {
     public void onCheckBoxClicked(ActionEvent event) {
 
         Parent parent = ((AnchorPane) ((CheckBox) event.getSource()).getParent()).getParent();
-        if (parent instanceof VBox) {
-            VBox parentVBox = (VBox) ((AnchorPane) ((CheckBox) event.getSource()).getParent()).getParent();
 
-            for (Node child: parentVBox.getChildren()) {
+        if (parent instanceof VBox || parent instanceof HBox) {
+            Pane parentPane = (Pane) parent;
+
+            for (Node child : parentPane.getChildren()) {
                 if (child instanceof AnchorPane) {
-                    for (Node checkBox: ((AnchorPane) child).getChildren()) {
-                        if (checkBox instanceof CheckBox) {
-                            if (((CheckBox) checkBox).isSelected() && event.getSource() != checkBox) {
-                                ((CheckBox) checkBox).setSelected(false);
-                            }
+                    for (Node checkBox : ((AnchorPane) child).getChildren()) {
+                        if (checkBox instanceof CheckBox && event.getSource() != checkBox) {
+                            ((CheckBox) checkBox).setSelected(false);
                         }
                     }
                 }
             }
         }
-        else {
-            HBox parentHBox = (HBox) ((AnchorPane) ((CheckBox) event.getSource()).getParent()).getParent();
-            for (Node child: parentHBox.getChildren()) {
-                if (child instanceof AnchorPane) {
-                    for (Node checkBox: ((AnchorPane) child).getChildren()) {
-                        if (checkBox instanceof CheckBox) {
-                            if (((CheckBox) checkBox).isSelected() && event.getSource() != checkBox) {
-                                ((CheckBox) checkBox).setSelected(false);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-
 
     }
 

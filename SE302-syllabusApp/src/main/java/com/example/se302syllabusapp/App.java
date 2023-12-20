@@ -25,14 +25,11 @@ public class App extends Application {
         Controllers controllers = new Controllers();
 
 
-
-
-
         controller.setPrimaryStage(stage);
 
 
         // The width and height can be changed.
-        Scene scene = new Scene(root,1500,800);
+        Scene scene = new Scene(root,1400,750);
         stage.setScene(scene);
         stage.show();
 
