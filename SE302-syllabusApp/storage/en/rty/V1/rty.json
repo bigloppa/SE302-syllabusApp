@@ -1,0 +1,352 @@
+{
+    "syllabus":[
+        {
+            "GI":[
+                {
+                    "sub1":[
+                        {
+                            "Course Name":"rty"
+                        },
+                        {
+                            "Code":"rty"
+                        },
+                        {
+                            "Fall":""
+                        },
+                        {
+                            "Spring":""
+                        },
+                        {
+                            "Theory":""
+                        },
+                        {
+                            "Application Lab":""
+                        },
+                        {
+                            "Local Credits":""
+                        },
+                        {
+                            "ECTS":""
+                        }
+                    ]
+                },
+                {
+                    "sub2":[
+                        {
+                            "Prerequisites":""
+                        },
+                        {
+                            "Course Language":""
+                        },
+                        {
+                            "Course Type":""
+                        },
+                        {
+                            "Course Level":""
+                        },
+                        {
+                            "Mode of Delivery":""
+                        },
+                        {
+                            "TMT":""
+                        }
+                    ]
+                },
+                {
+                    "sub3":[
+                        {
+                            "Course-Coordinator":"",
+                            "Course-Lecturers":"",
+                            "Assistants":""
+                        }
+                    ]
+                },
+                {
+                    "sub4":[
+                        {
+                            "Learning-Outcomes":"",
+                            "Course-Objectives":"",
+                            "Course-Description":""
+                        }
+                    ]
+                },
+                {
+                    "sub5":[
+                        {
+                            "Course-Category":""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "WSRM":[
+                {
+                    "sub1":[
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"rtyasd",
+                            "requiredMaterials":"rtyasd"
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        }
+                    ]
+                },
+                {
+                    "sub2":[
+                        {
+                            "courseNotes-textbooks":"",
+                            "suggestedReading-materials":""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "A":[
+                
+            ]
+        },
+        {
+            "ECTS-WT":[
+                {
+                    "Course-Hours":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "L-AH":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "SHOOC":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "Field-Work":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "Q-SC":[
+                        {
+                            "Number":"zxc",
+                            "Duration":"zxc",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "H-A":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "P-J":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "Project":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "Portfolio":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "S-W":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "Oral-Exam":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "Midterm":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "Final-Exam":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "Total":""
+                }
+            ]
+        },
+        {
+            "C-POM":[
+                {
+                    "sub1":[
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

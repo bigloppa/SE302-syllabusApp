@@ -40,7 +40,7 @@ public class VersionController extends FileManager {
 
     public void showDescriptions(String filePath){
 
-
+        String last = "";
         int lastDotIndex = filePath.lastIndexOf('.');
         if (lastDotIndex > 0) {
             filePath = filePath.substring(0, lastDotIndex)+"txt";
@@ -52,7 +52,7 @@ public class VersionController extends FileManager {
 
 
             while ((line = bufferedReader.readLine()) != null) {
-                System.out.println(line);
+                last+= line;
             }
 
         }catch(IOException e) {

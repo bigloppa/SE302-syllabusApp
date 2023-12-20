@@ -196,6 +196,7 @@ public class Controllers extends FileManager{
             try (FileWriter file = new FileWriter(filepath)) {
 
                 file.write(indentJson(jsonObject.toJSONString()));
+                System.out.println(counter);
                 System.out.println("Data successfully written");
             } catch (IOException e) {
                 e.printStackTrace();

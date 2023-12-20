@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="Gui and controller updates">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/resources/com/example/se302syllabusapp/SyllabusSheet.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/resources/com/example/se302syllabusapp/SyllabusSheet.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/SyllabusData.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/SyllabusData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/VersionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/VersionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +105,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/SE302-syllabusApp" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--stacktrace" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -209,6 +214,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Gui and controller updates" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java</url>
+          <line>136</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.lang.String" memberName="value" />

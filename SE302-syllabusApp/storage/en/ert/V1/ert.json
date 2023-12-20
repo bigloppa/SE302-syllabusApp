@@ -1,0 +1,352 @@
+{
+    "syllabus":[
+        {
+            "GI":[
+                {
+                    "sub1":[
+                        {
+                            "Course Name":"ert"
+                        },
+                        {
+                            "Code":"ert"
+                        },
+                        {
+                            "Fall":"ert"
+                        },
+                        {
+                            "Spring":"ert"
+                        },
+                        {
+                            "Theory":"etr"
+                        },
+                        {
+                            "Application Lab":"erter"
+                        },
+                        {
+                            "Local Credits":"ter"
+                        },
+                        {
+                            "ECTS":"tert"
+                        }
+                    ]
+                },
+                {
+                    "sub2":[
+                        {
+                            "Prerequisites":""
+                        },
+                        {
+                            "Course Language":"English"
+                        },
+                        {
+                            "Course Type":""
+                        },
+                        {
+                            "Course Level":""
+                        },
+                        {
+                            "Mode of Delivery":""
+                        },
+                        {
+                            "TMT":"ertert"
+                        }
+                    ]
+                },
+                {
+                    "sub3":[
+                        {
+                            "Course-Coordinator":"",
+                            "Course-Lecturers":"",
+                            "Assistants":""
+                        }
+                    ]
+                },
+                {
+                    "sub4":[
+                        {
+                            "Learning-Outcomes":"erer",
+                            "Course-Objectives":"",
+                            "Course-Description":""
+                        }
+                    ]
+                },
+                {
+                    "sub5":[
+                        {
+                            "Course-Category":""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "WSRM":[
+                {
+                    "sub1":[
+                        {
+                            "subject":"Major Area Course",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"ertasd",
+                            "requiredMaterials":"ertasd"
+                        },
+                        {
+                            "subject":"erteertassd",
+                            "requiredMaterials":"easdasd"
+                        },
+                        {
+                            "subject":"rtasda",
+                            "requiredMaterials":"erteras"
+                        },
+                        {
+                            "subject":"tetsda",
+                            "requiredMaterials":"erertdasda"
+                        },
+                        {
+                            "subject":"eerterterterterterterterterterrtsasd",
+                            "requiredMaterials":"dasd"
+                        },
+                        {
+                            "subject":"erasd",
+                            "requiredMaterials":"etasdasd"
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        },
+                        {
+                            "subject":"",
+                            "requiredMaterials":""
+                        }
+                    ]
+                },
+                {
+                    "sub2":[
+                        {
+                            "courseNotes-textbooks":"",
+                            "suggestedReading-materials":""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "A":[
+                
+            ]
+        },
+        {
+            "ECTS-WT":[
+                {
+                    "Course-Hours":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "L-AH":[
+                        {
+                            "Number":"",
+                            "Duration":"vbnvbnvbn",
+                            "Workload":"nvb"
+                        }
+                    ]
+                },
+                {
+                    "SHOOC":[
+                        {
+                            "Number":"LO1",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "Field-Work":[
+                        {
+                            "Number":"",
+                            "Duration":"vb",
+                            "Workload":"vbnnvbn"
+                        }
+                    ]
+                },
+                {
+                    "Q-SC":[
+                        {
+                            "Number":"",
+                            "Duration":"LO2",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "H-A":[
+                        {
+                            "Number":"",
+                            "Duration":"vbnvbn",
+                            "Workload":"vvbn"
+                        }
+                    ]
+                },
+                {
+                    "P-J":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":"LO3"
+                        }
+                    ]
+                },
+                {
+                    "Project":[
+                        {
+                            "Number":"",
+                            "Duration":"vn",
+                            "Workload":"vbn"
+                        }
+                    ]
+                },
+                {
+                    "Portfolio":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "S-W":[
+                        {
+                            "Number":"LO4",
+                            "Duration":"vb",
+                            "Workload":"v"
+                        }
+                    ]
+                },
+                {
+                    "Oral-Exam":[
+                        {
+                            "Number":"",
+                            "Duration":"",
+                            "Workload":"LO3"
+                        }
+                    ]
+                },
+                {
+                    "Midterm":[
+                        {
+                            "Number":"",
+                            "Duration":"vbn",
+                            "Workload":"vbvbn"
+                        }
+                    ]
+                },
+                {
+                    "Final-Exam":[
+                        {
+                            "Number":"",
+                            "Duration":"LO2",
+                            "Workload":""
+                        }
+                    ]
+                },
+                {
+                    "Total":""
+                }
+            ]
+        },
+        {
+            "C-POM":[
+                {
+                    "sub1":[
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":"vbn"
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":"LO1"
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        },
+                        {
+                            "Outcome Number":"",
+                            "Contribution Level":""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

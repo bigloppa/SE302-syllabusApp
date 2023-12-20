@@ -18,6 +18,19 @@ public class SyllabusData {
         this.value = value;
         this.children = children;
     }
+    public ArrayList<String> getAttributes() {
+        ArrayList<String> last = new ArrayList<>();
+        for (SyllabusData syllabusData : this.getChildren()) {
+            for (SyllabusData syllabusData3 : syllabusData.getChildren()) {
+                for (SyllabusData syllabusData4 : syllabusData3.getChildren()) {
+                    last.add(syllabusData4.getValue());
+                }
+            }
+        }
+
+        return last;
+    }
+
 
     public String getName() {
         return name;

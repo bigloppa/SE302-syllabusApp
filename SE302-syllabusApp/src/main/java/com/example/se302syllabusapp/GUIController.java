@@ -64,7 +64,7 @@ public class GUIController implements Initializable {
     ArrayList<String> syllabusData;
 
     public GUIController(){
-        syllabusData = new ArrayList<>();
+        syllabusData = new ArrayList<>(500);
         controllers = new Controllers();
     }
 
@@ -72,7 +72,7 @@ public class GUIController implements Initializable {
 
     public void importSyllabus(){
 
-
+        /*
         File storagePath = new File("storage");
         if (!storagePath.exists()) {
             System.out.println("Storage file does not exist!");
@@ -94,7 +94,14 @@ public class GUIController implements Initializable {
             setControllers(new Controllers(new SyllabusData(),new SyllabusData()));
             getControllers().setJsonFile(new File(selectedFile.getAbsolutePath()));
             syllabusData = getControllers().read();
+
+
+            assert syllabusData != null;
+            System.out.println(syllabusData.getName());
+
         }
+
+         */
 
 
 
@@ -499,11 +506,13 @@ public class GUIController implements Initializable {
     public void saveButtonFunctionality() {
 
 
-        syllabusData.addAll(filterInput(page1));
-        syllabusData.addAll(filterInput(page2));
-        syllabusData.addAll(filterInput(page3));
-        syllabusData.addAll(filterInput(page4));
-        syllabusData.addAll(filterInput(page5));
+        filterInput(page1);
+        filterInput(page2);
+        filterInput(page3);
+        filterInput(page4);
+        filterInput(page5);
+
+
         String selectedValue = comboBox.getValue();
         if (selectedValue.equals("English")) {
             controllers.saveFromUserEntry(syllabusData, "en");
@@ -514,30 +523,39 @@ public class GUIController implements Initializable {
 
     }
 
-    public ArrayList<String> filterInput(Node node) {
+    public void filterInput(Node node) {
 
-        if (node instanceof TextField || node instanceof TextArea) {
+
+        if (node instanceof TextField) {
             String textValues = ((TextInputControl) node).getText();
             syllabusData.add(textValues);
+
+
 
         } else if (node instanceof CheckBox) {
             String userData = "";
             if (((CheckBox) node).isSelected()&& node.getUserData()!=null) {
                userData = node.getUserData().toString();
+                syllabusData.add(userData);
+
 
             }
-            syllabusData.add(userData);
-        } else {
-            if (node instanceof Parent parent) {
-                // If the node is a Parent (e.g., VBox, HBox), recursively search its children
 
+
+        } else {
+
+            if (node instanceof Parent parent){
                 for (Node child : parent.getChildrenUnmodifiable()) {
-                    filterInput(child); // Recursive call for each child
+                    filterInput(child);
+
+
                 }
             }
         }
 
-        return syllabusData;
+
+
+
     }
 
     public void onCheckBoxClicked(ActionEvent event) {
