@@ -299,7 +299,7 @@ public class GUIController implements Initializable {
         popup.showAndWait();
     }
 
-    public void deletePopup(){
+    public void deletePopup() {
         BorderPane borderPane = new BorderPane();
 
         // Merkez
@@ -340,52 +340,53 @@ public class GUIController implements Initializable {
         label.setLayoutX(344);
         label.setLayoutY(42);
 
-        anchorPane2.getChildren().setAll(text1,button,label);
+        anchorPane2.getChildren().setAll(text1, button, label);
         hBox2.getChildren().setAll(anchorPane2);
 
         anchorPane.getChildren().setAll(hBox2);
         vBox2.getChildren().setAll(anchorPane);
 
-        centerVBox.getChildren().add( vBox2);
+        centerVBox.getChildren().add(vBox2);
 
 
         String selectedValue = comboBox.getValue();
-        if(selectedValue.equals("English")) {
+        if (selectedValue.equals("English")) {
 
 //        centerVBox.getChildren().add(centerAnchorPane);
 
-        // Alt
-        AnchorPane bottomAnchorPane = new AnchorPane();
-        bottomAnchorPane.setPrefHeight(23);
-        bottomAnchorPane.setPrefWidth(600);
+            // Alt
+            AnchorPane bottomAnchorPane = new AnchorPane();
+            bottomAnchorPane.setPrefHeight(23);
+            bottomAnchorPane.setPrefWidth(600);
 
-        Button compareButton = new Button("Button");
-        compareButton.setLayoutX(511.0);
-        compareButton.setLayoutY(-12.0);
-        compareButton.setPrefHeight(25);
-        compareButton.setPrefWidth(69);
+            Button compareButton = new Button("Button");
+            compareButton.setLayoutX(511.0);
+            compareButton.setLayoutY(-12.0);
+            compareButton.setPrefHeight(25);
+            compareButton.setPrefWidth(69);
 
-        bottomAnchorPane.getChildren().add(compareButton);
-        borderPane.setBottom(bottomAnchorPane);
-        borderPane.setCenter(centerVBox);
+            bottomAnchorPane.getChildren().add(compareButton);
+            borderPane.setBottom(bottomAnchorPane);
+            borderPane.setCenter(centerVBox);
 
-        // Add your other components here
-        compareButton.setOnAction(event -> {
-            // Call another method when the button is clicked
-            compareVersions(parentVBox);
-            popup.close();
-        });
+            // Add your other components here
+            compareButton.setOnAction(event -> {
+                // Call another method when the button is clicked
+                compareVersions(parentVBox);
+                popup.close();
+            });
 
-        Scene scene = new Scene(borderPane, 600, 400);
-        // Scene
-        setPopup(new Stage());
-        popup.initOwner(getPrimaryStage());
-        popup.initModality(Modality.APPLICATION_MODAL);
-        popup.setTitle("Compare Versions");
-        popup.setResizable(false);
-        popup.setScene(scene);
+            Scene scene = new Scene(borderPane, 600, 400);
+            // Scene
+            setPopup(new Stage());
+            popup.initOwner(getPrimaryStage());
+            popup.initModality(Modality.APPLICATION_MODAL);
+            popup.setTitle("Compare Versions");
+            popup.setResizable(false);
+            popup.setScene(scene);
 
-        popup.showAndWait();
+            popup.showAndWait();
+        }
     }
 
 
@@ -396,8 +397,8 @@ public class GUIController implements Initializable {
     public void saveButtonFunctionality() {
 
         //String desc = ((TextArea) ((AnchorPane) syllabusParent.getChildren().get(0)).getChildren().get(1)).getText();
-
-
+        String selectedValue = comboBox.getValue();
+        if(selectedValue.equals("English")){
 
             syllabusData.addAll(filterInput(page1));
             syllabusData.addAll(filterInput(page2));
