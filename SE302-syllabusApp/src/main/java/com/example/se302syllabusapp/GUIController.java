@@ -296,21 +296,89 @@ public class GUIController implements Initializable {
     }
 
     public void deletePopup(){
-        FXMLLoader popDelete = new FXMLLoader(getClass().getResource("deletePage.fxml"));
-        try {
-            Parent comparePopup = popDelete.load();
-            setPopup(new Stage());
-            popup.initOwner(getPrimaryStage());
-            popup.initModality(Modality.APPLICATION_MODAL);
-            popup.setTitle("Select Version");
-            popup.setResizable(false);
-            popup.setScene(new Scene(comparePopup));
+        BorderPane borderPane = new BorderPane();
 
-            popup.showAndWait();
+        // Merkez
+        VBox centerVBox = new VBox();
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        VBox vBox2 = new VBox();
+        vBox2.setPrefHeight(297);
+        vBox2.setPrefWidth(600);
+        vBox2.setSpacing(20);
+
+        AnchorPane anchorPane = new AnchorPane();
+
+        HBox hBox2 = new HBox();
+        hBox2.setLayoutY(25);
+        hBox2.prefHeight(100);
+        hBox2.prefWidth(600);
+
+        AnchorPane anchorPane2 = new AnchorPane();
+        anchorPane2.prefHeight(100);
+        anchorPane2.prefWidth(607);
+
+        Text text1 = new Text("Choose version");
+        text1.setFont(new Font(14));
+        text1.setLayoutX(51);
+        text1.setLayoutY(46);
+        text1.setWrappingWidth(88.13671875);
+
+        Button button = new Button("Choose");
+        button.setLayoutX(175);
+        button.setLayoutY(38);
+        button.prefHeight(25);
+        button.setPrefWidth(71);
+        button.setOnAction(event -> {
+            importSyllabus();
+        });
+
+        Label label = new Label("Label");
+        label.setLayoutX(344);
+        label.setLayoutY(42);
+
+        anchorPane2.getChildren().setAll(text1,button,label);
+        hBox2.getChildren().setAll(anchorPane2);
+
+        anchorPane.getChildren().setAll(hBox2);
+        vBox2.getChildren().setAll(anchorPane);
+
+        centerVBox.getChildren().add( vBox2);
+
+
+//        centerVBox.getChildren().add(centerAnchorPane);
+
+        // Alt
+        AnchorPane bottomAnchorPane = new AnchorPane();
+        bottomAnchorPane.setPrefHeight(23);
+        bottomAnchorPane.setPrefWidth(600);
+
+        Button compareButton = new Button("Button");
+        compareButton.setLayoutX(511.0);
+        compareButton.setLayoutY(-12.0);
+        compareButton.setPrefHeight(25);
+        compareButton.setPrefWidth(69);
+
+        bottomAnchorPane.getChildren().add(compareButton);
+        borderPane.setBottom(bottomAnchorPane);
+        borderPane.setCenter(centerVBox);
+
+        // Add your other components here
+        compareButton.setOnAction(event -> {
+            // Call another method when the button is clicked
+            compareVersions(parentVBox);
+            popup.close();
+        });
+
+        Scene scene = new Scene(borderPane, 600, 400);
+        // Scene
+        setPopup(new Stage());
+        popup.initOwner(getPrimaryStage());
+        popup.initModality(Modality.APPLICATION_MODAL);
+        popup.setTitle("Compare Versions");
+        popup.setResizable(false);
+        popup.setScene(scene);
+
+        popup.showAndWait();
     }
 
 
