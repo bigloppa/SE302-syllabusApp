@@ -56,7 +56,7 @@
                         <MenuItem mnemonicParsing="false" text="Open" onAction="#importSyllabus"/>
                         <MenuItem mnemonicParsing="false" text="Compare" onAction="#compareVersionsPopup"/>
                         <MenuItem mnemonicParsing="false" text="Delete" onAction="#deleteSyllabus"/>
-                        <MenuItem mnemonicParsing="false" text="Export" />
+                        <MenuItem mnemonicParsing="false" text="Export" onAction="#exportPopup"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">

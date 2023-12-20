@@ -16,16 +16,24 @@
     <right>
         <AnchorPane style="-fx-background-color: rgb(204,204,204);" BorderPane.alignment="CENTER">
             <children>
-                <Button fx:id="saveButton" layoutX="122.0" layoutY="560" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Save" onAction="#saveButtonFunctionality" />
-                <ComboBox fx:id="comboBox" prefWidth="202.0" layoutX="9" layoutY="520.0" prefHeight="25.0" >
-
+                <Button fx:id="saveButton" layoutX="110.0" layoutY="620" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Save" onAction="#saveButtonFunctionality" />
+                <ComboBox fx:id="comboBox" prefWidth="202.0" layoutX="9" layoutY="520.0" prefHeight="25.0">
                     <items>
-                        <FXCollections fx:factory="observableArrayList">
+                        <FXCollections fx:factory="observableArrayList" >
                             <String fx:value="English" />
                             <String fx:value="Turkish" />
                         </FXCollections>
                     </items>
+                    <value>
+                        <String fx:value="English" />
+                    </value>
                 </ComboBox>
+                <CheckBox layoutX="15" layoutY="555" selected="true" onAction="#onCheckBoxClicked">
+                    Save As New Version
+                </CheckBox>
+                <CheckBox layoutX="15" layoutY="580" onAction="#onCheckBoxClicked" >
+                    Edit Last Version
+                </CheckBox>
                 <TextArea fx:id="descriptionValue" layoutX="7.0" layoutY="90.0" prefHeight="428.0" prefWidth="202.0" promptText="Write descriptions about changes. "/>
                 <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0">
                     Description

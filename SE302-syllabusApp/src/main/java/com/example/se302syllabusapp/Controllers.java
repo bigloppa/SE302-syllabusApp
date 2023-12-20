@@ -99,11 +99,7 @@ public class Controllers extends FileManager{
         }
     }
 
-
-
-
     public int createDir(String language,String lecture){
-
 
         String filepath = "storage/";
         filepath+= language;
@@ -112,7 +108,6 @@ public class Controllers extends FileManager{
         filepath+= ("/"+ lecture);
         checkDir(filepath);
 
-
         int counter = 1;
         boolean flag = true;
         while(flag){
@@ -120,15 +115,7 @@ public class Controllers extends FileManager{
             counter++;
 
         }
-
-
-
         return counter;
-
-
-
-
-
     }
 
     public boolean checkDir(String storagePath){
