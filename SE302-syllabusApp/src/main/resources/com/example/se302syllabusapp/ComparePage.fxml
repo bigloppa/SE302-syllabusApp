@@ -11,7 +11,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/19" fx:controller="com.example.se302syllabusapp.GUIController" xmlns:fx="http://javafx.com/fxml/1">
     <center>
-        <ScrollPane fitToWidth="true"  vvalue="1.0" BorderPane.alignment="TOP_CENTER" fitToHeight="true">
+        <ScrollPane fitToWidth="true" BorderPane.alignment="TOP_CENTER" fitToHeight="true">
             <content>
                 <HBox fx:id="parentHBox" minWidth="1000.0" alignment="TOP_CENTER" style="-fx-background-color: rgb(170,170,170);" >
                     <VBox alignment="TOP_CENTER" fillWidth="false" prefWidth="700.0" spacing="10.0">
