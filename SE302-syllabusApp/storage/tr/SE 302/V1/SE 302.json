@@ -5,10 +5,10 @@
                 {
                     "sub1":[
                         {
-                            "Course Name":"coasdasd"
+                            "Course Name":"Coruse Nameeee"
                         },
                         {
-                            "Code":"math 201"
+                            "Code":"SE 302"
                         },
                         {
                             "Fall":""
@@ -36,13 +36,13 @@
                             "Prerequisites":""
                         },
                         {
-                            "Course Language":""
+                            "Course Language":"Turkish"
                         },
                         {
-                            "Course Type":""
+                            "Course Type":"First Cycle"
                         },
                         {
-                            "Course Level":""
+                            "Course Level":"Blended"
                         },
                         {
                             "Mode of Delivery":""
@@ -108,8 +108,8 @@
                             "requiredMaterials":""
                         },
                         {
-                            "subject":"coasdasd",
-                            "requiredMaterials":"math 201"
+                            "subject":"",
+                            "requiredMaterials":""
                         },
                         {
                             "subject":"",
@@ -305,8 +305,8 @@
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"coasdasd",
-                            "Contribution Level":"math 201"
+                            "Outcome Number":"",
+                            "Contribution Level":""
                         },
                         {
                             "Outcome Number":"",

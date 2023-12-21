@@ -62,6 +62,7 @@ public class GUIController implements Initializable {
     VersionController versionController;
 
     ArrayList<String> syllabusData;
+    private int INDEX_FOR_DATA_PASSING;
 
     public GUIController(){
         syllabusData = new ArrayList<>(500);
@@ -72,7 +73,6 @@ public class GUIController implements Initializable {
 
     public void importSyllabus(){
 
-        /*
         File storagePath = new File("storage");
         if (!storagePath.exists()) {
             System.out.println("Storage file does not exist!");
@@ -87,8 +87,7 @@ public class GUIController implements Initializable {
         );
         File selectedFile = chooser.showOpenDialog(new Popup());
 
-        // Buralar deneme amacli yazildi kod calisiyor ama duzenlenmesi gerek
-        SyllabusData syllabusData = new SyllabusData();
+        SyllabusData syllabusData;
 
         if (selectedFile != null) {
             setControllers(new Controllers(new SyllabusData(),new SyllabusData()));
@@ -96,21 +95,32 @@ public class GUIController implements Initializable {
             syllabusData = getControllers().read();
 
 
-            assert syllabusData != null;
-            System.out.println(syllabusData.getName());
+            if (syllabusData != null) {
 
+                FXMLLoader syllabusLoader = new FXMLLoader(getClass().getResource("SyllabusSheet.fxml"));
+                ArrayList<String> data = syllabusData.getAttributes(new ArrayList<>());
+
+                try {
+                    Node syllabusSheet = syllabusLoader.load();
+
+                    // This two line for allocating syllabus data only
+                    BorderPane borderPane = (BorderPane) syllabusSheet;
+                    ScrollPane scrollPane = (ScrollPane) borderPane.getChildren().get(1);
+
+                    passValuesToSyllabusSheet(scrollPane, data);
+
+                    if (!parentVBox.getChildren().isEmpty())
+                        parentVBox.getChildren().remove(1);
+
+                    parentVBox.getChildren().add(syllabusSheet);
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
 
-         */
 
-
-
-
-//        System.out.println(syllabusData.name);
-
-        //getFileManager().setJsonFile(new File(""));
-
-        //SyllabusData syllabusData = getFileManager().read();
 
     }
 
@@ -534,7 +544,7 @@ public class GUIController implements Initializable {
 
         } else if (node instanceof CheckBox) {
             String userData = "";
-            if (((CheckBox) node).isSelected()&& node.getUserData()!=null) {
+            if (((CheckBox) node).isSelected()) {
                userData = node.getUserData().toString();
                 syllabusData.add(userData);
 
@@ -552,10 +562,33 @@ public class GUIController implements Initializable {
                 }
             }
         }
+    }
 
+    public void passValuesToSyllabusSheet(Node node, ArrayList<String> syllabusData) {
 
+        if (node instanceof TextField) {
 
+            ((TextField) node).setText(syllabusData.get(INDEX_FOR_DATA_PASSING));
+            INDEX_FOR_DATA_PASSING++;
 
+        } else if (node instanceof CheckBox) {
+            if (syllabusData.get(INDEX_FOR_DATA_PASSING).equals(node.getUserData())) {
+                ((CheckBox) node).setSelected(true);
+                INDEX_FOR_DATA_PASSING++;
+            }
+        }
+        else {
+            if (node instanceof Parent) {
+                if (node instanceof ScrollPane) {
+                    passValuesToSyllabusSheet(((ScrollPane) node).getContent(), syllabusData);
+                }
+                else {
+                    for (Node child: ((Parent) node).getChildrenUnmodifiable()) {
+                        passValuesToSyllabusSheet(child, syllabusData);
+                    }
+                }
+            }
+        }
     }
 
     public void onCheckBoxClicked(ActionEvent event) {

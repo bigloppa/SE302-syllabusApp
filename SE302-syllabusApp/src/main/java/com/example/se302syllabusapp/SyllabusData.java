@@ -18,17 +18,19 @@ public class SyllabusData {
         this.value = value;
         this.children = children;
     }
-    public ArrayList<String> getAttributes() {
-        ArrayList<String> last = new ArrayList<>();
-        for (SyllabusData syllabusData : this.getChildren()) {
-            for (SyllabusData syllabusData3 : syllabusData.getChildren()) {
-                for (SyllabusData syllabusData4 : syllabusData3.getChildren()) {
-                    last.add(syllabusData4.getValue());
-                }
+    public ArrayList<String> getAttributes(ArrayList<String> dataList) {
+
+        // TODO Ege yemin ediyorum sayende ilk defa böyle kod yazdım çok iyi la
+        // TODO Recursive methoda bak bee
+        if (this.getChildren().isEmpty()) {
+            dataList.add(this.getValue());
+        } else {
+            for (SyllabusData child: this.getChildren()) {
+                child.getAttributes(dataList);
             }
         }
 
-        return last;
+        return dataList;
     }
 
 

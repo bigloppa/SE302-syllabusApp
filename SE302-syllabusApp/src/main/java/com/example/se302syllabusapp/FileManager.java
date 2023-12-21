@@ -121,8 +121,6 @@ public class FileManager {
 
                             JSONObject jObj2 = (JSONObject) sub2Elements;
 
-                            System.out.println(jObj2.keySet());
-
                             SyllabusData subObject2 = new SyllabusData();
                             if (jObj2.keySet().toString().split("[\\[\\]]")[1].isEmpty())
                                 subObject2.setName(jObj2.keySet().toString().split("[\\[\\]]")[1]);
