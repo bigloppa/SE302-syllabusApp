@@ -55,8 +55,12 @@
         {
           "sub3": [
             {
-              "Course-Coordinator": "",
-              "Course-Lecturers": "",
+              "Course-Coordinator": ""
+            },
+            {
+              "Course-Lecturers": ""
+            },
+            {
               "Assistants": ""
             }
           ]
@@ -64,8 +68,12 @@
         {
           "sub4": [
             {
-              "Course-Objectives": "",
-              "Learning-Outcomes": "",
+              "Course-Objectives": ""
+            },
+            {
+              "Learning-Outcomes": ""
+            },
+            {
               "Course-Description": ""
             }
           ]
@@ -84,67 +92,99 @@
         {
           "sub1": [
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             },
             {
-              "subject": "",
+              "subject": ""
+            },
+            {
               "requiredMaterials": ""
             }
 
@@ -153,7 +193,9 @@
         {
           "sub2": [
             {
-              "courseNotes-textbooks": "",
+              "courseNotes-textbooks": ""
+            },
+            {
               "suggestedReading-materials": ""
             }
           ]
@@ -327,7 +369,16 @@
               "Weighting": ""
             },
             {
-              "LO": ""
+              "LO1": ""
+            },
+            {
+              "LO2": ""
+            },
+            {
+              "LO3": ""
+            },
+            {
+              "LO4": ""
             }
           ]
         },
@@ -366,7 +417,16 @@
               "Weighting": ""
             },
             {
-              "LO": ""
+              "LO1": ""
+            },
+            {
+              "LO2": ""
+            },
+            {
+              "LO3": ""
+            },
+            {
+              "LO4": ""
             }
           ]
         }
@@ -377,8 +437,12 @@
         {
           "Course-Hours": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -386,8 +450,12 @@
         {
           "L-AH": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -395,8 +463,12 @@
         {
           "SHOOC": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -404,8 +476,12 @@
         {
           "Field-Work": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -413,8 +489,12 @@
         {
           "Q-SC": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -422,8 +502,12 @@
         {
           "H-A": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -431,8 +515,12 @@
         {
           "P-J": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -440,8 +528,12 @@
         {
           "Project": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -449,8 +541,12 @@
         {
           "Portfolio": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -458,8 +554,12 @@
         {
           "S-W": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -467,8 +567,12 @@
         {
           "Oral-Exam": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -476,8 +580,12 @@
         {
           "Midterm": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
@@ -485,14 +593,22 @@
         {
           "Final-Exam": [
             {
-              "Number": "",
-              "Duration": "",
+              "Number": ""
+            },
+            {
+              "Duration": ""
+            },
+            {
               "Workload": ""
             }
           ]
         },
         {
-          "Total": ""
+          "Total": [
+            {
+              "Total": ""
+            }
+          ]
         }
       ]
     },
