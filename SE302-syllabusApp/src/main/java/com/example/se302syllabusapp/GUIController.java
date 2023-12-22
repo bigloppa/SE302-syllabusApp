@@ -66,6 +66,8 @@ public class GUIController implements Initializable {
     ArrayList<String> syllabusData;
     private int INDEX_FOR_DATA_PASSING;
 
+    private int counterOfCheckBoxes;
+
     public GUIController(){
         syllabusData = new ArrayList<>(500);
         controllers = new Controllers();
@@ -562,18 +564,31 @@ public class GUIController implements Initializable {
 
 
     public void deleteSyllabus(){
-
         deletePopup();
+    }
+
+    private void showAlert(String title, String header, String content) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 
     public void saveButtonFunctionality() {
 
+        counterOfCheckBoxes = 0;
 
         filterInput(page1);
         filterInput(page2);
         filterInput(page3);
         filterInput(page4);
         filterInput(page5);
+
+        if (counterOfCheckBoxes != 32){
+            showAlert("Warning!", "Empty CheckBox", "Fill in the checkbox fields.");
+            return;
+        }
 
 
         String selectedValue = comboBox.getValue();
@@ -600,6 +615,7 @@ public class GUIController implements Initializable {
             if (((CheckBox) node).isSelected()) {
                userData = node.getUserData().toString();
                 syllabusData.add(userData);
+                counterOfCheckBoxes++;
 
 
             }

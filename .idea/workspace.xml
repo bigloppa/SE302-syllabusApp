@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="Gui and controller updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/resources/com/example/se302syllabusapp/Demo4.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/resources/com/example/se302syllabusapp/Demo4.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/tr/SE 302/V1/SE 302.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +155,7 @@
       <updated>1702294091719</updated>
       <workItem from="1702797211004" duration="19205000" />
       <workItem from="1703190225002" duration="3764000" />
-      <workItem from="1703248087024" duration="4795000" />
+      <workItem from="1703248087024" duration="6888000" />
     </task>
     <task id="LOCAL-00001" summary="Import functions">
       <option name="closed" value="true" />
