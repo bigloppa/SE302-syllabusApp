@@ -123,7 +123,7 @@ public class GUIController implements Initializable {
                     ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
 
                     passValuesToSyllabusSheet(scrollPane.getContent(), data);
-                    System.out.println(INDEX_FOR_DATA_PASSING);
+
                     INDEX_FOR_DATA_PASSING = 0;
 
                     if (!parentVBox.getChildren().isEmpty())
@@ -159,16 +159,41 @@ public class GUIController implements Initializable {
 
     }
 
-    public void compareVersions(VBox parentVBox) {
+    public void compareVersions(VBox parentVBox, String path1, String path2) {
         if (popup != null) {
             System.out.println(popup.getTitle());
             popup.close();
         }
+
+        SyllabusData syllabusData1;
+        setControllers(new Controllers(new SyllabusData(), new SyllabusData()));
+        getControllers().setJsonFile(new File(path1));
+        syllabusData1 = getControllers().read();
+        ArrayList<String> data1 = syllabusData1.getAttributes(new ArrayList<>());
+
+        SyllabusData syllabusData2;
+        setControllers(new Controllers(new SyllabusData(), new SyllabusData()));
+        getControllers().setJsonFile(new File(path2));
+        syllabusData2 = getControllers().read();
+        ArrayList<String> data2 = syllabusData2.getAttributes(new ArrayList<>());
+
+
         FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("ComparePage.fxml"));
         try {
             // version numbers and description will be added
-            Node syllabusSheet = compareLoader.load();
-            System.out.println(parentVBox);
+            BorderPane syllabusSheet = compareLoader.load();
+            ScrollPane scrollPane = (ScrollPane) syllabusSheet.getChildren().get(1);
+            HBox hBox = (HBox) scrollPane.getContent();
+            VBox syllabus1 = (VBox) hBox.getChildren().get(0);
+            VBox syllabus2 = (VBox) hBox.getChildren().get(1);
+
+            ContributionLevelValuesList = new ArrayList<>();
+            ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
+
+            passValuesToSyllabusSheet(syllabus1, data1);
+            INDEX_FOR_DATA_PASSING = 0;
+            passValuesToSyllabusSheet(syllabus2, data2);
+            INDEX_FOR_DATA_PASSING = 0;
 
             if (!parentVBox.getChildren().isEmpty())
                 parentVBox.getChildren().remove(1);
@@ -266,6 +291,8 @@ public class GUIController implements Initializable {
         Label courseLabel = new Label();
         courseLabel.setLayoutX(344);
         courseLabel.setLayoutY(42);
+
+        ArrayList<String> paths = new ArrayList<>();
 
         courseChoiceBox.setOnAction(event -> {
             String selectedOption = courseChoiceBox.getValue();
@@ -380,7 +407,9 @@ public class GUIController implements Initializable {
         // Add your other components here
         compareButton.setOnAction(event -> {
             // Call another method when the button is clicked
-            compareVersions(parentVBox);
+            String firstFilePath = "storage\\" + langChoiceBox.getValue() + "\\"+ courseChoiceBox.getValue() + "\\" + versionChoiceBox1.getValue() + "\\"+ courseChoiceBox.getValue() + ".json";
+            String secondFilePath = "storage\\" + langChoiceBox.getValue() + "\\"+ courseChoiceBox.getValue() + "\\" + versionChoiceBox2.getValue() + "\\"+ courseChoiceBox.getValue() + ".json";
+            compareVersions(parentVBox, firstFilePath , secondFilePath);
             popup.close();
         });
 
