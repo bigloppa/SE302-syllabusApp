@@ -69,8 +69,6 @@ public class GUIController implements Initializable {
     private final String[] ContributionLevelValues = {"1","2","3","4","5"};
     private ArrayList<String> ContributionLevelValuesList;
 
-    private int counterOfCheckBoxes;
-
     public GUIController(){
         syllabusData = new ArrayList<>(500);
         controllers = new Controllers();
@@ -831,9 +829,8 @@ public class GUIController implements Initializable {
         alert.showAndWait();
     }
 
-    public void saveButtonFunctionality() {
+    public void saveButtonFunctionality(ActionEvent event) {
 
-        counterOfCheckBoxes = 0;
 
         filterInput(page1);
         filterInput(page2);
@@ -841,17 +838,16 @@ public class GUIController implements Initializable {
         filterInput(page4);
         filterInput(page5);
 
-        if (counterOfCheckBoxes != 32){
-            showAlert("Empty CheckBox", "Fill in the checkbox fields.");
-            return;
-        }
-
+        System.out.println(syllabusData);
         System.out.println(syllabusData.size());
         String selectedValue = comboBox.getValue();
+        Button saveButton = (Button) event.getSource();
+        AnchorPane parent = (AnchorPane) saveButton.getParent();
+        CheckBox editLastVersionCheckBox = (CheckBox) parent.getChildren().get(3);
         if (selectedValue.equals("English")) {
-            controllers.saveFromUserEntry(syllabusData, "en");
+            controllers.saveFromUserEntry(syllabusData, "en", editLastVersionCheckBox.isSelected());
         }else if (selectedValue.equals("Turkish")){
-            controllers.saveFromUserEntry(syllabusData, "tr");
+            controllers.saveFromUserEntry(syllabusData, "tr", editLastVersionCheckBox.isSelected());
         }
 
 
@@ -864,14 +860,28 @@ public class GUIController implements Initializable {
             String textValues = ((TextInputControl) node).getText();
             syllabusData.add(textValues);
 
-
-
         } else if (node instanceof CheckBox) {
+
             String userData = "";
+            boolean oneElementIsAlreadySelected = false;
+            if (node.getUserData().toString().equals("5") && !((CheckBox) node).isSelected()) {
+                HBox grandParent = (HBox) ((AnchorPane) node.getParent()).getParent();
+
+                for (Node parent : grandParent.getChildren()) {
+                    AnchorPane anchorPane = (AnchorPane) parent;
+
+                    if (((CheckBox) anchorPane.getChildren().get(0)).isSelected()) {
+                        oneElementIsAlreadySelected = true;
+                    }
+                }
+                if (!oneElementIsAlreadySelected) {
+                    syllabusData.add(userData);
+                }
+            }
+
             if (((CheckBox) node).isSelected()) {
-               userData = node.getUserData().toString();
+                userData = node.getUserData().toString();
                 syllabusData.add(userData);
-                counterOfCheckBoxes++;
                 // TODO Burada sikinti var
             }
 
@@ -881,8 +891,6 @@ public class GUIController implements Initializable {
             if (node instanceof Parent parent){
                 for (Node child : parent.getChildrenUnmodifiable()) {
                     filterInput(child);
-
-
                 }
             }
         }
@@ -897,9 +905,6 @@ public class GUIController implements Initializable {
             INDEX_FOR_DATA_PASSING++;
 
         } else if (node instanceof CheckBox) {
-            if (INDEX_FOR_DATA_PASSING == 162) {
-                return;
-            }
             boolean oneElementIsAlreadySelected = false;
             if (ContributionLevelValuesList.contains(node.getUserData().toString())) {
                 HBox grandParent = (HBox) ((AnchorPane) node.getParent()).getParent();

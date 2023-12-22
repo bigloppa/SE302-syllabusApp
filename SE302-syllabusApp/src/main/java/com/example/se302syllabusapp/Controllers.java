@@ -106,7 +106,7 @@ public class Controllers extends FileManager{
         }
     }
 
-    public int createDir(String language,String lecture){
+    public int createDir(String language,String lecture,boolean isEditLastVersionSelected){
 
         String filepath = "storage/";
         filepath+= language;
@@ -115,12 +115,15 @@ public class Controllers extends FileManager{
         filepath+= ("/"+ lecture);
         checkDir(filepath);
 
-        int counter = 1;
-        boolean flag = true;
-        while(flag){
-            flag = checkDir(filepath + "/V" +counter );
-            counter++;
+        int counter = 0;
+        if (!isEditLastVersionSelected) {
+            counter = 1;
+            boolean flag = true;
+            while(flag){
+                flag = checkDir(filepath + "/V" +counter );
+                counter++;
 
+            }
         }
         return counter;
     }
@@ -140,11 +143,15 @@ public class Controllers extends FileManager{
 
     }
 
-    public void saveFromUserEntry(ArrayList<String>syllabusData, String language) {
+    public void saveFromUserEntry(ArrayList<String>syllabusData, String language, boolean isEditLastVersionSelected) {
 
         String lecture = syllabusData.get(1).trim();
-        int version = createDir(language,lecture);
+        int version = createDir(language,lecture, isEditLastVersionSelected);
         String filepath = "storage/" + language+ "/"+ lecture+ "/V"+ --version+"/"+ lecture+".json";
+
+        if (isEditLastVersionSelected) {
+            delete(filepath, lecture);
+        }
 
         JSONParser parser = new JSONParser();
         int counter = 0;
@@ -169,7 +176,6 @@ public class Controllers extends FileManager{
                     // [ sub1, ... , sub1, ... , Participation, ... , Course-Hours, ..., sub1 ]
 
                     JSONArray sub2List = (JSONArray) objList1[i];
-                    //System.out.println(sub2List);
 
                     for (Object sub2ListElements : sub2List) {
 
