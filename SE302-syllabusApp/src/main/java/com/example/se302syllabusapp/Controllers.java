@@ -1,7 +1,6 @@
 package com.example.se302syllabusapp;
 
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -12,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.cert.Extension;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -81,17 +81,21 @@ public class Controllers extends FileManager{
         }
     }
 
-    public void fileExport(File file, Stage primaryStage){
+    public void fileExport(String path, String type, String name){
+
+        // diğer dosya türleri oluşturulduğunda düzenleme yapılması gerekiyor
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save File");
+        fileChooser.setInitialFileName(name);
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(type + " Dosyaları", "*." + type));
 
 
-        File selectedFile = fileChooser.showSaveDialog(primaryStage);
+        File selectedFile = fileChooser.showSaveDialog(null);
 
         if (selectedFile != null) {
             try {
-                Path source = Paths.get(file.getPath());
+                Path source = Paths.get(path);
                 Path destination = Paths.get(selectedFile.getPath());
 
 

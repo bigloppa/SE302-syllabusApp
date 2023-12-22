@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="Gui and controller updates">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/base/base.json" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/base/base.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/FileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/SyllabusData.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/SyllabusData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/Ce 315/V1/Ce 315.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/Se 302/V1/Se 302.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/Se 302/V2/Se 302.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/tr/CE405/V1/CE405.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

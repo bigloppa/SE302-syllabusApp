@@ -572,6 +572,217 @@ public class GUIController implements Initializable {
         deletePopup();
     }
 
+    public void exportPopup() {
+        BorderPane borderPane = new BorderPane();
+
+        // Merkez
+        ChoiceBox<String> langChoiceBox = new ChoiceBox<>();
+        ChoiceBox<String> courseChoiceBox = new ChoiceBox<>();
+        ChoiceBox<String> versionChoiceBox1 = new ChoiceBox<>();
+
+        VBox centerVBox = new VBox();
+        AnchorPane centerAnchorPane = new AnchorPane();
+        HBox topHBox = new HBox();
+        AnchorPane topAnchorPane = new AnchorPane();
+        Text courseText = new Text("Language:");
+
+        langChoiceBox.getItems().addAll("en","tur");
+        Label languageLabel = new Label();
+        langChoiceBox.setOnAction(event -> {
+            String selectedOption = langChoiceBox.getValue();
+            languageLabel.setText( selectedOption);
+            courseChoiceBox.getItems().clear();
+            versionChoiceBox1.getItems().clear();
+            try {
+                Files.newDirectoryStream(Paths.get("storage/" + selectedOption))
+                        .forEach(path -> {
+                            String fileName = path.getFileName().toString();
+                            courseChoiceBox.getItems().add(fileName);
+                        });
+            } catch (IOException ignore) {
+
+            }
+        });
+
+        courseText.setFont(new Font(14.0));
+        courseText.setLayoutX(49);
+        courseText.setLayoutY(55);
+        courseText.setWrappingWidth(64.13671875);
+
+        langChoiceBox.setLayoutX(135.0);
+        langChoiceBox.setLayoutY(37.0);
+        langChoiceBox.setPrefWidth(150);
+
+        languageLabel.setLayoutX(344);
+        languageLabel.setLayoutY(41);
+        languageLabel.setPrefWidth(193);
+        languageLabel.setPrefHeight(17);
+
+
+        topAnchorPane.getChildren().addAll(courseText, langChoiceBox, languageLabel);
+        topHBox.getChildren().add(topAnchorPane);
+        centerAnchorPane.getChildren().add(topHBox);
+
+        VBox vBox2 = new VBox();
+        vBox2.setPrefHeight(297);
+        vBox2.setPrefWidth(600);
+        vBox2.setSpacing(20);
+
+        AnchorPane anchorPane = new AnchorPane();
+
+        HBox hBox2 = new HBox();
+        hBox2.setLayoutY(25);
+        hBox2.prefHeight(100);
+        hBox2.prefWidth(600);
+
+        AnchorPane anchorPane2 = new AnchorPane();
+        anchorPane2.prefHeight(100);
+        anchorPane2.prefWidth(607);
+
+        Text text1 = new Text("Course: ");
+        text1.setFont(new Font(14));
+        text1.setLayoutX(51);
+        text1.setLayoutY(46);
+        text1.setWrappingWidth(88.13671875);
+
+        courseChoiceBox.setLayoutX(135.0);
+        courseChoiceBox.setLayoutY(37.0);
+        courseChoiceBox.setPrefWidth(150);
+
+        Label courseLabel = new Label();
+        courseLabel.setLayoutX(344);
+        courseLabel.setLayoutY(42);
+
+        courseChoiceBox.setOnAction(event -> {
+            String selectedOption = courseChoiceBox.getValue();
+            courseLabel.setText( selectedOption);
+            versionChoiceBox1.getItems().clear();
+            try {
+                Files.newDirectoryStream(Paths.get("storage/" + langChoiceBox.getValue() + "/" + selectedOption))
+                        .forEach(path -> {
+                            String fileName = path.getFileName().toString();
+                            versionChoiceBox1.getItems().add(fileName);
+                            System.out.println(path);
+                        });
+            } catch (IOException ignore) {
+
+            }
+        });
+
+        anchorPane2.getChildren().setAll(text1,courseChoiceBox,courseLabel);
+        hBox2.getChildren().setAll(anchorPane2);
+
+//        2. hBox
+
+        HBox hBox3 = new HBox();
+        hBox3.setLayoutY(100);
+        hBox3.prefHeight(100);
+        hBox3.prefWidth(600);
+
+        AnchorPane anchorPane3 = new AnchorPane();
+        anchorPane3.prefHeight(100);
+        anchorPane3.prefWidth(607);
+
+        Text text2 = new Text("First chosen version: ");
+        text2.setFont(new Font(14));
+        text2.setLayoutX(51);
+        text2.setLayoutY(46);
+        text2.setWrappingWidth(88.13671875);
+
+        versionChoiceBox1.setLayoutX(135.0);
+        versionChoiceBox1.setLayoutY(37.0);
+        versionChoiceBox1.setPrefWidth(150);
+
+        Label versionLabel1 = new Label();
+        versionLabel1.setLayoutX(344);
+        versionLabel1.setLayoutY(42);
+
+        versionChoiceBox1.setOnAction(event -> {
+            String selectedOption = versionChoiceBox1.getValue();
+            versionLabel1.setText( selectedOption);
+        });
+
+        anchorPane3.getChildren().setAll(text2,versionChoiceBox1, versionLabel1);
+        hBox3.getChildren().setAll(anchorPane3);
+
+        //        3. hBox
+
+        HBox hBox4 = new HBox();
+        hBox4.setLayoutY(180);
+        hBox4.prefHeight(100);
+        hBox4.prefWidth(600);
+
+        AnchorPane anchorPane4 = new AnchorPane();
+        anchorPane4.prefHeight(100);
+        anchorPane4.prefWidth(607);
+
+        Text text3 = new Text("File Type: ");
+        text3.setFont(new Font(14));
+        text3.setLayoutX(51);
+        text3.setLayoutY(46);
+        text3.setWrappingWidth(90.13671875);
+
+        ChoiceBox<String> typeChoiceBox = new ChoiceBox<>();
+        typeChoiceBox.getItems().setAll("json","html","docx");
+        typeChoiceBox.setLayoutX(135.0);
+        typeChoiceBox.setLayoutY(37.0);
+        typeChoiceBox.setPrefWidth(150);
+
+        Label versionLabel2 = new Label();
+        versionLabel2.setLayoutX(344);
+        versionLabel2.setLayoutY(42);
+
+        typeChoiceBox.setOnAction(event -> {
+            String selectedOption = typeChoiceBox.getValue();
+            versionLabel2.setText( selectedOption);
+        });
+
+        anchorPane4.getChildren().setAll(text3,typeChoiceBox, versionLabel2);
+        hBox4.getChildren().setAll(anchorPane4);
+
+        anchorPane.getChildren().setAll(hBox2,hBox3,hBox4);
+        vBox2.getChildren().setAll(anchorPane);
+
+        centerVBox.getChildren().setAll(centerAnchorPane, vBox2);
+
+
+//        centerVBox.getChildren().add(centerAnchorPane);
+
+        // Alt
+        AnchorPane bottomAnchorPane = new AnchorPane();
+        bottomAnchorPane.setPrefHeight(23);
+        bottomAnchorPane.setPrefWidth(600);
+
+        Button compareButton = new Button("Button");
+        compareButton.setLayoutX(511.0);
+        compareButton.setLayoutY(-12.0);
+        compareButton.setPrefHeight(25);
+        compareButton.setPrefWidth(69);
+
+        bottomAnchorPane.getChildren().add(compareButton);
+        borderPane.setBottom(bottomAnchorPane);
+        borderPane.setCenter(centerVBox);
+
+        // Add your other components here
+        compareButton.setOnAction(event -> {
+            controllers.fileExport("storage/" + langChoiceBox.getValue() + "/" + courseChoiceBox.getValue() + "/" + versionChoiceBox1.getValue() + "/" + courseChoiceBox.getValue() + ".json",
+                    typeChoiceBox.getValue(), langChoiceBox.getValue() + "-" + courseChoiceBox.getValue() + "-" + versionChoiceBox1.getValue());
+            popup.close();
+        });
+
+        Scene scene = new Scene(borderPane, 600, 400);
+        // Scene
+        setPopup(new Stage());
+        popup.initOwner(getPrimaryStage());
+        popup.initModality(Modality.APPLICATION_MODAL);
+        popup.setTitle("Export File");
+        popup.setResizable(false);
+        popup.setScene(scene);
+
+        popup.showAndWait();
+
+    }
+
     private void showAlert(String header, String content) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Warning!");
@@ -692,195 +903,6 @@ public class GUIController implements Initializable {
                 }
             }
         }
-
-    }
-
-    public void exportPopup() {
-        BorderPane borderPane = new BorderPane();
-
-        // Merkez
-        VBox centerVBox = new VBox();
-        AnchorPane centerAnchorPane = new AnchorPane();
-        HBox topHBox = new HBox();
-        AnchorPane topAnchorPane = new AnchorPane();
-        Text courseText = new Text("Language:");
-        ChoiceBox<String> langChoiceBox = new ChoiceBox<>();
-        langChoiceBox.getItems().addAll("en","tur");
-        Label languageLabel = new Label();
-        langChoiceBox.setOnAction(event -> {
-            String selectedOption = langChoiceBox.getValue();
-            languageLabel.setText( selectedOption);
-        });
-
-        courseText.setFont(new Font(14.0));
-        courseText.setLayoutX(49);
-        courseText.setLayoutY(55);
-        courseText.setWrappingWidth(64.13671875);
-
-        langChoiceBox.setLayoutX(135.0);
-        langChoiceBox.setLayoutY(37.0);
-        langChoiceBox.setPrefWidth(150);
-
-        languageLabel.setLayoutX(344);
-        languageLabel.setLayoutY(41);
-        languageLabel.setPrefWidth(193);
-        languageLabel.setPrefHeight(17);
-
-
-        topAnchorPane.getChildren().addAll(courseText, langChoiceBox, languageLabel);
-        topHBox.getChildren().add(topAnchorPane);
-        centerAnchorPane.getChildren().add(topHBox);
-
-        VBox vBox2 = new VBox();
-        vBox2.setPrefHeight(297);
-        vBox2.setPrefWidth(600);
-        vBox2.setSpacing(20);
-
-        AnchorPane anchorPane = new AnchorPane();
-
-        HBox hBox2 = new HBox();
-        hBox2.setLayoutY(25);
-        hBox2.prefHeight(100);
-        hBox2.prefWidth(600);
-
-        AnchorPane anchorPane2 = new AnchorPane();
-        anchorPane2.prefHeight(100);
-        anchorPane2.prefWidth(607);
-
-        Text text1 = new Text("Course: ");
-        text1.setFont(new Font(14));
-        text1.setLayoutX(51);
-        text1.setLayoutY(46);
-        text1.setWrappingWidth(88.13671875);
-
-        ChoiceBox<String> courseChoiceBox = new ChoiceBox<>();
-        courseChoiceBox.getItems().addAll("se302","ce323");
-        courseChoiceBox.setLayoutX(135.0);
-        courseChoiceBox.setLayoutY(37.0);
-        courseChoiceBox.setPrefWidth(150);
-
-        Label courseLabel = new Label();
-        courseLabel.setLayoutX(344);
-        courseLabel.setLayoutY(42);
-
-        courseChoiceBox.setOnAction(event -> {
-            String selectedOption = courseChoiceBox.getValue();
-            courseLabel.setText( selectedOption);
-        });
-
-        anchorPane2.getChildren().setAll(text1,courseChoiceBox,courseLabel);
-        hBox2.getChildren().setAll(anchorPane2);
-
-//        2. hBox
-
-        HBox hBox3 = new HBox();
-        hBox3.setLayoutY(100);
-        hBox3.prefHeight(100);
-        hBox3.prefWidth(600);
-
-        AnchorPane anchorPane3 = new AnchorPane();
-        anchorPane3.prefHeight(100);
-        anchorPane3.prefWidth(607);
-
-        Text text2 = new Text("First chosen version: ");
-        text2.setFont(new Font(14));
-        text2.setLayoutX(51);
-        text2.setLayoutY(46);
-        text2.setWrappingWidth(88.13671875);
-
-        ChoiceBox<String> versionChoiceBox1 = new ChoiceBox<>();
-        versionChoiceBox1.getItems().setAll("V1","V2","V3");
-        versionChoiceBox1.setLayoutX(135.0);
-        versionChoiceBox1.setLayoutY(37.0);
-        versionChoiceBox1.setPrefWidth(150);
-
-        Label versionLabel1 = new Label();
-        versionLabel1.setLayoutX(344);
-        versionLabel1.setLayoutY(42);
-
-        versionChoiceBox1.setOnAction(event -> {
-            String selectedOption = versionChoiceBox1.getValue();
-            versionLabel1.setText( selectedOption);
-        });
-
-        anchorPane3.getChildren().setAll(text2,versionChoiceBox1, versionLabel1);
-        hBox3.getChildren().setAll(anchorPane3);
-
-        //        3. hBox
-
-        HBox hBox4 = new HBox();
-        hBox4.setLayoutY(180);
-        hBox4.prefHeight(100);
-        hBox4.prefWidth(600);
-
-        AnchorPane anchorPane4 = new AnchorPane();
-        anchorPane4.prefHeight(100);
-        anchorPane4.prefWidth(607);
-
-        Text text3 = new Text("File Type: ");
-        text3.setFont(new Font(14));
-        text3.setLayoutX(51);
-        text3.setLayoutY(46);
-        text3.setWrappingWidth(90.13671875);
-
-        ChoiceBox<String> versionChoiceBox2 = new ChoiceBox<>();
-        versionChoiceBox2.getItems().setAll("JSON","HTML","WORD");
-        versionChoiceBox2.setLayoutX(135.0);
-        versionChoiceBox2.setLayoutY(37.0);
-        versionChoiceBox2.setPrefWidth(150);
-
-        Label versionLabel2 = new Label();
-        versionLabel2.setLayoutX(344);
-        versionLabel2.setLayoutY(42);
-
-        versionChoiceBox2.setOnAction(event -> {
-            String selectedOption = versionChoiceBox2.getValue();
-            versionLabel2.setText( selectedOption);
-        });
-
-        anchorPane4.getChildren().setAll(text3,versionChoiceBox2, versionLabel2);
-        hBox4.getChildren().setAll(anchorPane4);
-
-        anchorPane.getChildren().setAll(hBox2,hBox3,hBox4);
-        vBox2.getChildren().setAll(anchorPane);
-
-        centerVBox.getChildren().setAll(centerAnchorPane, vBox2);
-
-
-//        centerVBox.getChildren().add(centerAnchorPane);
-
-        // Alt
-        AnchorPane bottomAnchorPane = new AnchorPane();
-        bottomAnchorPane.setPrefHeight(23);
-        bottomAnchorPane.setPrefWidth(600);
-
-        Button compareButton = new Button("Button");
-        compareButton.setLayoutX(511.0);
-        compareButton.setLayoutY(-12.0);
-        compareButton.setPrefHeight(25);
-        compareButton.setPrefWidth(69);
-
-        bottomAnchorPane.getChildren().add(compareButton);
-        borderPane.setBottom(bottomAnchorPane);
-        borderPane.setCenter(centerVBox);
-
-        // Add your other components here
-        compareButton.setOnAction(event -> {
-            // Call another method when the button is clicked
-            compareVersions(parentVBox);
-            popup.close();
-        });
-
-        Scene scene = new Scene(borderPane, 600, 400);
-        // Scene
-        setPopup(new Stage());
-        popup.initOwner(getPrimaryStage());
-        popup.initModality(Modality.APPLICATION_MODAL);
-        popup.setTitle("Export File");
-        popup.setResizable(false);
-        popup.setScene(scene);
-
-        popup.showAndWait();
 
     }
 
