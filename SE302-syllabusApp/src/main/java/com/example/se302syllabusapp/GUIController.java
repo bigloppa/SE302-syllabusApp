@@ -24,6 +24,8 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -171,17 +173,34 @@ public class GUIController implements Initializable {
         BorderPane borderPane = new BorderPane();
 
         // Merkez
+        ChoiceBox<String> langChoiceBox = new ChoiceBox<>();
+        ChoiceBox<String> courseChoiceBox = new ChoiceBox<>();
+        ChoiceBox<String> versionChoiceBox1 = new ChoiceBox<>();
+        ChoiceBox<String> versionChoiceBox2 = new ChoiceBox<>();
+
         VBox centerVBox = new VBox();
         AnchorPane centerAnchorPane = new AnchorPane();
         HBox topHBox = new HBox();
         AnchorPane topAnchorPane = new AnchorPane();
         Text courseText = new Text("Language:");
-        ChoiceBox<String> langChoiceBox = new ChoiceBox<>();
-        langChoiceBox.getItems().addAll("en","tur");
+
+        langChoiceBox.getItems().addAll("en","tr");
         Label languageLabel = new Label();
         langChoiceBox.setOnAction(event -> {
             String selectedOption = langChoiceBox.getValue();
             languageLabel.setText( selectedOption);
+            courseChoiceBox.getItems().clear();
+            versionChoiceBox1.getItems().clear();
+            versionChoiceBox2.getItems().clear();
+            try {
+                Files.newDirectoryStream(Paths.get("storage/" + selectedOption))
+                        .forEach(path -> {
+                            String fileName = path.getFileName().toString();
+                            courseChoiceBox.getItems().add(fileName);
+                        });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
 
         courseText.setFont(new Font(14.0));
@@ -225,8 +244,6 @@ public class GUIController implements Initializable {
         text1.setLayoutY(46);
         text1.setWrappingWidth(88.13671875);
 
-        ChoiceBox<String> courseChoiceBox = new ChoiceBox<>();
-        courseChoiceBox.getItems().addAll("se302","ce323");
         courseChoiceBox.setLayoutX(135.0);
         courseChoiceBox.setLayoutY(37.0);
         courseChoiceBox.setPrefWidth(150);
@@ -238,6 +255,17 @@ public class GUIController implements Initializable {
         courseChoiceBox.setOnAction(event -> {
             String selectedOption = courseChoiceBox.getValue();
             courseLabel.setText( selectedOption);
+            versionChoiceBox1.getItems().clear();
+            versionChoiceBox2.getItems().clear();
+            try {
+                Files.newDirectoryStream(Paths.get("storage/" + langChoiceBox.getValue() + "/" + selectedOption))
+                        .forEach(path -> {
+                            String fileName = path.getFileName().toString();
+                            versionChoiceBox1.getItems().add(fileName);
+                        });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
 
         anchorPane2.getChildren().setAll(text1,courseChoiceBox,courseLabel);
@@ -260,8 +288,6 @@ public class GUIController implements Initializable {
         text2.setLayoutY(46);
         text2.setWrappingWidth(88.13671875);
 
-        ChoiceBox<String> versionChoiceBox1 = new ChoiceBox<>();
-        versionChoiceBox1.getItems().setAll("V1","V2","V3");
         versionChoiceBox1.setLayoutX(135.0);
         versionChoiceBox1.setLayoutY(37.0);
         versionChoiceBox1.setPrefWidth(150);
@@ -273,6 +299,10 @@ public class GUIController implements Initializable {
         versionChoiceBox1.setOnAction(event -> {
             String selectedOption = versionChoiceBox1.getValue();
             versionLabel1.setText( selectedOption);
+            versionChoiceBox2.getItems().clear();
+            versionChoiceBox2.getItems().addAll(versionChoiceBox1.getItems());
+            versionChoiceBox2.getItems().remove(selectedOption);
+
         });
 
         anchorPane3.getChildren().setAll(text2,versionChoiceBox1, versionLabel1);
@@ -295,8 +325,6 @@ public class GUIController implements Initializable {
         text3.setLayoutY(46);
         text3.setWrappingWidth(90.13671875);
 
-        ChoiceBox<String> versionChoiceBox2 = new ChoiceBox<>();
-        versionChoiceBox2.getItems().setAll("V1","V2","V3");
         versionChoiceBox2.setLayoutX(135.0);
         versionChoiceBox2.setLayoutY(37.0);
         versionChoiceBox2.setPrefWidth(150);
@@ -356,20 +384,36 @@ public class GUIController implements Initializable {
     }
 
     public void deletePopup(){
+        Controllers controllers1 = new Controllers();
         BorderPane borderPane = new BorderPane();
 
         // Merkez
+        ChoiceBox<String> langChoiceBox = new ChoiceBox<>();
+        ChoiceBox<String> courseChoiceBox = new ChoiceBox<>();
+        ChoiceBox<String> versionChoiceBox = new ChoiceBox<>();
+
         VBox centerVBox = new VBox();
         AnchorPane centerAnchorPane = new AnchorPane();
         HBox topHBox = new HBox();
         AnchorPane topAnchorPane = new AnchorPane();
         Text courseText = new Text("Language:");
-        ChoiceBox<String> langChoiceBox = new ChoiceBox<>();
-        langChoiceBox.getItems().addAll("en","tur");
+
+        langChoiceBox.getItems().addAll("en","tr");
         Label languageLabel = new Label();
         langChoiceBox.setOnAction(event -> {
-            String selectedOption = langChoiceBox.getValue();
-            languageLabel.setText( selectedOption);
+            String selectedOption1 = langChoiceBox.getValue();
+            languageLabel.setText( selectedOption1);
+            courseChoiceBox.getItems().clear();
+            try {
+                Files.newDirectoryStream(Paths.get("storage/" + selectedOption1))
+                        .forEach(path -> {
+                            String fileName = path.getFileName().toString();
+                            courseChoiceBox.getItems().add(fileName);
+                            System.out.println(fileName);
+                        });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
 
         courseText.setFont(new Font(14.0));
@@ -413,8 +457,6 @@ public class GUIController implements Initializable {
         text1.setLayoutY(46);
         text1.setWrappingWidth(88.13671875);
 
-        ChoiceBox<String> courseChoiceBox = new ChoiceBox<>();
-        courseChoiceBox.getItems().addAll("se302","ce323");
         courseChoiceBox.setLayoutX(135.0);
         courseChoiceBox.setLayoutY(37.0);
         courseChoiceBox.setPrefWidth(150);
@@ -424,8 +466,19 @@ public class GUIController implements Initializable {
         courseLabel.setLayoutY(42);
 
         courseChoiceBox.setOnAction(event -> {
-            String selectedOption = courseChoiceBox.getValue();
-            courseLabel.setText( selectedOption);
+            String selectedOption2 = courseChoiceBox.getValue();
+            courseLabel.setText( selectedOption2);
+            versionChoiceBox.getItems().clear();
+            try {
+                Files.newDirectoryStream(Paths.get("storage/" + langChoiceBox.getValue() + "/" + selectedOption2))
+                        .forEach(path -> {
+                            String fileName = path.getFileName().toString();
+                            versionChoiceBox.getItems().add(fileName);
+                            System.out.println(fileName);
+                        });
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
 
         anchorPane2.getChildren().setAll(text1,courseChoiceBox,courseLabel);
@@ -448,8 +501,6 @@ public class GUIController implements Initializable {
         text2.setLayoutY(46);
         text2.setWrappingWidth(88.13671875);
 
-        ChoiceBox<String> versionChoiceBox = new ChoiceBox<>();
-        versionChoiceBox.getItems().setAll("V1","V2","V3");
         versionChoiceBox.setLayoutX(135.0);
         versionChoiceBox.setLayoutY(37.0);
         versionChoiceBox.setPrefWidth(150);
@@ -459,8 +510,8 @@ public class GUIController implements Initializable {
         versionLabel.setLayoutY(42);
 
         versionChoiceBox.setOnAction(event -> {
-            String selectedOption = versionChoiceBox.getValue();
-            versionLabel.setText( selectedOption);
+            String selectedOption3 = versionChoiceBox.getValue();
+            versionLabel.setText( selectedOption3);
         });
 
         anchorPane3.getChildren().setAll(text2,versionChoiceBox, versionLabel);
@@ -492,7 +543,8 @@ public class GUIController implements Initializable {
         // Add your other components here
         compareButton.setOnAction(event -> {
             // Call another method when the button is clicked
-            compareVersions(parentVBox);
+            controllers1.delete("storage/" + langChoiceBox.getValue() + "/" +
+                    courseChoiceBox.getValue() + "/" + versionChoiceBox.getValue(), courseChoiceBox.getValue());
             popup.close();
         });
 
@@ -510,6 +562,7 @@ public class GUIController implements Initializable {
 
 
     public void deleteSyllabus(){
+
         deletePopup();
     }
 
@@ -733,14 +786,14 @@ public class GUIController implements Initializable {
         anchorPane4.prefHeight(100);
         anchorPane4.prefWidth(607);
 
-        Text text3 = new Text("Second chosen version: ");
+        Text text3 = new Text("File Type: ");
         text3.setFont(new Font(14));
         text3.setLayoutX(51);
         text3.setLayoutY(46);
         text3.setWrappingWidth(90.13671875);
 
         ChoiceBox<String> versionChoiceBox2 = new ChoiceBox<>();
-        versionChoiceBox2.getItems().setAll("V1","V2","V3");
+        versionChoiceBox2.getItems().setAll("JSON","HTML","WORD");
         versionChoiceBox2.setLayoutX(135.0);
         versionChoiceBox2.setLayoutY(37.0);
         versionChoiceBox2.setPrefWidth(150);

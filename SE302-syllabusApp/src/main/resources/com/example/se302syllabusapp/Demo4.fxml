@@ -45,6 +45,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.text.Font?>
+<?import java.lang.String?>
 <VBox
         fx:id="parentVBox" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.se302syllabusapp.GUIController" xmlns:fx="http://javafx.com/fxml/1">
     <children>

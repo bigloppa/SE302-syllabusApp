@@ -5,10 +5,10 @@
                 {
                     "sub1":[
                         {
-                            "Course Name":"Coruse Nameeee"
+                            "Course Name":""
                         },
                         {
-                            "Code":"SE 302"
+                            "Code":"Se 302"
                         },
                         {
                             "Fall":""
@@ -36,13 +36,13 @@
                             "Prerequisites":""
                         },
                         {
-                            "Course Language":"Turkish"
+                            "Course Language":""
                         },
                         {
-                            "Course Type":"First Cycle"
+                            "Course Type":""
                         },
                         {
-                            "Course Level":"Blended"
+                            "Course Level":""
                         },
                         {
                             "Mode of Delivery":""
@@ -161,7 +161,214 @@
         },
         {
             "A":[
-                
+                {
+                    "Participation":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Laboratory\/Application":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Field Work":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Quiz\/Studio Critique":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Homework\/Assignment":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Presentation\/Jury":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Project":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Portfolio":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Seminar\/Workshop":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Oral Exam":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Midterm":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Final Exam":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Total":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Weighting of Semester Activities on the Final Grade":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Weighting of End-of-Semester Activities on the Final Grade":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                },
+                {
+                    "Total":[
+                        {
+                            "Number":""
+                        },
+                        {
+                            "Weighting":""
+                        },
+                        {
+                            "LO":""
+                        }
+                    ]
+                }
             ]
         },
         {
@@ -293,55 +500,42 @@
                 {
                     "sub1":[
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         },
                         {
-                            "Outcome Number":"",
                             "Contribution Level":""
                         }
                     ]

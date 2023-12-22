@@ -36,11 +36,11 @@ public class Controllers extends FileManager{
     }
 
     // TODO: 18.12.2023 it needs to be tested 
-    public void update(String filePath){
+    public void update(String filePath, String course){
         JSONObject courseObject = new JSONObject();
         JSONObject subObject = new JSONObject();
         JSONArray syllabus = new JSONArray();
-        delete(filePath);
+        delete(filePath, course);
         for(SyllabusData syllabusData: syllabusData1.getChildren()){
             for (SyllabusData syllabusData3 : syllabusData.getChildren()){
                 for (SyllabusData syllabusData4 : syllabusData3.getChildren()){
@@ -67,9 +67,14 @@ public class Controllers extends FileManager{
         
     }
 
-    public void delete(String filePath){
+    public void delete(String filePath , String course){
         File file = new File(filePath);
-
+        File insideFile = new File(filePath + "/" + course + ".json");
+        if (insideFile.delete()){
+            System.out.println("File deleted successfully.");
+        } else {
+            System.out.println("Failed to delete file!");
+        }
 
         if (file.delete()) {
             System.out.println("File deleted successfully.");
