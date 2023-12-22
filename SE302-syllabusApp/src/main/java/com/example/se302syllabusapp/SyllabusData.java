@@ -20,8 +20,6 @@ public class SyllabusData {
     }
     public ArrayList<String> getAttributes(ArrayList<String> dataList) {
 
-        // TODO Ege yemin ediyorum sayende ilk defa böyle kod yazdım çok iyi la
-        // TODO Recursive methoda bak bee
         if (this.getChildren().isEmpty()) {
             dataList.add(this.getValue());
         } else {

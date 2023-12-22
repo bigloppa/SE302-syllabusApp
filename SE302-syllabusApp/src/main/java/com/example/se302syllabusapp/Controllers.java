@@ -1,11 +1,9 @@
 package com.example.se302syllabusapp;
 
 import javafx.stage.FileChooser;
-import javafx.stage.Popup;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -15,7 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.Collection;
 
 
 public class Controllers extends FileManager{
@@ -138,80 +136,69 @@ public class Controllers extends FileManager{
 
     }
 
-    public void saveFromUserEntry(ArrayList<String>syllabusData, String language){
+    public void saveFromUserEntry(ArrayList<String>syllabusData, String language) {
+
         String lecture = syllabusData.get(1).trim();
         int version = createDir(language,lecture);
         String filepath = "storage/" + language+ "/"+ lecture+ "/V"+ --version+"/"+ lecture+".json";
 
-
-        int counter = 0;
         JSONParser parser = new JSONParser();
-        SyllabusData root = new SyllabusData();
-
+        int counter = 0;
         try {
+            // [ syllabus ]
             JSONObject jsonObject = (JSONObject) parser.parse(new FileReader("base/base.json"));
 
-            Object keyName = jsonObject.keySet();
-            String[] name = keyName.toString().split("[\\[\\]]");
 
-            root.setName(name[1]);
+            Collection<JSONArray> value =  jsonObject.values();
+            Object[] objList = value.toArray();
 
-            JSONArray children = (JSONArray) jsonObject.get(name[1]);
+            // [ GI, WSRM, A, ECTS-WT, C-POM ]
+            JSONArray sub1List = (JSONArray) objList[0];
 
-            for(Object sub: children) {
-                JSONObject jObj = (JSONObject) sub;
-                String subObjectName = jObj.keySet().toString().split("[\\[\\]]")[1];
-                JSONArray jA1 = (JSONArray) jObj.get(subObjectName);
-
-                for (Object sub1: jA1) {
-                    JSONObject jObj1 = (JSONObject) sub1;
-
-                    if (jObj1.isEmpty()) {
-                        continue;
-                    }
-
-                    String subObjectName1 = jObj1.keySet().toString().split("[\\[\\]]")[1];
-
-                    try {
-                        JSONArray sub2 = (JSONArray) jObj1.get(subObjectName1);
-
-                        for (Object sub2Elements: sub2) {
-
-                            JSONObject sub3 = (JSONObject) sub2Elements;
+            for (Object sub1ListElements : sub1List) {
 
 
-                            for (Object key: sub3.keySet()) {
-                                sub3.put(key,syllabusData.get(counter));
+                Collection<JSONArray> value1 =  ((JSONObject) sub1ListElements).values();
+                Object[] objList1 = value1.toArray();
+
+                for (int i = 0; i < objList1.length; i++) {
+                    // [ sub1, ... , sub1, ... , Participation, ... , Course-Hours, ..., sub1 ]
+
+                    JSONArray sub2List = (JSONArray) objList1[i];
+                    //System.out.println(sub2List);
+
+                    for (Object sub2ListElements : sub2List) {
+
+                        Collection<JSONArray> value2 =  ((JSONObject) sub2ListElements).values();
+                        Object[] objList2 = value2.toArray();
+
+                        for (int j = 0; j < objList2.length; j++) {
+
+                            JSONArray sub3List = (JSONArray) objList2[i];
+
+                            for (Object sub3ListElements : sub3List) {
+
+                                JSONObject lastValue = (JSONObject) sub3ListElements;
+                                String keyName = lastValue.keySet().toString().split("[\\[\\]]")[1];
+
+                                lastValue.put(keyName,syllabusData.get(counter));
                                 counter++;
                             }
-
-
                         }
-
-                    }catch (Exception e) {
-
                     }
-
                 }
-
             }
-
-
 
             try (FileWriter file = new FileWriter(filepath)) {
-
                 file.write(indentJson(jsonObject.toJSONString()));
-                System.out.println(counter);
                 System.out.println("Data successfully written");
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
+
         } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         }
-
-
-
     }
 
     private static String indentJson(String jsonString) {

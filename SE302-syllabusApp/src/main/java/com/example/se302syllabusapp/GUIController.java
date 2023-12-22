@@ -27,6 +27,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class GUIController implements Initializable {
@@ -65,12 +66,15 @@ public class GUIController implements Initializable {
 
     ArrayList<String> syllabusData;
     private int INDEX_FOR_DATA_PASSING;
+    private final String[] ContributionLevelValues = {"1","2","3","4","5"};
+    private ArrayList<String> ContributionLevelValuesList;
 
     private int counterOfCheckBoxes;
 
     public GUIController(){
         syllabusData = new ArrayList<>(500);
         controllers = new Controllers();
+        INDEX_FOR_DATA_PASSING = 0;
     }
 
 
@@ -99,10 +103,14 @@ public class GUIController implements Initializable {
             syllabusData = getControllers().read();
 
 
+
             if (syllabusData != null) {
 
                 FXMLLoader syllabusLoader = new FXMLLoader(getClass().getResource("SyllabusSheet.fxml"));
                 ArrayList<String> data = syllabusData.getAttributes(new ArrayList<>());
+                System.out.println(data);
+                System.out.println(data.size());
+
 
                 try {
                     Node syllabusSheet = syllabusLoader.load();
@@ -111,7 +119,12 @@ public class GUIController implements Initializable {
                     BorderPane borderPane = (BorderPane) syllabusSheet;
                     ScrollPane scrollPane = (ScrollPane) borderPane.getChildren().get(1);
 
-                    passValuesToSyllabusSheet(scrollPane, data);
+                    ContributionLevelValuesList = new ArrayList<>();
+                    ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
+
+                    passValuesToSyllabusSheet(scrollPane.getContent(), data);
+                    System.out.println(INDEX_FOR_DATA_PASSING);
+                    INDEX_FOR_DATA_PASSING = 0;
 
                     if (!parentVBox.getChildren().isEmpty())
                         parentVBox.getChildren().remove(1);
@@ -200,8 +213,8 @@ public class GUIController implements Initializable {
                             String fileName = path.getFileName().toString();
                             courseChoiceBox.getItems().add(fileName);
                         });
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ignore) {
+
             }
         });
 
@@ -264,9 +277,10 @@ public class GUIController implements Initializable {
                         .forEach(path -> {
                             String fileName = path.getFileName().toString();
                             versionChoiceBox1.getItems().add(fileName);
+                            System.out.println(path);
                         });
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ignore) {
+
             }
         });
 
@@ -348,9 +362,6 @@ public class GUIController implements Initializable {
 
         centerVBox.getChildren().setAll(centerAnchorPane, vBox2);
 
-
-//        centerVBox.getChildren().add(centerAnchorPane);
-
         // Alt
         AnchorPane bottomAnchorPane = new AnchorPane();
         bottomAnchorPane.setPrefHeight(23);
@@ -411,10 +422,8 @@ public class GUIController implements Initializable {
                         .forEach(path -> {
                             String fileName = path.getFileName().toString();
                             courseChoiceBox.getItems().add(fileName);
-                            System.out.println(fileName);
                         });
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ignored) {
             }
         });
 
@@ -476,10 +485,9 @@ public class GUIController implements Initializable {
                         .forEach(path -> {
                             String fileName = path.getFileName().toString();
                             versionChoiceBox.getItems().add(fileName);
-                            System.out.println(fileName);
                         });
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ignore) {
+
             }
         });
 
@@ -524,9 +532,6 @@ public class GUIController implements Initializable {
 
         centerVBox.getChildren().setAll(centerAnchorPane, vBox2);
 
-
-//        centerVBox.getChildren().add(centerAnchorPane);
-
         // Alt
         AnchorPane bottomAnchorPane = new AnchorPane();
         bottomAnchorPane.setPrefHeight(23);
@@ -567,9 +572,9 @@ public class GUIController implements Initializable {
         deletePopup();
     }
 
-    private void showAlert(String title, String header, String content) {
+    private void showAlert(String header, String content) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle(title);
+        alert.setTitle("Warning!");
         alert.setHeaderText(header);
         alert.setContentText(content);
         alert.showAndWait();
@@ -586,11 +591,11 @@ public class GUIController implements Initializable {
         filterInput(page5);
 
         if (counterOfCheckBoxes != 32){
-            showAlert("Warning!", "Empty CheckBox", "Fill in the checkbox fields.");
+            showAlert("Empty CheckBox", "Fill in the checkbox fields.");
             return;
         }
 
-
+        System.out.println(syllabusData.size());
         String selectedValue = comboBox.getValue();
         if (selectedValue.equals("English")) {
             controllers.saveFromUserEntry(syllabusData, "en");
@@ -616,8 +621,7 @@ public class GUIController implements Initializable {
                userData = node.getUserData().toString();
                 syllabusData.add(userData);
                 counterOfCheckBoxes++;
-
-
+                // TODO Burada sikinti var
             }
 
 
@@ -635,26 +639,37 @@ public class GUIController implements Initializable {
 
     public void passValuesToSyllabusSheet(Node node, ArrayList<String> syllabusData) {
 
+
         if (node instanceof TextField) {
 
             ((TextField) node).setText(syllabusData.get(INDEX_FOR_DATA_PASSING));
             INDEX_FOR_DATA_PASSING++;
 
         } else if (node instanceof CheckBox) {
-            if (syllabusData.get(INDEX_FOR_DATA_PASSING).equals(node.getUserData())) {
+            if (INDEX_FOR_DATA_PASSING == 162) {
+                return;
+            }
+            boolean oneElementIsAlreadySelected = false;
+            if (ContributionLevelValuesList.contains(node.getUserData().toString())) {
+                HBox grandParent = (HBox) ((AnchorPane) node.getParent()).getParent();
+
+                for (Node parent : grandParent.getChildren()) {
+                    AnchorPane anchorPane = (AnchorPane) parent;
+
+                    if (((CheckBox) anchorPane.getChildren().get(0)).isSelected()) {
+                        oneElementIsAlreadySelected = true;
+                    }
+                }
+            }
+            if (syllabusData.get(INDEX_FOR_DATA_PASSING).equals(node.getUserData()) && !oneElementIsAlreadySelected) {
                 ((CheckBox) node).setSelected(true);
                 INDEX_FOR_DATA_PASSING++;
             }
         }
         else {
             if (node instanceof Parent) {
-                if (node instanceof ScrollPane) {
-                    passValuesToSyllabusSheet(((ScrollPane) node).getContent(), syllabusData);
-                }
-                else {
-                    for (Node child: ((Parent) node).getChildrenUnmodifiable()) {
-                        passValuesToSyllabusSheet(child, syllabusData);
-                    }
+                for (Node child: ((Parent) node).getChildrenUnmodifiable()) {
+                    passValuesToSyllabusSheet(child, syllabusData);
                 }
             }
         }

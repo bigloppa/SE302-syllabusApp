@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.security.Key;
+import java.util.*;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -70,16 +70,16 @@ public class FileManager {
 
     // This function reads JSON files and translate into SyllabusData object.
     // Also, reads Text files that are related with JSON file, for descriptions.
-    public SyllabusData read(){
 
-        // TODO: We have to figure it out how to pass paths of JSON and TXT files!
-        String filepath = "fake_path";
-        // Take JSON file
+    public SyllabusData read() {
+
         JSONParser parser = new JSONParser();
 
         SyllabusData root = new SyllabusData();
 
+        int counter = 0;
         try {
+            // [ syllabus ]
             JSONObject jsonObject = (JSONObject) parser.parse(new FileReader(getJsonFile()));
 
             Object keyName = jsonObject.keySet();
@@ -87,83 +87,68 @@ public class FileManager {
 
             root.setName(name[1]);
 
-            JSONArray children = (JSONArray) jsonObject.get(name[1]);
+            Collection<JSONArray> value =  jsonObject.values();
+            Object[] objList = value.toArray();
 
-            for(Object sub: children) {
+            // [ GI, WSRM, A, ECTS-WT, C-POM ]
+            JSONArray sub1List = (JSONArray) objList[0];
+
+            for (Object sub1ListElements : sub1List) {
+
+                JSONObject forValuePassing = (JSONObject)  sub1ListElements;
+                String keyName1 = forValuePassing.keySet().toString().split("[\\[\\]]")[1];
 
                 SyllabusData subObject = new SyllabusData();
-                // GI , WSRM , A ...
-                JSONObject jObj = (JSONObject) sub;
+                subObject.setName(keyName1);
 
-                String subObjectName = jObj.keySet().toString().split("[\\[\\]]")[1];
+                Collection<JSONArray> value1 =  ((JSONObject) sub1ListElements).values();
+                Object[] objList1 = value1.toArray();
 
-                subObject.setName(subObjectName);
+                for (int i = 0; i < objList1.length; i++) {
+                    // [ sub1, ... , sub1, ... , Participation, ... , Course-Hours, ..., sub1 ]
 
-                JSONArray jA1 = (JSONArray) jObj.get(subObjectName);
+                    JSONArray sub2List = (JSONArray) objList1[i];
+                    //System.out.println(sub2List);
 
-                for (Object sub1: jA1) {
-                    // GI , WSRM , A ... bunların içindeki objeler
-                    JSONObject jObj1 = (JSONObject) sub1;
+                    for (Object sub2ListElements : sub2List) {
 
-                    if (jObj1.isEmpty())
-                        continue;
+                        JSONObject forValuePassing2 = (JSONObject)  sub2ListElements;
+                        String keyName3 = forValuePassing2.keySet().toString().split("[\\[\\]]")[1];
 
-                    SyllabusData subObject1 = new SyllabusData();
+                        SyllabusData subObject2 = new SyllabusData();
+                        subObject2.setName(keyName3);
 
-                    String subObjectName1 = jObj1.keySet().toString().split("[\\[\\]]")[1];
+                        Collection<JSONArray> value2 =  ((JSONObject) sub2ListElements).values();
+                        Object[] objList2 = value2.toArray();
 
-                    subObject1.setName(subObjectName1);
+                        for (int j = 0; j < objList2.length; j++) {
 
-                    try {
-                        JSONArray sub2 = (JSONArray) jObj1.get(subObjectName1);
+                            JSONArray sub3List = (JSONArray) objList2[i];
+                            SyllabusData subObject3 = new SyllabusData();
 
-                        for (Object sub2Elements: sub2) {
+                            for (Object sub3ListElements : sub3List) {
 
-                            JSONObject jObj2 = (JSONObject) sub2Elements;
+                                JSONObject lastValue = (JSONObject) sub3ListElements;
+                                String keyName4 = lastValue.keySet().toString().split("[\\[\\]]")[1];
 
-                            SyllabusData subObject2 = new SyllabusData();
-                            if (jObj2.keySet().toString().split("[\\[\\]]")[1].isEmpty())
-                                subObject2.setName(jObj2.keySet().toString().split("[\\[\\]]")[1]);
-
-
-
-                            for (Object kName: jObj2.keySet().toArray()) {
-                                SyllabusData subObject3 = new SyllabusData();
-                                subObject3.setName(kName.toString());
-                                subObject3.setValue(jObj2.get(kName).toString());
-                                subObject2.getChildren().add(subObject3);
-
+                                SyllabusData subObject4 = new SyllabusData();
+                                subObject4.setName(keyName4);
+                                subObject4.setValue(lastValue.get(keyName4).toString());
+                                subObject3.getChildren().add(subObject4);
+                                counter++;
                             }
-
-
-
-                            subObject1.getChildren().add(subObject2);
-
+                            subObject2.getChildren().add(subObject3);
                         }
-
-                    }catch (Exception e) {
-                        // Özel bir durum Total için bir alt çocuğu olmayanlar için
-                        subObject1.setValue(jObj1.get(subObjectName1).toString());
-
+                        subObject.getChildren().add(subObject2);
                     }
-                    subObject.getChildren().add(subObject1);
-
                 }
-
-                // Burada bir alt sub objeclerin ekelemelerini yapıyorum
                 root.getChildren().add(subObject);
-
             }
         } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         }
-
+        System.out.println(counter);
         return root;
     }
 
-
-    public SyllabusData recursive(JSONObject object) {
-
-        return null;
-    }
 }

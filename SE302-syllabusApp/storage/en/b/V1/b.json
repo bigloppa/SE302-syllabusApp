@@ -5,41 +5,41 @@
                 {
                     "sub1":[
                         {
-                            "Course Name":"aaasdasd"
+                            "Course Name":"a"
                         },
                         {
-                            "Code":"CE405"
+                            "Code":"b"
                         },
                         {
-                            "Fall":"asdasd"
+                            "Fall":"c"
                         },
                         {
-                            "Spring":"asd"
+                            "Spring":"de"
                         },
                         {
-                            "Theory":"asdas"
+                            "Theory":"e"
                         },
                         {
-                            "Application Lab":"dasdas"
+                            "Application Lab":"f"
                         },
                         {
-                            "Local Credits":"das"
+                            "Local Credits":"g"
                         },
                         {
-                            "ECTS":"dasd"
+                            "ECTS":"h"
                         }
                     ]
                 },
                 {
                     "sub2":[
                         {
-                            "Prerequisites":"asdasdasda"
+                            "Prerequisites":"j"
                         },
                         {
                             "Course Language":"Turkish"
                         },
                         {
-                            "Course Type":"Required"
+                            "Course Type":"Elective"
                         },
                         {
                             "Course Level":"Short Cycle"
@@ -48,32 +48,40 @@
                             "Mode of Delivery":"Face-to-Face"
                         },
                         {
-                            "TMT":"asdasdasd"
+                            "TMT":"k"
                         }
                     ]
                 },
                 {
                     "sub3":[
                         {
-                            "Course-Coordinator":"asda",
-                            "Course-Lecturers":"sdas",
-                            "Assistants":"sdasdasd"
+                            "Course-Coordinator":"l"
+                        },
+                        {
+                            "Course-Lecturers":"m"
+                        },
+                        {
+                            "Assistants":"n"
                         }
                     ]
                 },
                 {
                     "sub4":[
                         {
-                            "Learning-Outcomes":"asdasd",
-                            "Course-Objectives":"asdasd",
-                            "Course-Description":"asdasd"
+                            "Course-Objectives":"o"
+                        },
+                        {
+                            "Learning-Outcomes":"p"
+                        },
+                        {
+                            "Course-Description":"r"
                         }
                     ]
                 },
                 {
                     "sub5":[
                         {
-                            "Course-Category":"Communication and Management Skills Course"
+                            "Course-Category":"Transferable Skill Course"
                         }
                     ]
                 }
@@ -84,76 +92,110 @@
                 {
                     "sub1":[
                         {
-                            "subject":"asdasd",
-                            "requiredMaterials":"sdasda"
+                            "subject":"s"
                         },
                         {
-                            "subject":"sdas",
-                            "requiredMaterials":"asda"
+                            "requiredMaterials":"t"
                         },
                         {
-                            "subject":"dasd",
-                            "requiredMaterials":"asdasd"
+                            "subject":"u"
                         },
                         {
-                            "subject":"asdas",
-                            "requiredMaterials":"dasda"
+                            "requiredMaterials":"v"
                         },
                         {
-                            "subject":"da",
-                            "requiredMaterials":"sdasd"
+                            "subject":"y"
                         },
                         {
-                            "subject":"sdas",
-                            "requiredMaterials":"das"
+                            "requiredMaterials":"z"
                         },
                         {
-                            "subject":"asd",
-                            "requiredMaterials":"asdaasd"
+                            "subject":"w"
                         },
                         {
-                            "subject":"asdas",
-                            "requiredMaterials":"dasd"
+                            "requiredMaterials":"q"
                         },
                         {
-                            "subject":"asd",
-                            "requiredMaterials":"asd"
+                            "subject":"x"
                         },
                         {
-                            "subject":"asda",
-                            "requiredMaterials":"sfxc"
+                            "requiredMaterials":"a"
                         },
                         {
-                            "subject":"zasd",
-                            "requiredMaterials":"asdas"
+                            "subject":"b"
                         },
                         {
-                            "subject":"das",
-                            "requiredMaterials":"das"
+                            "requiredMaterials":"c"
                         },
                         {
-                            "subject":"das",
-                            "requiredMaterials":"dsa"
+                            "subject":"d"
                         },
                         {
-                            "subject":"asd",
-                            "requiredMaterials":"asd"
+                            "requiredMaterials":"e"
                         },
                         {
-                            "subject":"asdasd",
-                            "requiredMaterials":"asdas"
+                            "subject":"f"
                         },
                         {
-                            "subject":"dasd",
-                            "requiredMaterials":"as"
+                            "requiredMaterials":"g"
+                        },
+                        {
+                            "subject":"h"
+                        },
+                        {
+                            "requiredMaterials":"i"
+                        },
+                        {
+                            "subject":"j"
+                        },
+                        {
+                            "requiredMaterials":"k"
+                        },
+                        {
+                            "subject":"l"
+                        },
+                        {
+                            "requiredMaterials":"m"
+                        },
+                        {
+                            "subject":"n"
+                        },
+                        {
+                            "requiredMaterials":"o"
+                        },
+                        {
+                            "subject":"p"
+                        },
+                        {
+                            "requiredMaterials":"r"
+                        },
+                        {
+                            "subject":"s"
+                        },
+                        {
+                            "requiredMaterials":"t"
+                        },
+                        {
+                            "subject":"y"
+                        },
+                        {
+                            "requiredMaterials":"z"
+                        },
+                        {
+                            "subject":"w"
+                        },
+                        {
+                            "requiredMaterials":"x"
                         }
                     ]
                 },
                 {
                     "sub2":[
                         {
-                            "courseNotes-textbooks":"asdas",
-                            "suggestedReading-materials":"dasd"
+                            "courseNotes-textbooks":"q"
+                        },
+                        {
+                            "suggestedReading-materials":"a"
                         }
                     ]
                 }
@@ -164,23 +206,10 @@
                 {
                     "Participation":[
                         {
-                            "Number":"asdas"
+                            "Number":"b"
                         },
                         {
-                            "Weighting":"das"
-                        },
-                        {
-                            "LO":"LO1"
-                        }
-                    ]
-                },
-                {
-                    "Laboratory\/Application":[
-                        {
-                            "Number":"das"
-                        },
-                        {
-                            "Weighting":"dasd"
+                            "Weighting":"c"
                         },
                         {
                             "LO":"LO2"
@@ -188,12 +217,25 @@
                     ]
                 },
                 {
-                    "Field Work":[
+                    "Laboratory\/Application":[
                         {
-                            "Number":"asd"
+                            "Number":"d"
                         },
                         {
-                            "Weighting":"asd"
+                            "Weighting":"e"
+                        },
+                        {
+                            "LO":"LO3"
+                        }
+                    ]
+                },
+                {
+                    "Field Work":[
+                        {
+                            "Number":"f"
+                        },
+                        {
+                            "Weighting":"g"
                         },
                         {
                             "LO":"LO3"
@@ -203,36 +245,36 @@
                 {
                     "Quiz\/Studio Critique":[
                         {
-                            "Number":"asd"
+                            "Number":"a"
                         },
                         {
-                            "Weighting":"asd"
+                            "Weighting":"as"
                         },
                         {
-                            "LO":"LO4"
+                            "LO":"LO2"
                         }
                     ]
                 },
                 {
                     "Homework\/Assignment":[
                         {
-                            "Number":"as"
+                            "Number":"a"
                         },
                         {
-                            "Weighting":"das"
+                            "Weighting":"as"
                         },
                         {
-                            "LO":"LO3"
+                            "LO":"LO1"
                         }
                     ]
                 },
                 {
                     "Presentation\/Jury":[
                         {
-                            "Number":"dasd"
+                            "Number":"as"
                         },
                         {
-                            "Weighting":"asd"
+                            "Weighting":"df"
                         },
                         {
                             "LO":"LO2"
@@ -242,23 +284,36 @@
                 {
                     "Project":[
                         {
-                            "Number":"asd"
+                            "Number":"fasf"
                         },
                         {
-                            "Weighting":"asd"
+                            "Weighting":"as"
                         },
                         {
-                            "LO":"LO1"
+                            "LO":"LO3"
                         }
                     ]
                 },
                 {
                     "Portfolio":[
                         {
-                            "Number":"as"
+                            "Number":"fas"
                         },
                         {
-                            "Weighting":"dasd"
+                            "Weighting":"fa"
+                        },
+                        {
+                            "LO":"LO3"
+                        }
+                    ]
+                },
+                {
+                    "Seminar\/Workshop":[
+                        {
+                            "Number":"sfa"
+                        },
+                        {
+                            "Weighting":"sf"
                         },
                         {
                             "LO":"LO2"
@@ -266,48 +321,35 @@
                     ]
                 },
                 {
-                    "Seminar\/Workshop":[
-                        {
-                            "Number":"as"
-                        },
-                        {
-                            "Weighting":"dasd"
-                        },
-                        {
-                            "LO":"LO3"
-                        }
-                    ]
-                },
-                {
                     "Oral Exam":[
                         {
-                            "Number":"as"
+                            "Number":"a"
                         },
                         {
-                            "Weighting":"da"
+                            "Weighting":"asf"
                         },
                         {
-                            "LO":"LO4"
+                            "LO":"LO2"
                         }
                     ]
                 },
                 {
                     "Midterm":[
                         {
-                            "Number":"sda"
+                            "Number":"asf"
                         },
                         {
-                            "Weighting":"sd"
+                            "Weighting":"sf"
                         },
                         {
-                            "LO":"LO3"
+                            "LO":"LO1"
                         }
                     ]
                 },
                 {
                     "Final Exam":[
                         {
-                            "Number":"asd"
+                            "Number":"asf"
                         },
                         {
                             "Weighting":"a"
@@ -320,39 +362,48 @@
                 {
                     "Total":[
                         {
-                            "Number":"asdas"
+                            "Number":"sf"
                         },
                         {
-                            "Weighting":"dasd"
+                            "Weighting":"asf"
                         },
                         {
-                            "LO":"asd"
+                            "LO1":"asf"
+                        },
+                        {
+                            "LO2":"saf"
+                        },
+                        {
+                            "LO3":"a"
+                        },
+                        {
+                            "LO4":"a"
                         }
                     ]
                 },
                 {
                     "Weighting of Semester Activities on the Final Grade":[
                         {
-                            "Number":"asd"
+                            "Number":"dsa"
                         },
                         {
                             "Weighting":"asd"
                         },
                         {
-                            "LO":"a"
+                            "LO":"LO2"
                         }
                     ]
                 },
                 {
                     "Weighting of End-of-Semester Activities on the Final Grade":[
                         {
-                            "Number":"sdas"
+                            "Number":"asda"
                         },
                         {
-                            "Weighting":"dasd"
+                            "Weighting":"d"
                         },
                         {
-                            "LO":"LO1"
+                            "LO":"LO3"
                         }
                     ]
                 },
@@ -362,10 +413,19 @@
                             "Number":"as"
                         },
                         {
-                            "Weighting":"dasd"
+                            "Weighting":"sd"
                         },
                         {
-                            "LO":"LO3"
+                            "LO1":"asd"
+                        },
+                        {
+                            "LO2":"as"
+                        },
+                        {
+                            "LO3":"das"
+                        },
+                        {
+                            "LO4":"da"
                         }
                     ]
                 }
@@ -376,44 +436,64 @@
                 {
                     "Course-Hours":[
                         {
-                            "Number":"asd",
-                            "Duration":"as",
-                            "Workload":"asdas"
+                            "Number":"asda"
+                        },
+                        {
+                            "Duration":"sd"
+                        },
+                        {
+                            "Workload":"asd"
                         }
                     ]
                 },
                 {
                     "L-AH":[
                         {
-                            "Number":"das",
-                            "Duration":"da",
-                            "Workload":"sd"
+                            "Number":"asd"
+                        },
+                        {
+                            "Duration":"as"
+                        },
+                        {
+                            "Workload":"da"
                         }
                     ]
                 },
                 {
                     "SHOOC":[
                         {
-                            "Number":"dasd",
-                            "Duration":"asd",
-                            "Workload":"asd"
+                            "Number":"sd"
+                        },
+                        {
+                            "Duration":"asd"
+                        },
+                        {
+                            "Workload":"as"
                         }
                     ]
                 },
                 {
                     "Field-Work":[
                         {
-                            "Number":"asd",
-                            "Duration":"as",
-                            "Workload":"das"
+                            "Number":"da"
+                        },
+                        {
+                            "Duration":"sd"
+                        },
+                        {
+                            "Workload":"asd"
                         }
                     ]
                 },
                 {
                     "Q-SC":[
                         {
-                            "Number":"da",
-                            "Duration":"sd",
+                            "Number":"as"
+                        },
+                        {
+                            "Duration":"d"
+                        },
+                        {
                             "Workload":"asd"
                         }
                     ]
@@ -421,77 +501,113 @@
                 {
                     "H-A":[
                         {
-                            "Number":"asd",
-                            "Duration":"asd",
-                            "Workload":"as"
+                            "Number":"as"
+                        },
+                        {
+                            "Duration":"da"
+                        },
+                        {
+                            "Workload":"sd"
                         }
                     ]
                 },
                 {
                     "P-J":[
                         {
-                            "Number":"das",
-                            "Duration":"da",
-                            "Workload":"sd"
+                            "Number":"as"
+                        },
+                        {
+                            "Duration":"da"
+                        },
+                        {
+                            "Workload":"sda"
                         }
                     ]
                 },
                 {
                     "Project":[
                         {
-                            "Number":"asd",
-                            "Duration":"asd",
-                            "Workload":"as"
+                            "Number":"sd"
+                        },
+                        {
+                            "Duration":"as"
+                        },
+                        {
+                            "Workload":"das"
                         }
                     ]
                 },
                 {
                     "Portfolio":[
                         {
-                            "Number":"das",
-                            "Duration":"da",
-                            "Workload":"sda"
+                            "Number":"da"
+                        },
+                        {
+                            "Duration":"sd"
+                        },
+                        {
+                            "Workload":"asd"
                         }
                     ]
                 },
                 {
                     "S-W":[
                         {
-                            "Number":"sda",
-                            "Duration":"sd",
-                            "Workload":"asd"
+                            "Number":"as"
+                        },
+                        {
+                            "Duration":"da"
+                        },
+                        {
+                            "Workload":"sda"
                         }
                     ]
                 },
                 {
                     "Oral-Exam":[
                         {
-                            "Number":"asd",
-                            "Duration":"asd",
-                            "Workload":"asd"
+                            "Number":"s"
+                        },
+                        {
+                            "Duration":"das"
+                        },
+                        {
+                            "Workload":"das"
                         }
                     ]
                 },
                 {
                     "Midterm":[
                         {
-                            "Number":"as",
-                            "Duration":"da",
-                            "Workload":"sda"
+                            "Number":"da"
+                        },
+                        {
+                            "Duration":"sd"
+                        },
+                        {
+                            "Workload":"asda"
                         }
                     ]
                 },
                 {
                     "Final-Exam":[
                         {
-                            "Number":"sd",
-                            "Duration":"asd",
-                            "Workload":"asd"
+                            "Number":"sd"
+                        },
+                        {
+                            "Duration":"asd"
+                        },
+                        {
+                            "Workload":"as"
                         }
                     ]
                 },
                 {
-                    "Total":""
+                    "Total":[
+                        {
+                            "Total":"dsa"
+                        }
+                    ]
                 }
             ]
         },
@@ -500,56 +616,43 @@
                 {
                     "sub1":[
                         {
-                            "Outcome Number":"asd",
-                            "Contribution Level":"as"
-                        },
-                        {
-                            "Outcome Number":"dasd",
-                            "Contribution Level":"as"
-                        },
-                        {
-                            "Outcome Number":"das",
-                            "Contribution Level":"d"
-                        },
-                        {
-                            "Outcome Number":"asd",
                             "Contribution Level":"1"
                         },
                         {
-                            "Outcome Number":"2",
-                            "Contribution Level":"1"
+                            "Contribution Level":"2"
                         },
                         {
-                            "Outcome Number":"2",
                             "Contribution Level":"3"
                         },
                         {
-                            "Outcome Number":"2",
-                            "Contribution Level":"1"
+                            "Contribution Level":"4"
                         },
                         {
-                            "Outcome Number":"5",
                             "Contribution Level":"5"
                         },
                         {
-                            "Outcome Number":"3",
+                            "Contribution Level":"4"
+                        },
+                        {
                             "Contribution Level":"3"
                         },
                         {
-                            "Outcome Number":"4",
-                            "Contribution Level":"5"
+                            "Contribution Level":"2"
                         },
                         {
-                            "Outcome Number":"",
-                            "Contribution Level":""
+                            "Contribution Level":"3"
                         },
                         {
-                            "Outcome Number":"",
-                            "Contribution Level":""
+                            "Contribution Level":"4"
                         },
                         {
-                            "Outcome Number":"",
-                            "Contribution Level":""
+                            "Contribution Level":"4"
+                        },
+                        {
+                            "Contribution Level":"3"
+                        },
+                        {
+                            "Contribution Level":"2"
                         }
                     ]
                 }
