@@ -49,8 +49,14 @@ public class GUIController implements Initializable {
     @FXML
     private VBox parentVBox;
     @FXML
+    private VBox lo;
+    @FXML
     private HBox parentHBox;
     private Stage popup;
+    @FXML
+    private TextField learningOutcomesField;
+
+
 
     @FXML
     private ComboBox<String> comboBox;
@@ -130,21 +136,63 @@ public class GUIController implements Initializable {
 
     public void addingSyllabus() {
 
-        FXMLLoader syllabusLoader = new FXMLLoader(getClass().getResource("SyllabusSheet.fxml"));
+        FXMLLoader learningOutcomesLoader = new FXMLLoader(getClass().getResource("LearningOutcomes.fxml"));
 
         try {
-            Node syllabusSheet = syllabusLoader.load();
+            Node learningOutcomesSheet = learningOutcomesLoader.load();
 
             if (!parentVBox.getChildren().isEmpty())
                 parentVBox.getChildren().remove(1);
 
-            parentVBox.getChildren().add(syllabusSheet);
+            parentVBox.getChildren().add(learningOutcomesSheet);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+
     }
+    public void continueButtonClicked(ActionEvent event) {
+        try {
+            int numberOfLearningOutcomes = Integer.parseInt(learningOutcomesField.getText());
+
+            try {
+                if (!lo.getChildren().isEmpty())
+                   lo.getChildren().remove(0);
+
+
+                FXMLLoader syllabusLoader = new FXMLLoader(getClass().getResource("SyllabusSheet.fxml"));
+                Node syllabusSheet = syllabusLoader.load();
+
+
+                GUIController syllabusSheetController = syllabusLoader.getController();
+                syllabusSheetController.handleNumberOfLearningOutcomes(numberOfLearningOutcomes);
+
+
+                lo.getChildren().add(syllabusSheet);
+
+
+            } catch (IOException e) {
+                System.out.println("Error loading Syllabus Sheet:");
+                e.printStackTrace();
+                if (e.getCause() != null) {
+                    Throwable cause = e.getCause();
+                    System.out.println("Wrapped Exception:");
+                    cause.printStackTrace();
+                }
+            }
+
+        } catch (NumberFormatException e) {
+            // Handle invalid input (non-numeric value)
+            showAlert("Error", "Invalid Input", "Please enter a valid number for learning outcomes.");
+        }
+    }
+    public void handleNumberOfLearningOutcomes(int numberOfLearningOutcomes) {
+
+        System.out.println("Number of Learning Outcomes: " + numberOfLearningOutcomes);
+    }
+
+
 
     public void compareVersions(VBox parentVBox) {
         if (popup != null) {
