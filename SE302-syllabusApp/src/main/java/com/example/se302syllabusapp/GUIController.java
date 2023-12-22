@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -136,74 +137,82 @@ public class GUIController implements Initializable {
 
     public void addingSyllabus() {
 
-        FXMLLoader learningOutcomesLoader = new FXMLLoader(getClass().getResource("LearningOutcomes.fxml"));
+        VBox vBox = new VBox();
+        HBox hBox = new HBox();
 
+        Label label = new Label("Number of Learning Outcomes:");
+        label.setFont(new Font("American Typewriter",18.0));
+        label.setPrefHeight(33.0);
+        label.setPrefWidth(318.0);
+
+        TextField textField = new TextField();
+        textField.setPrefHeight(28.0);
+        textField.setPrefWidth(196.0);
+        textField.setOpaqueInsets(new Insets(5,5,5,0));
+        textField.setFont(new Font(15));
+        textField.setPadding(new Insets(5,5,5,5));
+        HBox.setMargin(textField, new Insets(5,0,0,0));
+
+        Button button = new Button("Continue");
+        button.setPadding(new Insets(8,8,8,8));
+        HBox.setMargin(button, new Insets(5,0,0,10));
+
+        vBox.getChildren().addAll(label,textField,button);
+
+
+
+        button.setOnAction(event -> {
+            // Call another method when the button is clicked
+            continueButtonClicked(parentVBox, textField.getText());
+            popup.close();
+        });
+
+        Scene scene = new Scene(vBox, 600, 400);
+        // Scene
+        setPopup(new Stage());
+        popup.initOwner(getPrimaryStage());
+        popup.initModality(Modality.APPLICATION_MODAL);
+        popup.setTitle("Number Of Learning Outcomes");
+        popup.setResizable(false);
+        popup.setScene(scene);
+
+        popup.showAndWait();
+
+
+    }
+    public void continueButtonClicked(VBox parentVBox, String lOString ) {
+        int lONumber = Integer.parseInt(lOString);
+        System.out.println(lONumber);
+        if (popup != null) {
+            System.out.println(popup.getTitle());
+            popup.close();
+        }
+        FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("SyllabusSheet.fxml"));
         try {
-            Node learningOutcomesSheet = learningOutcomesLoader.load();
+            // version numbers and description will be added
+            Node syllabusSheet = compareLoader.load();
 
             if (!parentVBox.getChildren().isEmpty())
                 parentVBox.getChildren().remove(1);
 
-            parentVBox.getChildren().add(learningOutcomesSheet);
+            parentVBox.getChildren().add(syllabusSheet);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
-    public void continueButtonClicked(ActionEvent event) {
-        try {
-            int numberOfLearningOutcomes = Integer.parseInt(learningOutcomesField.getText());
 
-            try {
-                if (!lo.getChildren().isEmpty())
-                   lo.getChildren().remove(0);
-
-
-                FXMLLoader syllabusLoader = new FXMLLoader(getClass().getResource("SyllabusSheet.fxml"));
-                Node syllabusSheet = syllabusLoader.load();
-
-
-                GUIController syllabusSheetController = syllabusLoader.getController();
-                syllabusSheetController.handleNumberOfLearningOutcomes(numberOfLearningOutcomes);
-
-
-                lo.getChildren().add(syllabusSheet);
-
-
-            } catch (IOException e) {
-                System.out.println("Error loading Syllabus Sheet:");
-                e.printStackTrace();
-                if (e.getCause() != null) {
-                    Throwable cause = e.getCause();
-                    System.out.println("Wrapped Exception:");
-                    cause.printStackTrace();
-                }
-            }
-
-        } catch (NumberFormatException e) {
-            // Handle invalid input (non-numeric value)
-            showAlert("Error", "Invalid Input", "Please enter a valid number for learning outcomes.");
-        }
-    }
-    public void handleNumberOfLearningOutcomes(int numberOfLearningOutcomes) {
-
-        System.out.println("Number of Learning Outcomes: " + numberOfLearningOutcomes);
-    }
 
 
 
     public void compareVersions(VBox parentVBox) {
         if (popup != null) {
-            System.out.println(popup.getTitle());
             popup.close();
         }
         FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("ComparePage.fxml"));
         try {
             // version numbers and description will be added
             Node syllabusSheet = compareLoader.load();
-            System.out.println(parentVBox);
 
             if (!parentVBox.getChildren().isEmpty())
                 parentVBox.getChildren().remove(1);
