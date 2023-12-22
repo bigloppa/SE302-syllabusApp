@@ -406,11 +406,14 @@ public class GUIController implements Initializable {
 
         // Add your other components here
         compareButton.setOnAction(event -> {
-            // Call another method when the button is clicked
-            String firstFilePath = "storage\\" + langChoiceBox.getValue() + "\\"+ courseChoiceBox.getValue() + "\\" + versionChoiceBox1.getValue() + "\\"+ courseChoiceBox.getValue() + ".json";
-            String secondFilePath = "storage\\" + langChoiceBox.getValue() + "\\"+ courseChoiceBox.getValue() + "\\" + versionChoiceBox2.getValue() + "\\"+ courseChoiceBox.getValue() + ".json";
-            compareVersions(parentVBox, firstFilePath , secondFilePath);
-            popup.close();
+            if (versionChoiceBox2.getValue()== null){
+                showAlert("Empty ChoiceBox", "Fill in all ChoiceBoxes!");
+            }else {
+                String firstFilePath = "storage\\" + langChoiceBox.getValue() + "\\" + courseChoiceBox.getValue() + "\\" + versionChoiceBox1.getValue() + "\\" + courseChoiceBox.getValue() + ".json";
+                String secondFilePath = "storage\\" + langChoiceBox.getValue() + "\\" + courseChoiceBox.getValue() + "\\" + versionChoiceBox2.getValue() + "\\" + courseChoiceBox.getValue() + ".json";
+                compareVersions(parentVBox, firstFilePath, secondFilePath);
+                popup.close();
+            }
         });
 
         Scene scene = new Scene(borderPane, 600, 400);
@@ -578,10 +581,13 @@ public class GUIController implements Initializable {
 
         // Add your other components here
         compareButton.setOnAction(event -> {
-            // Call another method when the button is clicked
-            controllers1.delete("storage/" + langChoiceBox.getValue() + "/" +
-                    courseChoiceBox.getValue() + "/" + versionChoiceBox.getValue(), courseChoiceBox.getValue());
-            popup.close();
+            if (versionChoiceBox.getValue() == null){
+                showAlert("Empty ChoiceBox", "Fill in all ChoiceBoxes!");
+            } else{
+                controllers1.delete("storage/" + langChoiceBox.getValue() + "/" +
+                        courseChoiceBox.getValue() + "/" + versionChoiceBox.getValue(), courseChoiceBox.getValue());
+                popup.close();
+            }
         });
 
         Scene scene = new Scene(borderPane, 600, 400);
@@ -794,9 +800,14 @@ public class GUIController implements Initializable {
 
         // Add your other components here
         compareButton.setOnAction(event -> {
-            controllers.fileExport("storage/" + langChoiceBox.getValue() + "/" + courseChoiceBox.getValue() + "/" + versionChoiceBox1.getValue() + "/" + courseChoiceBox.getValue() + ".json",
-                    typeChoiceBox.getValue(), langChoiceBox.getValue() + "-" + courseChoiceBox.getValue() + "-" + versionChoiceBox1.getValue());
-            popup.close();
+            if (versionChoiceBox1.getValue() == null || typeChoiceBox.getValue() == null){
+                showAlert("Empty ChoiceBox", "Fill in all ChoiceBoxes!");
+            }
+            else {
+                controllers.fileExport("storage/" + langChoiceBox.getValue() + "/" + courseChoiceBox.getValue() + "/" + versionChoiceBox1.getValue() + "/" + courseChoiceBox.getValue() + ".json",
+                        typeChoiceBox.getValue(), langChoiceBox.getValue() + "-" + courseChoiceBox.getValue() + "-" + versionChoiceBox1.getValue());
+                popup.close();
+            }
         });
 
         Scene scene = new Scene(borderPane, 600, 400);
