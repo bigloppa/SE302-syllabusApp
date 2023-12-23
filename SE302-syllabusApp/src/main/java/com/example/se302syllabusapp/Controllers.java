@@ -33,37 +33,6 @@ public class Controllers extends FileManager{
 
     }
 
-    // TODO: 18.12.2023 it needs to be tested 
-    public void update(String filePath, String course){
-        JSONObject courseObject = new JSONObject();
-        JSONObject subObject = new JSONObject();
-        JSONArray syllabus = new JSONArray();
-        delete(filePath, course);
-        for(SyllabusData syllabusData: syllabusData1.getChildren()){
-            for (SyllabusData syllabusData3 : syllabusData.getChildren()){
-                for (SyllabusData syllabusData4 : syllabusData3.getChildren()){
-
-                    courseObject.put(syllabusData4.getName(), syllabusData4.getValue());
-                    
-                }
-
-                subObject.put(syllabusData3.getName(),courseObject);
-
-            }
-
-            syllabus.add(subObject);
-            
-        }
-
-        try (FileWriter file = new FileWriter(filePath)) {
-            file.write(syllabus.toJSONString());
-            System.out.println("JSON data written to file successfully.");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        
-    }
 
     public void delete(String filePath , String course){
         File file = new File(filePath);
@@ -193,33 +162,37 @@ public class Controllers extends FileManager{
 
 
     public int createDir(String language,String lecture,boolean isEditLastVersionSelected){
-
+        checkDir("storage",false);
         String filepath = "storage/";
         filepath+= language;
-        checkDir(filepath);
+        checkDir(filepath,false);
 
         filepath+= ("/"+ lecture);
-        checkDir(filepath);
+        checkDir(filepath,false);
 
-        int counter = 0;
-        if (!isEditLastVersionSelected) {
-            counter = 1;
-            boolean flag = true;
-            while(flag){
-                flag = checkDir(filepath + "/V" +counter );
-                counter++;
+        int counter = 1;
 
-            }
+
+        boolean flag = true;
+        while(flag) {
+            flag = checkDir(filepath + "/V" + counter,isEditLastVersionSelected);
+            counter++;
         }
-        return counter;
+
+        if (isEditLastVersionSelected) {
+            return --counter;
+        }else {
+            return counter;
+        }
     }
 
-    public boolean checkDir(String storagePath){
+    public boolean checkDir(String storagePath,boolean isEditLastVersionSelected){
         File storage = new File(storagePath);
         boolean flag = true;
         if (!storage.exists()) {
             flag = false;
-            if (storage.mkdir()) {
+            if (!isEditLastVersionSelected) {
+                storage.mkdir();
                 System.out.println("Directory created successfully.");
             } else {
                 System.out.println("Failed to create directory!");
