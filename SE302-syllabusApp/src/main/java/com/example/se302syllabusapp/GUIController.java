@@ -873,7 +873,7 @@ public class GUIController implements Initializable {
     }
 
     public void saveButtonFunctionality(ActionEvent event) {
-
+        syllabusData = new ArrayList<>();
 
         filterInput(page1);
         filterInput(page2);

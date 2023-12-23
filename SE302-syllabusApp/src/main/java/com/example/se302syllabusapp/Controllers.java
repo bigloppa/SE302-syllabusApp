@@ -245,7 +245,7 @@ public class Controllers extends FileManager{
         String lecture = syllabusData.get(1).trim();
         int version = createDir(language,lecture, isEditLastVersionSelected);
         String filepath = "storage/" + language+ "/"+ lecture+ "/V"+ --version+"/"+ lecture+".json";
-        String filepathDes = "storage/" + language+ "/"+ lecture+ "/V"+ --version+"/"+ lecture+".txt";
+        String filepathDes = "storage/" + language+ "/"+ lecture+ "/V"+ version+"/"+ lecture+".txt";
 
         if (isEditLastVersionSelected) {
             delete(filepath, lecture);
