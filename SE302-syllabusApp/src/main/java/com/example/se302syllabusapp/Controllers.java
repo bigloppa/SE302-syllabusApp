@@ -35,9 +35,11 @@ public class Controllers extends FileManager{
 
 
     public void delete(String filePath , String course){
+        GUIController guiController = new GUIController();
         File file = new File(filePath);
-        File insideFile = new File(filePath + "/" + course + ".json");
-        if (insideFile.delete()){
+        File insideFileJson = new File(filePath + "/" + course + ".json");
+        File insideFileTxt = new File(filePath + "/" + course + ".txt");
+        if (insideFileJson.delete() & insideFileTxt.delete()){
             System.out.println("File deleted successfully.");
         } else {
             System.out.println("Failed to delete file!");
@@ -45,13 +47,14 @@ public class Controllers extends FileManager{
 
         if (file.delete()) {
             System.out.println("File deleted successfully.");
+            guiController.showAlert("Deleting File", "File deleted successfully." );
         } else {
             System.out.println("Failed to delete file!");
         }
     }
 
     public void fileExport(String path, String type, String name){
-
+        GUIController guiController = new GUIController();
         // diğer dosya türleri oluşturulduğunda düzenleme yapılması gerekiyor
 
         FileChooser fileChooser = new FileChooser();
@@ -69,6 +72,8 @@ public class Controllers extends FileManager{
 
 
                 Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
+                guiController.showAlert("Exporting File" , "The file successfully exported.");
+
             }catch (IOException e){
                 e.printStackTrace();
             }
@@ -214,11 +219,12 @@ public class Controllers extends FileManager{
     }
 
     public void saveFromUserEntry(ArrayList<String>syllabusData, String language, boolean isEditLastVersionSelected,String description) {
+        GUIController guiController = new GUIController();
 
         String lecture = syllabusData.get(1).trim();
         int version = createDir(language,lecture, isEditLastVersionSelected);
-        String filepath = "storage/" + language+ "/"+ lecture+ "/V"+ --version+"/"+ lecture+".json";
-        String filepathDes = "storage/" + language+ "/"+ lecture+ "/V"+ version+"/"+ lecture+".txt";
+        String filepath = "storage/" + language+ "/" + lecture+ "/V"+ --version+"/" + lecture+".json";
+        String filepathDes = "storage/" + language+ "/" + lecture+ "/V" + version+"/" + lecture+".txt";
 
         if (isEditLastVersionSelected) {
             delete(filepath, lecture);
@@ -272,6 +278,7 @@ public class Controllers extends FileManager{
 
             try (FileWriter file = new FileWriter(filepath)) {
                 file.write(indentJson(jsonObject.toJSONString()));
+                guiController.showAlert("Adding Data", "Data successfully written");
                 System.out.println("Data successfully written");
             } catch (IOException e) {
                 throw new RuntimeException(e);

@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -829,18 +830,18 @@ public class GUIController implements Initializable {
         bottomAnchorPane.setPrefHeight(23);
         bottomAnchorPane.setPrefWidth(600);
 
-        Button compareButton = new Button("Button");
-        compareButton.setLayoutX(511.0);
-        compareButton.setLayoutY(-12.0);
-        compareButton.setPrefHeight(25);
-        compareButton.setPrefWidth(69);
+        Button exportButton = new Button("Button");
+        exportButton.setLayoutX(511.0);
+        exportButton.setLayoutY(-12.0);
+        exportButton.setPrefHeight(25);
+        exportButton.setPrefWidth(69);
 
-        bottomAnchorPane.getChildren().add(compareButton);
+        bottomAnchorPane.getChildren().add(exportButton);
         borderPane.setBottom(bottomAnchorPane);
         borderPane.setCenter(centerVBox);
 
         // Add your other components here
-        compareButton.setOnAction(event -> {
+        exportButton.setOnAction(event -> {
             if (versionChoiceBox1.getValue() == null || typeChoiceBox.getValue() == null){
                 showAlert("Empty ChoiceBox", "Fill in all ChoiceBoxes!");
             }
@@ -864,13 +865,24 @@ public class GUIController implements Initializable {
 
     }
 
-    private void showAlert(String header, String content) {
+    public void showAlert(String header, String content) {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Warning!");
         alert.setHeaderText(header);
         alert.setContentText(content);
         alert.showAndWait();
     }
+
+    public void showFeedback(String header, String content){
+        TextInputDialog feedbackDialog = new TextInputDialog();
+        feedbackDialog.setTitle("Feedback");
+        feedbackDialog.setHeaderText(header);
+        feedbackDialog.setContentText(content);
+
+        feedbackDialog.showAndWait();
+
+    }
+
 
     public void saveButtonFunctionality(ActionEvent event) {
         syllabusData = new ArrayList<>();
