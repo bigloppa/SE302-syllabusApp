@@ -143,11 +143,23 @@ public class Controllers extends FileManager{
 
     }
 
-    public void saveFromUserEntry(ArrayList<String>syllabusData, String language, boolean isEditLastVersionSelected) {
+    public void saveDescription(String description, String filePath){
+        try(FileWriter fileWriter = new FileWriter(new File(filePath))){
+            fileWriter.write(description);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public void saveFromUserEntry(ArrayList<String>syllabusData, String language, boolean isEditLastVersionSelected,String description) {
 
         String lecture = syllabusData.get(1).trim();
         int version = createDir(language,lecture, isEditLastVersionSelected);
         String filepath = "storage/" + language+ "/"+ lecture+ "/V"+ --version+"/"+ lecture+".json";
+        String filepathDes = "storage/" + language+ "/"+ lecture+ "/V"+ --version+"/"+ lecture+".txt";
 
         if (isEditLastVersionSelected) {
             delete(filepath, lecture);
@@ -209,6 +221,8 @@ public class Controllers extends FileManager{
         } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         }
+
+        saveDescription(description,filepathDes);
     }
 
     private static String indentJson(String jsonString) {

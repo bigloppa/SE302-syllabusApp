@@ -30,7 +30,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+
 public class GUIController implements Initializable {
+
+
     @FXML
     public Button compareButton;
     @FXML
@@ -845,9 +848,9 @@ public class GUIController implements Initializable {
         AnchorPane parent = (AnchorPane) saveButton.getParent();
         CheckBox editLastVersionCheckBox = (CheckBox) parent.getChildren().get(3);
         if (selectedValue.equals("English")) {
-            controllers.saveFromUserEntry(syllabusData, "en", editLastVersionCheckBox.isSelected());
+            controllers.saveFromUserEntry(syllabusData, "en", editLastVersionCheckBox.isSelected(),descriptionValue.getText());
         }else if (selectedValue.equals("Turkish")){
-            controllers.saveFromUserEntry(syllabusData, "tr", editLastVersionCheckBox.isSelected());
+            controllers.saveFromUserEntry(syllabusData, "tr", editLastVersionCheckBox.isSelected(),descriptionValue.getText());
         }
 
 
