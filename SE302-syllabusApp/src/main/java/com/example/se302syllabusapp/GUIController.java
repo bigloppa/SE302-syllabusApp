@@ -91,6 +91,8 @@ public class GUIController implements Initializable {
     public GUIController(){
         syllabusData = new ArrayList<>(500);
         controllers = new Controllers();
+        ContributionLevelValuesList = new ArrayList<>();
+        ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
         INDEX_FOR_DATA_PASSING = 0;
     }
 
@@ -1087,12 +1089,16 @@ public class GUIController implements Initializable {
                 if (child instanceof AnchorPane) {
                     for (Node checkBox : ((AnchorPane) child).getChildren()) {
                         if (checkBox instanceof CheckBox) {
-                            if (event.getSource() != checkBox && ContributionLevelValuesList.contains(checkBox.getUserData().toString())) {
-                                ((CheckBox) checkBox).setSelected(false);
+                            if (ContributionLevelValuesList.contains(checkBox.getUserData().toString())) {
+                                for (Node loop :  ((AnchorPane) child).getChildren()) {
+                                    if (loop instanceof CheckBox) {
+                                        if (event.getSource() != loop && ((CheckBox) loop).isSelected()) {
+                                            ((CheckBox) loop).setSelected(false);
+                                        }
+                                    }
+                                }
                             }
-                            else {
-                                ((CheckBox) checkBox).setSelected(((CheckBox) checkBox).isSelected());
-                            }
+                            else ((CheckBox) checkBox).setSelected(event.getSource() == checkBox);
                         }
                     }
                 }

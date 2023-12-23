@@ -28,10 +28,10 @@
                         <String fx:value="English" />
                     </value>
                 </ComboBox>
-                <CheckBox layoutX="15" layoutY="555" selected="true" onAction="#onCheckBoxClicked">
+                <CheckBox userData="Save As New Version" layoutX="15" layoutY="555" selected="true" onAction="#onCheckBoxClicked">
                     Save As New Version
                 </CheckBox>
-                <CheckBox layoutX="15" layoutY="580" onAction="#onCheckBoxClicked" >
+                <CheckBox userData="Edit Last Version" layoutX="15" layoutY="580" onAction="#onCheckBoxClicked" >
                     Edit Last Version
                 </CheckBox>
                 <TextArea fx:id="descriptionValue" layoutX="7.0" layoutY="90.0" prefHeight="428.0" prefWidth="202.0" promptText="Write descriptions about changes. "/>
