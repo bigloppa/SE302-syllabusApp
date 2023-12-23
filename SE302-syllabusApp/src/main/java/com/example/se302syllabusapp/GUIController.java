@@ -23,7 +23,9 @@ import javafx.stage.Modality;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -141,7 +143,7 @@ public class GUIController implements Initializable {
                     ContributionLevelValuesList = new ArrayList<>();
                     ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
 
-                    passValuesToSyllabusSheet(scrollPane.getContent(),data);
+                    passValuesToSyllabusSheet(scrollPane.getContent(),data, borderPane.getRight() , selectedFile.getPath().replace(".json",".txt"));
 
                     INDEX_FOR_DATA_PASSING = 0;
 
@@ -234,9 +236,11 @@ public class GUIController implements Initializable {
             ContributionLevelValuesList = new ArrayList<>();
             ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
 
-            passValuesToSyllabusSheetCompare(syllabus1, data1,indexDifferences);
+            passValuesToSyllabusSheetCompare(syllabus1, data1, indexDifferences, syllabusSheet.getRight(), path1.replace(".json", ".txt"),
+                    path2.replace(".json", ".txt"));
             INDEX_FOR_DATA_PASSING = 0;
-            passValuesToSyllabusSheetCompare(syllabus2, data2,indexDifferences);
+            passValuesToSyllabusSheetCompare(syllabus2, data2, indexDifferences, syllabusSheet.getRight(), path1.replace(".json", ".txt"),
+                    path2.replace(".json", ".txt"));
             INDEX_FOR_DATA_PASSING = 0;
 
             if (!parentVBox.getChildren().isEmpty())
@@ -953,7 +957,7 @@ public class GUIController implements Initializable {
         }
     }
 
-    public void passValuesToSyllabusSheet(Node node, ArrayList<String> syllabusData) {
+    public void passValuesToSyllabusSheet(Node node, ArrayList<String> syllabusData, Node node2 , String path) {
 
         if (node instanceof TextField) {
 
@@ -991,15 +995,29 @@ public class GUIController implements Initializable {
         else {
             if (node instanceof Parent) {
                 for (Node child: ((Parent) node).getChildrenUnmodifiable()) {
-                    passValuesToSyllabusSheet(child, syllabusData);
+                    passValuesToSyllabusSheet(child, syllabusData, node2, path);
                 }
             }
         }
+
+        for (Node child2 : ((Parent) node2).getChildrenUnmodifiable()){
+            if (child2 instanceof TextArea){
+                try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+                    String line = br.readLine();
+                    ((TextArea) child2).setText(line);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
     }
 
 
-    public void passValuesToSyllabusSheetCompare(Node node, ArrayList<String> syllabusData, ArrayList<Integer> differences) {
+    public void passValuesToSyllabusSheetCompare(Node node, ArrayList<String> syllabusData, ArrayList<Integer> differences, Node node2, String path1, String path2) {
 
+        boolean changeBoolean = true;
 
         if (node instanceof TextField) {
             textField = (TextField) node;
@@ -1072,9 +1090,31 @@ public class GUIController implements Initializable {
         else {
             if (node instanceof Parent) {
                 for (Node child: ((Parent) node).getChildrenUnmodifiable()) {
-                    passValuesToSyllabusSheetCompare(child, syllabusData,differences);
+                    passValuesToSyllabusSheetCompare(child, syllabusData,differences, node2, path1, path2);
                 }
             }
+        }
+
+        for (Node child2 : ((Parent) node2).getChildrenUnmodifiable()){
+            if (child2 instanceof TextArea) {
+                if (changeBoolean) {
+                    changeBoolean = false;
+                    try (BufferedReader br = new BufferedReader(new FileReader(path1))) {
+                        String line = br.readLine();
+                        ((TextArea) child2).setText(line);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }else {
+                    try (BufferedReader br = new BufferedReader(new FileReader(path2))) {
+                        String line = br.readLine();
+                        ((TextArea) child2).setText(line);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
         }
     }
 
