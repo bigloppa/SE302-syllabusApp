@@ -132,23 +132,24 @@ public class Controllers extends FileManager{
             // If JSON object, process its fields
             JSONObject jsonObject = (JSONObject) obj;
             for (Object key : jsonObject.keySet()) {
-                writer.write("<div><b>" + key + ":</b></div>\n");
+                writer.write("<div><b>" + key + ":</b></div>\t");
                 processJson(jsonObject.get(key), writer);
             }
         } else if (obj instanceof JSONArray) {
-            // If JSON array, process its elements
+            // If JSON array, process its elements as unordered lists
             JSONArray jsonArray = (JSONArray) obj;
+            writer.write("<ul>\n");
             for (Object element : jsonArray) {
-                writer.write("<div>\n");
+                writer.write("<li>\n");
                 processJson(element, writer);
-                writer.write("</div>\n");
+                writer.write("</li>\n");
             }
+            writer.write("</ul>\n");
         } else {
             // If JSON primitive, display its value
             writer.write("<div>" + obj.toString() + "</div>\n");
         }
     }
-
 
     public void fileExport2(String path, String type, String name) {
         FileChooser fileChooser = new FileChooser();
