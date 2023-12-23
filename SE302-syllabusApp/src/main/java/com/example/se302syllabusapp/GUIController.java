@@ -1,5 +1,6 @@
 package com.example.se302syllabusapp;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 
@@ -81,6 +83,10 @@ public class GUIController implements Initializable {
     private final String[] ContributionLevelValues = {"1","2","3","4","5"};
     private ArrayList<String> ContributionLevelValuesList;
 
+    private TextField textField;
+
+    private  CheckBox checkBox;
+
     public GUIController(){
         syllabusData = new ArrayList<>(500);
         controllers = new Controllers();
@@ -132,7 +138,7 @@ public class GUIController implements Initializable {
                     ContributionLevelValuesList = new ArrayList<>();
                     ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
 
-                    passValuesToSyllabusSheet(scrollPane.getContent(), data);
+                    passValuesToSyllabusSheet(scrollPane.getContent(),data);
 
                     INDEX_FOR_DATA_PASSING = 0;
 
@@ -202,6 +208,15 @@ public class GUIController implements Initializable {
         syllabusData2 = getControllers().read();
         ArrayList<String> data2 = syllabusData2.getAttributes(new ArrayList<>());
         System.out.println(data2);
+        ArrayList<Integer> indexDifferences = new ArrayList<>();
+
+        for (int i = 0; i < data1.size(); i++) {
+            if (!data1.get(i).equals(data2.get(i))){
+                indexDifferences.add(i);
+            }
+        }
+
+        System.out.println(indexDifferences);
 
 
         FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("ComparePage.fxml"));
@@ -216,9 +231,9 @@ public class GUIController implements Initializable {
             ContributionLevelValuesList = new ArrayList<>();
             ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
 
-            passValuesToSyllabusSheet(syllabus1, data1);
+            passValuesToSyllabusSheetCompare(syllabus1, data1,indexDifferences);
             INDEX_FOR_DATA_PASSING = 0;
-            passValuesToSyllabusSheet(syllabus2, data2);
+            passValuesToSyllabusSheetCompare(syllabus2, data2,indexDifferences);
             INDEX_FOR_DATA_PASSING = 0;
 
             if (!parentVBox.getChildren().isEmpty())
@@ -926,7 +941,6 @@ public class GUIController implements Initializable {
 
     public void passValuesToSyllabusSheet(Node node, ArrayList<String> syllabusData) {
 
-
         if (node instanceof TextField) {
 
             ((TextField) node).setText(syllabusData.get(INDEX_FOR_DATA_PASSING));
@@ -964,6 +978,87 @@ public class GUIController implements Initializable {
             if (node instanceof Parent) {
                 for (Node child: ((Parent) node).getChildrenUnmodifiable()) {
                     passValuesToSyllabusSheet(child, syllabusData);
+                }
+            }
+        }
+    }
+
+
+    public void passValuesToSyllabusSheetCompare(Node node, ArrayList<String> syllabusData, ArrayList<Integer> differences) {
+
+
+        if (node instanceof TextField) {
+            textField = (TextField) node;
+
+            if (differences.contains(INDEX_FOR_DATA_PASSING)) {
+                textField.setStyle("-fx-text-fill: red;-fx-font-weight: bold;");
+                textField.setText(syllabusData.get(INDEX_FOR_DATA_PASSING));
+
+
+            }else{
+                textField.setStyle("-fx-text-fill: green;-fx-font-weight: bold;");
+                textField.setText(syllabusData.get(INDEX_FOR_DATA_PASSING));
+
+            }
+            INDEX_FOR_DATA_PASSING++;
+            textField.setEditable(false);
+
+        } else if (node instanceof CheckBox) {
+            checkBox = ((CheckBox) node);
+            checkBox.setDisable(true);
+            checkBox.setStyle("-fx-opacity: 1; -fx-text-fill: black;");
+            boolean oneElementIsAlreadySelected = false;
+            if (ContributionLevelValuesList.contains(node.getUserData().toString())) {
+                HBox grandParent = (HBox) ((AnchorPane) node.getParent()).getParent();
+
+                for (Node parent : grandParent.getChildren()) {
+                    AnchorPane anchorPane = (AnchorPane) parent;
+
+                    if (((CheckBox) anchorPane.getChildren().get(0)).isSelected()) {
+                        oneElementIsAlreadySelected = true;
+                        break;
+                    }
+                }
+                if (!oneElementIsAlreadySelected && syllabusData.get(INDEX_FOR_DATA_PASSING).equals(node.getUserData())) {
+                    if (differences.contains(INDEX_FOR_DATA_PASSING)) {
+                        checkBox.getParent().setStyle("-fx-background-color: rgba(245, 7, 7, 0.25);");
+
+                        checkBox.setSelected(true);
+
+
+
+                        INDEX_FOR_DATA_PASSING++;
+                        return;
+                    }else{
+                        checkBox.getParent().setStyle("-fx-background-color: rgba(7, 245, 7, 0.25);");
+                        checkBox.setSelected(true);
+                        INDEX_FOR_DATA_PASSING++;
+                    }
+                }
+
+                if (node.getUserData().toString().equals("5") && !oneElementIsAlreadySelected) {
+                    INDEX_FOR_DATA_PASSING++;
+                    return;
+                }
+            }
+
+            if (syllabusData.get(INDEX_FOR_DATA_PASSING).equals(node.getUserData()) && !ContributionLevelValuesList.contains(node.getUserData().toString())) {
+                if (differences.contains(INDEX_FOR_DATA_PASSING)) {
+                    checkBox.getParent().setStyle("-fx-background-color: rgba(245, 7, 7, 0.25);");
+                    checkBox.setSelected(true);
+                    INDEX_FOR_DATA_PASSING++;
+
+                }else{
+                    checkBox.getParent().setStyle("-fx-background-color: rgba(7, 245, 7, 0.25);");
+                    checkBox.setSelected(true);
+                    INDEX_FOR_DATA_PASSING++;
+                }
+            }
+        }
+        else {
+            if (node instanceof Parent) {
+                for (Node child: ((Parent) node).getChildrenUnmodifiable()) {
+                    passValuesToSyllabusSheetCompare(child, syllabusData,differences);
                 }
             }
         }
