@@ -7,15 +7,7 @@
     <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="Gui and controller updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/V1/.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/V2/.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/V3/.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/b/V1/b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/b/V2/b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/dneem/V1/dneem.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/gfgfg/V1/gfgfg.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/hh/V1/hh.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/storage/en/son/V1/son.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,21 +115,8 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="SE302-syllabusApp.SE302-syllabusApp" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="SE302-syllabusApp.SE302-syllabusApp" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <recent_temporary>
       <list>
@@ -165,6 +144,7 @@
       <workItem from="1702797211004" duration="19205000" />
       <workItem from="1703190225002" duration="3764000" />
       <workItem from="1703248087024" duration="6888000" />
+      <workItem from="1703334029350" duration="335000" />
     </task>
     <task id="LOCAL-00001" summary="Import functions">
       <option name="closed" value="true" />
@@ -224,12 +204,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java</url>
-          <line>107</line>
+          <line>120</line>
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java</url>
-          <line>122</line>
+          <line>135</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>

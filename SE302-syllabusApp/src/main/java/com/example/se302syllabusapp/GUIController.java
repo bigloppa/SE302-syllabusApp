@@ -830,7 +830,7 @@ public class GUIController implements Initializable {
                 showAlert("Empty ChoiceBox", "Fill in all ChoiceBoxes!");
             }
             else {
-                controllers.fileExport("storage/" + langChoiceBox.getValue() + "/" + courseChoiceBox.getValue() + "/" + versionChoiceBox1.getValue() + "/" + courseChoiceBox.getValue() + ".json",
+                controllers.fileExport2("storage/" + langChoiceBox.getValue() + "/" + courseChoiceBox.getValue() + "/" + versionChoiceBox1.getValue() + "/" + courseChoiceBox.getValue() + ".json",
                         typeChoiceBox.getValue(), langChoiceBox.getValue() + "-" + courseChoiceBox.getValue() + "-" + versionChoiceBox1.getValue());
                 popup.close();
             }

@@ -105,6 +105,91 @@ public class Controllers extends FileManager{
             }
         }
     }
+    private static void convertJsonToHtml(String inputFile, String outputFile) throws IOException, ParseException {
+        // Parse JSON file using JSON.simple
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader(inputFile));
+
+        // Generate HTML and write to file
+        generateHtml(obj, outputFile);
+    }
+
+    private static void generateHtml(Object obj, String outputFile) throws IOException {
+        try (FileWriter writer = new FileWriter(outputFile)) {
+            // Start HTML document
+            writer.write("<html>\n<head>\n<title>JSON to HTML Conversion</title>\n</head>\n<body>\n");
+
+            // Recursively process JSON and convert to HTML
+            processJson(obj, writer);
+
+            // End HTML document
+            writer.write("</body>\n</html>");
+        }
+    }
+
+    private static void processJson(Object obj, FileWriter writer) throws IOException {
+        if (obj instanceof JSONObject) {
+            // If JSON object, process its fields
+            JSONObject jsonObject = (JSONObject) obj;
+            for (Object key : jsonObject.keySet()) {
+                writer.write("<div><b>" + key + ":</b></div>\n");
+                processJson(jsonObject.get(key), writer);
+            }
+        } else if (obj instanceof JSONArray) {
+            // If JSON array, process its elements
+            JSONArray jsonArray = (JSONArray) obj;
+            for (Object element : jsonArray) {
+                writer.write("<div>\n");
+                processJson(element, writer);
+                writer.write("</div>\n");
+            }
+        } else {
+            // If JSON primitive, display its value
+            writer.write("<div>" + obj.toString() + "</div>\n");
+        }
+    }
+
+
+    public void fileExport2(String path, String type, String name) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save File");
+        fileChooser.setInitialFileName(name);
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(type + " Dosyaları", "*." + type));
+
+        File selectedFile = fileChooser.showSaveDialog(null);
+
+        // If a file is selected, copy the content
+        if (selectedFile != null) {
+            try {
+                // Get the source and destination paths
+                Path source = Paths.get(path);
+                Path destination = Paths.get(selectedFile.getPath());
+
+                // Choose file extension based on the selected type
+                String fileExtension = "";
+                if ("json".equals(type)) {
+                    fileExtension = ".json";
+                    // Copy the file using Files.copy
+                    destination = Paths.get(destination.toString() + fileExtension);
+                    Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
+
+
+
+                } else if ("html".equals(type)) {
+                    fileExtension = ".html";
+                    destination = Paths.get(destination.toString() + fileExtension);
+                    convertJsonToHtml(source.toString(), destination.toString());
+                    System.out.println("Conversion completed successfully.");
+
+                }
+            } catch (IOException | ParseException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
 
     public int createDir(String language,String lecture,boolean isEditLastVersionSelected){
 
