@@ -1087,7 +1087,12 @@ public class GUIController implements Initializable {
                 if (child instanceof AnchorPane) {
                     for (Node checkBox : ((AnchorPane) child).getChildren()) {
                         if (checkBox instanceof CheckBox) {
-                            ((CheckBox) checkBox).setSelected(event.getSource() == checkBox);
+                            if (event.getSource() != checkBox && ContributionLevelValuesList.contains(checkBox.getUserData().toString())) {
+                                ((CheckBox) checkBox).setSelected(false);
+                            }
+                            else {
+                                ((CheckBox) checkBox).setSelected(((CheckBox) checkBox).isSelected());
+                            }
                         }
                     }
                 }
