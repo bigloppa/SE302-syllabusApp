@@ -13,14 +13,16 @@
     <right>
         <AnchorPane style="-fx-background-color: rgb(204,204,204);" BorderPane.alignment="CENTER">
             <children>
-                <Button layoutX="122.0" layoutY="560" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Exit"  />
                 <Text layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0">
                     Descriptions of the versions:
                     <font>
                         <Font size="15"/>
                     </font>
                 </Text>
-                <TextArea fx:id="versionDescriptions" layoutX="7.0" layoutY="90.0" prefHeight="428.0" prefWidth="202.0" editable="false"/>
+                <Label text="Description of the left side: " layoutX="13" layoutY="80"/>
+                <TextArea fx:id="versionDescriptions1" layoutX="7.0" layoutY="100.0" prefHeight="200.0" prefWidth="190.0" editable="false" wrapText="true"/>
+                <Label text="Description of the right side: " layoutX="13" layoutY="310"/>
+                <TextArea fx:id="versionDescriptions2" layoutX="7.0" layoutY="330.0" prefHeight="200.0" prefWidth="190.0" editable="false" wrapText="true"/>
             </children>
         </AnchorPane>
     </right>
