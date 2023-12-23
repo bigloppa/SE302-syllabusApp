@@ -69,7 +69,6 @@ public class FileManager {
 
 
     // This function reads JSON files and translate into SyllabusData object.
-    // Also, reads Text files that are related with JSON file, for descriptions.
 
     public SyllabusData read() {
 

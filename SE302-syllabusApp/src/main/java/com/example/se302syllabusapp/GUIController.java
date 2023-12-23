@@ -143,7 +143,15 @@ public class GUIController implements Initializable {
                     ContributionLevelValuesList = new ArrayList<>();
                     ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
 
-                    passValuesToSyllabusSheet(scrollPane.getContent(),data, borderPane.getRight() , selectedFile.getPath().replace(".json",".txt"));
+                    // Passing only JSON
+                    passValuesToSyllabusSheet(scrollPane.getContent(),data);
+
+                    Node node1 = borderPane.getRight();
+                    ArrayList<String> paths = new ArrayList<>();
+                    paths.add(selectedFile.getPath().replace(".json",".txt"));
+
+                    passDescription(node1,paths);
+
 
                     INDEX_FOR_DATA_PASSING = 0;
 
@@ -236,12 +244,17 @@ public class GUIController implements Initializable {
             ContributionLevelValuesList = new ArrayList<>();
             ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
 
-            passValuesToSyllabusSheetCompare(syllabus1, data1, indexDifferences, syllabusSheet.getRight(), path1.replace(".json", ".txt"),
-                    path2.replace(".json", ".txt"));
+            ArrayList<String> paths = new ArrayList<>();
+            paths.add(path1.replace(".json", ".txt"));
+            paths.add(path2.replace(".json", ".txt"));
+            Node node1 = syllabusSheet.getRight();
+
+            passValuesToSyllabusSheetCompare(syllabus1, data1, indexDifferences);
             INDEX_FOR_DATA_PASSING = 0;
-            passValuesToSyllabusSheetCompare(syllabus2, data2, indexDifferences, syllabusSheet.getRight(), path1.replace(".json", ".txt"),
-                    path2.replace(".json", ".txt"));
+            passValuesToSyllabusSheetCompare(syllabus2, data2, indexDifferences);
             INDEX_FOR_DATA_PASSING = 0;
+
+            passDescription(node1,paths);
 
             if (!parentVBox.getChildren().isEmpty())
                 parentVBox.getChildren().remove(1);
@@ -957,7 +970,7 @@ public class GUIController implements Initializable {
         }
     }
 
-    public void passValuesToSyllabusSheet(Node node, ArrayList<String> syllabusData, Node node2 , String path) {
+    public void passValuesToSyllabusSheet(Node node, ArrayList<String> syllabusData) {
 
         if (node instanceof TextField) {
 
@@ -995,27 +1008,14 @@ public class GUIController implements Initializable {
         else {
             if (node instanceof Parent) {
                 for (Node child: ((Parent) node).getChildrenUnmodifiable()) {
-                    passValuesToSyllabusSheet(child, syllabusData, node2, path);
+                    passValuesToSyllabusSheet(child, syllabusData);
                 }
             }
         }
-
-        for (Node child2 : ((Parent) node2).getChildrenUnmodifiable()){
-            if (child2 instanceof TextArea){
-                try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-                    String line = br.readLine();
-                    ((TextArea) child2).setText(line);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-
     }
 
 
-    public void passValuesToSyllabusSheetCompare(Node node, ArrayList<String> syllabusData, ArrayList<Integer> differences, Node node2, String path1, String path2) {
+    public void passValuesToSyllabusSheetCompare(Node node, ArrayList<String> syllabusData, ArrayList<Integer> differences) {
 
         boolean changeBoolean = true;
 
@@ -1090,31 +1090,25 @@ public class GUIController implements Initializable {
         else {
             if (node instanceof Parent) {
                 for (Node child: ((Parent) node).getChildrenUnmodifiable()) {
-                    passValuesToSyllabusSheetCompare(child, syllabusData,differences, node2, path1, path2);
+                    passValuesToSyllabusSheetCompare(child, syllabusData, differences);
                 }
             }
         }
+    }
 
-        for (Node child2 : ((Parent) node2).getChildrenUnmodifiable()){
-            if (child2 instanceof TextArea) {
-                if (changeBoolean) {
-                    changeBoolean = false;
-                    try (BufferedReader br = new BufferedReader(new FileReader(path1))) {
-                        String line = br.readLine();
-                        ((TextArea) child2).setText(line);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }else {
-                    try (BufferedReader br = new BufferedReader(new FileReader(path2))) {
-                        String line = br.readLine();
-                        ((TextArea) child2).setText(line);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+    private void passDescription(Node node, ArrayList<String> paths) {
+
+        int index = 0;
+        for (Node child : ((Parent) node).getChildrenUnmodifiable()){
+            if (child instanceof TextArea){
+                try (BufferedReader br = new BufferedReader(new FileReader(paths.get(index)))) {
+                    String line = br.readLine();
+                    ((TextArea) child).setText(line);
+                    index++;
+                } catch (IOException ignore) {
+
                 }
             }
-
         }
     }
 
@@ -1144,7 +1138,6 @@ public class GUIController implements Initializable {
                 }
             }
         }
-
     }
 
 
