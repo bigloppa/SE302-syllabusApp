@@ -161,7 +161,7 @@
                                                     </AnchorPane>
                                                     <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                         <children>
-                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="English" userData="English" selected="true" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox fx:id="english" layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="English" userData="English"  onAction="#onCheckBoxClicked"/>
                                                             <CheckBox layoutX="87.0" layoutY="4.0" mnemonicParsing="false" text="Turkish" userData="Turkish" onAction="#onCheckBoxClicked"/>
                                                             <CheckBox layoutX="169.0" layoutY="4.0" mnemonicParsing="false" text="Second Foreign Language" userData="Second Foreign Language" onAction="#onCheckBoxClicked"/>
                                                         </children>
@@ -181,7 +181,7 @@
                                                     </AnchorPane>
                                                     <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                         <children>
-                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Required" userData="Required" selected="true" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox fx:id="required" layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Required" userData="Required"  onAction="#onCheckBoxClicked"/>
                                                             <CheckBox layoutX="87.0" layoutY="4.0" mnemonicParsing="false" text="Elective" userData="Elective" onAction="#onCheckBoxClicked"/>
                                                         </children>
                                                     </AnchorPane>
@@ -200,7 +200,7 @@
                                                     </AnchorPane>
                                                     <AnchorPane prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                         <children>
-                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Short Cycle" userData="Short Cycle" selected="true" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox fx:id="shortCycle" layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Short Cycle" userData="Short Cycle"  onAction="#onCheckBoxClicked"/>
                                                             <CheckBox layoutX="88.0" layoutY="4.0" mnemonicParsing="false" text="First Cycle" userData="First Cycle" onAction="#onCheckBoxClicked"/>
                                                             <CheckBox layoutX="169.0" layoutY="4.0" mnemonicParsing="false" text="Second Cycle" userData="Second Cycle" onAction="#onCheckBoxClicked"/>
                                                             <CheckBox layoutX="261.0" layoutY="4.0" mnemonicParsing="false" text="Third Cycle" userData="Third Cycle" onAction="#onCheckBoxClicked"/>
@@ -221,7 +221,7 @@
                                                     </AnchorPane>
                                                     <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                         <children>
-                                                            <CheckBox layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Face-to-Face" userData="Face-to-Face" selected="true" onAction="#onCheckBoxClicked"/>
+                                                            <CheckBox fx:id="faceToFace" layoutX="6.0" layoutY="4.0" mnemonicParsing="false" text="Face-to-Face" userData="Face-to-Face"  onAction="#onCheckBoxClicked"/>
                                                             <CheckBox layoutX="102.0" layoutY="4.0" mnemonicParsing="false" text="Online" userData="Online" onAction="#onCheckBoxClicked"/>
                                                             <CheckBox layoutX="168.0" layoutY="4.0" mnemonicParsing="false" text="Blended" userData="Blended" onAction="#onCheckBoxClicked"/>
                                                         </children>
@@ -341,7 +341,7 @@
                                                         <children>
                                                             <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">
                                                                 <children>
-                                                                    <CheckBox layoutX="8.0" layoutY="4.0" mnemonicParsing="false" text="Core Course" userData="Core Course" selected="true" onAction="#onCheckBoxClicked"/>
+                                                                    <CheckBox fx:id="coreCourse" layoutX="8.0" layoutY="4.0" mnemonicParsing="false" text="Core Course" userData="Core Course"  onAction="#onCheckBoxClicked"/>
                                                                 </children>
                                                             </AnchorPane>
                                                             <AnchorPane prefHeight="25.0" prefWidth="350.0" style="-fx-border-color: rgb(210,210,210);">

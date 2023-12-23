@@ -60,7 +60,16 @@ public class GUIController implements Initializable {
     private ComboBox<String> comboBox;
 
 
-
+    @FXML
+    private CheckBox coreCourse;
+    @FXML
+    private CheckBox faceToFace;
+    @FXML
+    private CheckBox shortCycle;
+    @FXML
+    private CheckBox required;
+    @FXML
+    private CheckBox english;
     FileManager fileManager;
     // Todo bunlari dosyala
     private Stage primaryStage;
@@ -149,10 +158,24 @@ public class GUIController implements Initializable {
         try {
             Node syllabusSheet = syllabusLoader.load();
 
+            ScrollPane scrollPane = (ScrollPane) (((BorderPane) syllabusSheet).getChildren().get(1));
+            HBox hBox = (HBox) scrollPane.getContent();
+
+            ((CheckBox) hBox.lookup("#english")).setSelected(true);
+            ((CheckBox) hBox.lookup("#required")).setSelected(true);
+            ((CheckBox) hBox.lookup("#shortCycle")).setSelected(true);
+            ((CheckBox) hBox.lookup("#faceToFace")).setSelected(true);
+            ((CheckBox) hBox.lookup("#coreCourse")).setSelected(true);
+
+
+
+
             if (!parentVBox.getChildren().isEmpty())
                 parentVBox.getChildren().remove(1);
 
             parentVBox.getChildren().add(syllabusSheet);
+
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -171,12 +194,14 @@ public class GUIController implements Initializable {
         getControllers().setJsonFile(new File(path1));
         syllabusData1 = getControllers().read();
         ArrayList<String> data1 = syllabusData1.getAttributes(new ArrayList<>());
+        System.out.println(data1);
 
         SyllabusData syllabusData2;
         setControllers(new Controllers(new SyllabusData(), new SyllabusData()));
         getControllers().setJsonFile(new File(path2));
         syllabusData2 = getControllers().read();
         ArrayList<String> data2 = syllabusData2.getAttributes(new ArrayList<>());
+        System.out.println(data2);
 
 
         FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("ComparePage.fxml"));
@@ -917,10 +942,20 @@ public class GUIController implements Initializable {
 
                     if (((CheckBox) anchorPane.getChildren().get(0)).isSelected()) {
                         oneElementIsAlreadySelected = true;
+                        break;
                     }
                 }
+                if (!oneElementIsAlreadySelected && syllabusData.get(INDEX_FOR_DATA_PASSING).equals(node.getUserData())) {
+                    ((CheckBox) node).setSelected(true);
+                    INDEX_FOR_DATA_PASSING++;
+                    return;
+                }
+                if (node.getUserData().toString().equals("5") && !oneElementIsAlreadySelected) {
+                    INDEX_FOR_DATA_PASSING++;
+                    return;
+                }
             }
-            if (syllabusData.get(INDEX_FOR_DATA_PASSING).equals(node.getUserData()) && !oneElementIsAlreadySelected) {
+            if (syllabusData.get(INDEX_FOR_DATA_PASSING).equals(node.getUserData()) && !ContributionLevelValuesList.contains(node.getUserData().toString())) {
                 ((CheckBox) node).setSelected(true);
                 INDEX_FOR_DATA_PASSING++;
             }
