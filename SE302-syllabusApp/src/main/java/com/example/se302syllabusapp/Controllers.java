@@ -117,7 +117,7 @@ public class Controllers extends FileManager{
     private static void generateHtml(Object obj, String outputFile) throws IOException {
         try (FileWriter writer = new FileWriter(outputFile)) {
             // Start HTML document
-            writer.write("<html>\n<head>\n<title>JSON to HTML Conversion</title>\n</head>\n<body>\n");
+            writer.write("<html>\n<head>\n<title>HTML Version</title>\n</head>\n<body>\n");
 
             // Recursively process JSON and convert to HTML
             processJson(obj, writer);
