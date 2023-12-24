@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="docx finished">
+    <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="storage and language folders fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/Controllers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,6 +147,7 @@
       <workItem from="1703342000011" duration="4121000" />
       <workItem from="1703349518166" duration="6134000" />
       <workItem from="1703399868278" duration="6237000" />
+      <workItem from="1703435494883" duration="1316000" />
     </task>
     <task id="LOCAL-00001" summary="Import functions">
       <option name="closed" value="true" />
@@ -234,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703420776592</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="storage and language folders fixed">
+      <created>1703435737569</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703435737569</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +256,8 @@
     <MESSAGE value="Fixes about UI" />
     <MESSAGE value="Help instructions added" />
     <MESSAGE value="docx finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="docx finished" />
+    <MESSAGE value="storage and language folders fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="storage and language folders fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
