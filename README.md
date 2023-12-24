@@ -11,7 +11,7 @@ The Syllabus App is a Windows desktop application designed for creating, editing
 - JSON Simple (Not required to include externally)
 
 ## Installation
-- Download the set up file from the releases of the project's repository.
+- Download the set up file from the releases of the project's repository. (https://github.com/egedenizz/SE302-syllabusApp/releases)
   
 ## Design
 ![Syllabus](SE302-syllabusApp/images/systemArchitecture.png)
