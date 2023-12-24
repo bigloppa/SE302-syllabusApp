@@ -45,7 +45,7 @@ public class App extends Application {
     }
 
     private static void createFolders() {
-        String storageFolderPath = "/storage";
+        String storageFolderPath = "storage";
         Path storagePath = Paths.get(storageFolderPath);
 
         if (!Files.exists(storagePath)) {
