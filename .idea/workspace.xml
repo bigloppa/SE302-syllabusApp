@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="Fixes about UI">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="Help instructions added">
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/resources/com/example/se302syllabusapp/Demo4.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/resources/com/example/se302syllabusapp/Demo4.fxml" afterDir="false" />
     </list>
@@ -148,7 +147,7 @@
       <workItem from="1703334029350" duration="4974000" />
       <workItem from="1703342000011" duration="4121000" />
       <workItem from="1703349518166" duration="6134000" />
-      <workItem from="1703399868278" duration="5753000" />
+      <workItem from="1703399868278" duration="6237000" />
     </task>
     <task id="LOCAL-00001" summary="Import functions">
       <option name="closed" value="true" />
@@ -217,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703400760046</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Help instructions added">
+      <created>1703407063954</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703407063954</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +239,8 @@
     <MESSAGE value="A quick fix" />
     <MESSAGE value="Buttons changed" />
     <MESSAGE value="Fixes about UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes about UI" />
+    <MESSAGE value="Help instructions added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Help instructions added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
