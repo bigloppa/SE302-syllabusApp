@@ -1,11 +1,9 @@
 package com.example.se302syllabusapp;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -46,6 +44,8 @@ public class GUIController implements Initializable {
     public Button saveButton;
     @FXML
     public TextArea descriptionValue;
+    @FXML
+    public Label pathLabel;
     @FXML
     public VBox page1;
     public VBox page2;
@@ -153,6 +153,14 @@ public class GUIController implements Initializable {
                     passDescription(node1,paths);
 
 
+                    int startIndex = selectedFile.getPath().indexOf("V");
+                    int endIndex = selectedFile.getPath().indexOf("\\" ,startIndex);
+                    String version = selectedFile.getPath().substring(startIndex, endIndex);
+
+                    ((Label)((AnchorPane) borderPane.getRight()).getChildren().get(6)).setText(selectedFile.getPath());
+                    ((Text)((AnchorPane) borderPane.getRight()).getChildren().get(5)).setText("Description of " + version + ": ");
+                    ((CheckBox)((AnchorPane) borderPane.getRight()).getChildren().get(3)).setText("Edit " + version );
+
                     INDEX_FOR_DATA_PASSING = 0;
 
                     if (!parentVBox.getChildren().isEmpty())
@@ -177,6 +185,8 @@ public class GUIController implements Initializable {
         try {
             Node syllabusSheet = syllabusLoader.load();
 
+            BorderPane borderPane = (BorderPane) syllabusSheet;
+
             ScrollPane scrollPane = (ScrollPane) (((BorderPane) syllabusSheet).getChildren().get(1));
             HBox hBox = (HBox) scrollPane.getContent();
 
@@ -186,7 +196,8 @@ public class GUIController implements Initializable {
             ((CheckBox) hBox.lookup("#faceToFace")).setSelected(true);
             ((CheckBox) hBox.lookup("#coreCourse")).setSelected(true);
 
-
+            ((CheckBox)((AnchorPane) borderPane.getRight()).getChildren().get(3)).setDisable(true);
+            ((CheckBox)((AnchorPane) borderPane.getRight()).getChildren().get(3)).setText("Edit Version");
 
 
             if (!parentVBox.getChildren().isEmpty())
@@ -202,7 +213,7 @@ public class GUIController implements Initializable {
 
     }
 
-    public void compareVersions(VBox parentVBox, String path1, String path2) {
+    public void compareVersions(VBox parentVBox, String path1, String path2, String v1, String v2) {
         if (popup != null) {
             System.out.println(popup.getTitle());
             popup.close();
@@ -241,6 +252,9 @@ public class GUIController implements Initializable {
             VBox syllabus1 = (VBox) hBox.getChildren().get(0);
             VBox syllabus2 = (VBox) hBox.getChildren().get(1);
 
+            ((Label)((AnchorPane)syllabusSheet.getRight()).getChildren().get(1)).setText("Description of the left side(" + v1 + "):  ");
+            ((Label)((AnchorPane)syllabusSheet.getRight()).getChildren().get(3)).setText("Description of the right side(" + v2 + "):  ");
+
             ContributionLevelValuesList = new ArrayList<>();
             ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
 
@@ -269,7 +283,7 @@ public class GUIController implements Initializable {
 
     }
 
-    // TODO bunu dosyaya eklemeyı unutma
+
     public void compareVersionsPopup(){
         BorderPane borderPane = new BorderPane();
 
@@ -455,7 +469,7 @@ public class GUIController implements Initializable {
         bottomAnchorPane.setPrefHeight(23);
         bottomAnchorPane.setPrefWidth(600);
 
-        Button compareButton = new Button("Button");
+        Button compareButton = new Button("Compare");
         compareButton.setLayoutX(511.0);
         compareButton.setLayoutY(-12.0);
         compareButton.setPrefHeight(25);
@@ -472,7 +486,7 @@ public class GUIController implements Initializable {
             }else {
                 String firstFilePath = "storage\\" + langChoiceBox.getValue() + "\\" + courseChoiceBox.getValue() + "\\" + versionChoiceBox1.getValue() + "\\" + courseChoiceBox.getValue() + ".json";
                 String secondFilePath = "storage\\" + langChoiceBox.getValue() + "\\" + courseChoiceBox.getValue() + "\\" + versionChoiceBox2.getValue() + "\\" + courseChoiceBox.getValue() + ".json";
-                compareVersions(parentVBox, firstFilePath, secondFilePath);
+                compareVersions(parentVBox, firstFilePath, secondFilePath, versionChoiceBox1.getValue(), versionChoiceBox2.getValue());
                 popup.close();
             }
         });
@@ -630,7 +644,7 @@ public class GUIController implements Initializable {
         bottomAnchorPane.setPrefHeight(23);
         bottomAnchorPane.setPrefWidth(600);
 
-        Button compareButton = new Button("Button");
+        Button compareButton = new Button("Delete");
         compareButton.setLayoutX(511.0);
         compareButton.setLayoutY(-12.0);
         compareButton.setPrefHeight(25);
@@ -682,7 +696,7 @@ public class GUIController implements Initializable {
         AnchorPane topAnchorPane = new AnchorPane();
         Text courseText = new Text("Language:");
 
-        langChoiceBox.getItems().addAll("en","tur");
+        langChoiceBox.getItems().addAll("en","tr");
         Label languageLabel = new Label();
         langChoiceBox.setOnAction(event -> {
             String selectedOption = langChoiceBox.getValue();
@@ -779,7 +793,7 @@ public class GUIController implements Initializable {
         anchorPane3.prefHeight(100);
         anchorPane3.prefWidth(607);
 
-        Text text2 = new Text("First chosen version: ");
+        Text text2 = new Text("Version: ");
         text2.setFont(new Font(14));
         text2.setLayoutX(51);
         text2.setLayoutY(46);
@@ -849,7 +863,7 @@ public class GUIController implements Initializable {
         bottomAnchorPane.setPrefHeight(23);
         bottomAnchorPane.setPrefWidth(600);
 
-        Button exportButton = new Button("Button");
+        Button exportButton = new Button("Export");
         exportButton.setLayoutX(511.0);
         exportButton.setLayoutY(-12.0);
         exportButton.setPrefHeight(25);
@@ -865,7 +879,7 @@ public class GUIController implements Initializable {
                 showAlert("Empty ChoiceBox", "Fill in all ChoiceBoxes!");
             }
             else {
-                controllers.fileExport2("storage/" + langChoiceBox.getValue() + "/" + courseChoiceBox.getValue() + "/" + versionChoiceBox1.getValue() + "/" + courseChoiceBox.getValue() + ".json",
+                controllers.fileExport("storage/" + langChoiceBox.getValue() + "/" + courseChoiceBox.getValue() + "/" + versionChoiceBox1.getValue() + "/" + courseChoiceBox.getValue() + ".json",
                         typeChoiceBox.getValue(), langChoiceBox.getValue() + "-" + courseChoiceBox.getValue() + "-" + versionChoiceBox1.getValue());
                 popup.close();
             }
@@ -914,14 +928,24 @@ public class GUIController implements Initializable {
 
         System.out.println(syllabusData);
         System.out.println(syllabusData.size());
+
+        String version = "";
+
+        if (!pathLabel.getText().equals("a")){
+            String path = pathLabel.getText();
+            int startIndex = path.indexOf("V");
+            int endIndex = path.indexOf("\\" ,startIndex);
+            version = path.substring(startIndex, endIndex);
+        }
+
         String selectedValue = comboBox.getValue();
         Button saveButton = (Button) event.getSource();
         AnchorPane parent = (AnchorPane) saveButton.getParent();
         CheckBox editLastVersionCheckBox = (CheckBox) parent.getChildren().get(3);
         if (selectedValue.equals("English")) {
-            controllers.saveFromUserEntry(syllabusData, "en", editLastVersionCheckBox.isSelected(),descriptionValue.getText());
+            controllers.saveFromUserEntry(syllabusData, "en", editLastVersionCheckBox.isSelected(),descriptionValue.getText(), version);
         }else if (selectedValue.equals("Turkish")){
-            controllers.saveFromUserEntry(syllabusData, "tr", editLastVersionCheckBox.isSelected(),descriptionValue.getText());
+            controllers.saveFromUserEntry(syllabusData, "tr", editLastVersionCheckBox.isSelected(),descriptionValue.getText(), version);
         }
 
 
@@ -1139,6 +1163,31 @@ public class GUIController implements Initializable {
             }
         }
     }
+    public void showHelpPopUp() {
+        Alert guideAlert = new Alert(Alert.AlertType.INFORMATION);
+        guideAlert.getDialogPane().setPrefWidth(600);
+        guideAlert.getDialogPane().setPrefHeight(700);
+        guideAlert.setTitle("Guide");
+        guideAlert.setHeaderText("HOW TO USE SYLLABUS APP");
+        guideAlert.setContentText("-OPEN & IMPORT-\n1. To open or import a syllabus file, click on 'Open' in the File Menu.\n2. Direct to the desired JSON File from the File chooser that opens and click on Open.\n3. The desired syllabus can be viewed on the screen. On right, the description of the syllabus is noted." +
+                "\n\n-CREATE SYLLABUS & ADD VERSION-\n1. Click on 'New' in the File Menu.\n2. Fill out the syllabus information from the template and add a description.\n3. Select a language (to indicate whether Turkish or English version of the syllabus) from the dropdown menu.\n4. Choose 'Select As New Version' (the default option). If there exists a folder with the same course code it will be added as a new version. Otherwise, it will be added as new syllabus for the entered course code." +
+                "\n\n-EDIT SYLLABUS-\n1. After opening a syllabus as stated above, make the necessary changes.\n2. Click on 'Edit Version' on the right panel and click on 'Save' button." +
+                "\n\n-COMPARE SYLLABUS VERSIONS-\n1. To compare two versions, click on 'Compare' in the File Menu.\n2. From the pop up that opens, select the language, course name and the versions you want to compare from the dropdown menus.\n3. Click on 'Compare' button. On the screen, both selected versions will be displayed. On the right, the descriptions included while creating syllabi can be checked." +
+                "\n\n-DELETE SYLLABUS-\n1. Click on 'Delete' in the File Menu.\n2. Choose language, course code and the version you want to delete and click on 'Delete'." +
+                "\n\n-EXPORT SYLLABUS-\n1. To export a syllabus, click on 'Export' in the File Menu.\n2. Select the language, course code, version from the dropdown menu.\n3. Select the file type you want to export as and click on export.\n4. Navigate to the directory you desire to save, and click on 'Save'.");
+        guideAlert.showAndWait();
+    }
+    public void showAboutPopUp() {
+        Alert guideAlert = new Alert(Alert.AlertType.INFORMATION);
+        guideAlert.getDialogPane().setPrefWidth(600);
+        guideAlert.getDialogPane().setPrefHeight(700);
+        guideAlert.setTitle("About");
+        guideAlert.setHeaderText("Software Development Team");
+        guideAlert.setContentText("- Ali Boztepe\n- Beyza Altuner\n- Ege Deniz Yasar\n- Harun Onur\n- Nihan Yuksel" +
+                "\n\nThis application is development in the scope of SE 302 - Principles of Software Engineering as the  course project.");
+        guideAlert.showAndWait();
+    }
+
 
 
 

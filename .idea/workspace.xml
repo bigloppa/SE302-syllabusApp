@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="A quick fix">
+    <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="storage and language folders fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +63,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/GitHub/CE316&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -115,7 +114,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -145,8 +144,10 @@
       <workItem from="1703190225002" duration="3764000" />
       <workItem from="1703248087024" duration="6888000" />
       <workItem from="1703334029350" duration="4974000" />
-      <workItem from="1703342000011" duration="10044000" />
-      <workItem from="1703352617012" duration="580000" />
+      <workItem from="1703342000011" duration="4121000" />
+      <workItem from="1703349518166" duration="6134000" />
+      <workItem from="1703399868278" duration="6237000" />
+      <workItem from="1703435494883" duration="1316000" />
     </task>
     <task id="LOCAL-00001" summary="Import functions">
       <option name="closed" value="true" />
@@ -201,22 +202,47 @@
       <option name="project" value="LOCAL" />
       <updated>1703335180679</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Buttons changed">
+      <created>1703400267126</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703400267126</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fixes about UI">
+      <created>1703400760046</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703400760046</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Help instructions added">
+      <created>1703407063954</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703407063954</updated>
+    </task>
+    <task id="LOCAL-00011" summary="docx finished">
+      <option name="closed" value="true" />
+      <created>1703420776592</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703420776592</updated>
+    </task>
+    <task id="LOCAL-00012" summary="storage and language folders fixed">
+      <created>1703435737569</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703435737569</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Import functions" />
@@ -226,9 +252,23 @@
     <MESSAGE value="Gui and controller updates" />
     <MESSAGE value="JSON to HTML Table conversion for exporting" />
     <MESSAGE value="A quick fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="A quick fix" />
+    <MESSAGE value="Buttons changed" />
+    <MESSAGE value="Fixes about UI" />
+    <MESSAGE value="Help instructions added" />
+    <MESSAGE value="docx finished" />
+    <MESSAGE value="storage and language folders fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="storage and language folders fixed" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java</url>
+          <line>1016</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
