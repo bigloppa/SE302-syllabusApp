@@ -1,19 +1,23 @@
 package com.example.se302syllabusapp;
 
 import javafx.stage.FileChooser;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.security.cert.Extension;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Controllers extends FileManager{
@@ -53,32 +57,8 @@ public class Controllers extends FileManager{
         }
     }
 
-    public void fileExport(String path, String type, String name){
-        GUIController guiController = new GUIController();
-        // diğer dosya türleri oluşturulduğunda düzenleme yapılması gerekiyor
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save File");
-        fileChooser.setInitialFileName(name);
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter(type + " Dosyaları", "*." + type));
 
 
-        File selectedFile = fileChooser.showSaveDialog(null);
-
-        if (selectedFile != null) {
-            try {
-                Path source = Paths.get(path);
-                Path destination = Paths.get(selectedFile.getPath());
-
-
-                Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
-                guiController.showAlert("Exporting File" , "The file successfully exported.");
-
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-        }
-    }
     private static void convertJsonToHtml(String inputFile, String outputFile) throws IOException, ParseException {
         // Parse JSON file using JSON.simple
         JSONParser parser = new JSONParser();
@@ -100,6 +80,8 @@ public class Controllers extends FileManager{
             writer.write("</body>\n</html>");
         }
     }
+
+
 
     private static void processJson(Object obj, FileWriter writer) throws IOException {
         if (obj instanceof JSONObject) {
@@ -125,7 +107,7 @@ public class Controllers extends FileManager{
         }
     }
 
-    public void fileExport2(String path, String type, String name) {
+    public void fileExport(String path, String type, String name) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save File");
         fileChooser.setInitialFileName(name);
@@ -156,6 +138,11 @@ public class Controllers extends FileManager{
                     convertJsonToHtml(source.toString(), destination.toString());
                     System.out.println("Conversion completed successfully.");
 
+                }else if ("docx".equals(type)) {
+                    fileExtension = ".docx";
+                    destination = Paths.get(destination.toString() + fileExtension);
+                    exportJsonToDocx(source.toString(), destination.toString());
+                    System.out.println("Export to DOCX completed successfully.");
                 }
             } catch (IOException | ParseException e) {
                 e.printStackTrace();
@@ -167,10 +154,9 @@ public class Controllers extends FileManager{
 
 
     public int createDir(String language,String lecture,boolean isEditLastVersionSelected){
-        checkDir("storage",false);
-        String filepath = "storage/";
-        filepath+= language;
-        checkDir(filepath,false);
+
+        String filepath = "storage/"+ language;
+
 
         filepath+= ("/"+ lecture);
         checkDir(filepath,false);
@@ -287,11 +273,144 @@ public class Controllers extends FileManager{
             }
 
         } catch (IOException | ParseException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
         saveDescription(description,filepathDes);
     }
+
+    public void addLO(JSONObject root, int LONum){
+
+
+        try {
+
+
+            JSONArray syllabus = (JSONArray) root.get("syllabus");
+            for (Object section : syllabus) {
+                JSONObject sectionObject = (JSONObject) section;
+                if (sectionObject.containsKey("A")) {
+                    JSONArray aSection = (JSONArray) sectionObject.get("A");
+                    for (Object element : aSection) {
+                        JSONObject elementObject = (JSONObject) element;
+
+                        for (Object key : elementObject.keySet()) {
+                            JSONArray subElements = (JSONArray) elementObject.get(key);
+                            for (int i = 1; i <= LONum; i++) {
+                                JSONObject a = new JSONObject();
+                                a.put("LO" + i, "");
+                                subElements.add(a);
+
+                            }
+
+                        }
+                    }
+                }
+            }
+
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void exportJsonToDocx(String jsonFilePath, String docxFilePath) {
+        try {
+
+            JSONParser parser = new JSONParser();
+            JSONObject obj = (JSONObject)parser.parse(new FileReader(jsonFilePath));
+            Map<ArrayList<String>, ArrayList<String>> orderedMap = new HashMap<>();
+            orderedMap.put(new ArrayList<>(),new ArrayList<>());
+            Collection<JSONArray> value =  obj.values();
+            Object[] objList = value.toArray();
+
+            // [ GI, WSRM, A, ECTS-WT, C-POM ]
+            JSONArray sub1List = (JSONArray) objList[0];
+
+            for (Object sub1ListElements : sub1List) {
+
+
+                Collection<JSONArray> value1 =  ((JSONObject) sub1ListElements).values();
+                Object[] objList1 = value1.toArray();
+
+                for (int i = 0; i < objList1.length; i++) {
+                    // [ sub1, ... , sub1, ... , Participation, ... , Course-Hours, ..., sub1 ]
+
+                    JSONArray sub2List = (JSONArray) objList1[i];
+
+                    for (Object sub2ListElements : sub2List) {
+
+                        Collection<JSONArray> value2 =  ((JSONObject) sub2ListElements).values();
+                        Object[] objList2 = value2.toArray();
+
+                        for (int j = 0; j < objList2.length; j++) {
+
+                            JSONArray sub3List = (JSONArray) objList2[i];
+
+                            for (Object sub3ListElements : sub3List) {
+
+                                JSONObject lastValue = (JSONObject) sub3ListElements;
+
+                                for (Map.Entry<ArrayList<String>, ArrayList<String>> entry : orderedMap.entrySet()) {
+
+                                    for (Object key : lastValue.keySet()) {
+
+                                        String keyValue = (String) key;
+                                        String value5 = (String) lastValue.get(keyValue);
+                                        entry.getKey().add(keyValue);
+                                        entry.getValue().add(value5);
+
+
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+
+            exportToDocx(orderedMap, docxFilePath);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void exportToDocx(Map<ArrayList<String>, ArrayList<String>> jsonData, String outputFile) {
+        XWPFDocument document = new XWPFDocument();
+        for (Map.Entry<ArrayList<String>, ArrayList<String>> entry : jsonData.entrySet()) {
+            for (int i = 0; i < entry.getKey().size(); i++) {
+
+
+                String key = entry.getKey().get(i);
+                String value = entry.getValue().get(i);
+                String[] keyParts = key.split("\\.");
+                String lastKeyPart = keyParts[keyParts.length - 1];
+
+                System.out.println("LastKey" + lastKeyPart);
+
+
+                XWPFParagraph paragraph = document.createParagraph();
+                XWPFRun run = paragraph.createRun();
+                run.setBold(true);
+                run.setText(lastKeyPart + ": ");
+                run.setColor("FF0000");
+                run = paragraph.createRun();
+                run.setText(value);
+            }
+        }
+        try (FileOutputStream out = new FileOutputStream(outputFile)) {
+            document.write(out);
+            System.out.println("DOCX file written successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
 
     private static String indentJson(String jsonString) {
         StringBuilder indented = new StringBuilder();

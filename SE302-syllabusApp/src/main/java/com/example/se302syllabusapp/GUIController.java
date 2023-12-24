@@ -270,7 +270,7 @@ public class GUIController implements Initializable {
 
     }
 
-    // TODO bunu dosyaya eklemeyı unutma
+
     public void compareVersionsPopup(){
         BorderPane borderPane = new BorderPane();
 
@@ -683,7 +683,7 @@ public class GUIController implements Initializable {
         AnchorPane topAnchorPane = new AnchorPane();
         Text courseText = new Text("Language:");
 
-        langChoiceBox.getItems().addAll("English","Turkish");
+        langChoiceBox.getItems().addAll("en","tr");
         Label languageLabel = new Label();
         langChoiceBox.setOnAction(event -> {
             String selectedOption = langChoiceBox.getValue();
@@ -820,7 +820,7 @@ public class GUIController implements Initializable {
         text3.setWrappingWidth(90.13671875);
 
         ChoiceBox<String> typeChoiceBox = new ChoiceBox<>();
-        typeChoiceBox.getItems().setAll("JSON","HTML ","WORD");
+        typeChoiceBox.getItems().setAll("json","html","docx");
         typeChoiceBox.setLayoutX(135.0);
         typeChoiceBox.setLayoutY(37.0);
         typeChoiceBox.setPrefWidth(150);
@@ -866,7 +866,7 @@ public class GUIController implements Initializable {
                 showAlert("Empty ChoiceBox", "Fill in all ChoiceBoxes!");
             }
             else {
-                controllers.fileExport2("storage/" + langChoiceBox.getValue() + "/" + courseChoiceBox.getValue() + "/" + versionChoiceBox1.getValue() + "/" + courseChoiceBox.getValue() + ".json",
+                controllers.fileExport("storage/" + langChoiceBox.getValue() + "/" + courseChoiceBox.getValue() + "/" + versionChoiceBox1.getValue() + "/" + courseChoiceBox.getValue() + ".json",
                         typeChoiceBox.getValue(), langChoiceBox.getValue() + "-" + courseChoiceBox.getValue() + "-" + versionChoiceBox1.getValue());
                 popup.close();
             }
@@ -919,10 +919,10 @@ public class GUIController implements Initializable {
         String version = "";
 
         if (!pathLabel.getText().equals("a")){
-        String path = pathLabel.getText();
-        int startIndex = path.indexOf("V");
-        int endIndex = path.indexOf("\\" ,startIndex);
-        version = path.substring(startIndex, endIndex);
+            String path = pathLabel.getText();
+            int startIndex = path.indexOf("V");
+            int endIndex = path.indexOf("\\" ,startIndex);
+            version = path.substring(startIndex, endIndex);
         }
 
         String selectedValue = comboBox.getValue();
@@ -1189,7 +1189,7 @@ public class GUIController implements Initializable {
         guideAlert.getDialogPane().setPrefHeight(700);
         guideAlert.setTitle("About");
         guideAlert.setHeaderText("Software Development Team");
-        guideAlert.setContentText("- Ali Boztepe\n- Beyza Altuner\n- Ege Deniz Yaşar\n- Harun Onur\n- Nihan Yüksel" +
+        guideAlert.setContentText("- Ali Boztepe\n- Beyza Altuner\n- Ege Deniz YaÅŸar\n- Harun Onur\n- Nihan YÃ¼ksel" +
                 "\n\nThis application is development in the scope of SE 302 - Principles of Software Engineering as the  course project.");
         guideAlert.showAndWait();
     }
