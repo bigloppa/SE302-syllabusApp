@@ -615,7 +615,7 @@ public class GUIController implements Initializable {
         bottomAnchorPane.setPrefHeight(23);
         bottomAnchorPane.setPrefWidth(600);
 
-        Button compareButton = new Button("Button");
+        Button compareButton = new Button("Delete");
         compareButton.setLayoutX(511.0);
         compareButton.setLayoutY(-12.0);
         compareButton.setPrefHeight(25);
@@ -667,7 +667,7 @@ public class GUIController implements Initializable {
         AnchorPane topAnchorPane = new AnchorPane();
         Text courseText = new Text("Language:");
 
-        langChoiceBox.getItems().addAll("en","tur");
+        langChoiceBox.getItems().addAll("English","Turkish");
         Label languageLabel = new Label();
         langChoiceBox.setOnAction(event -> {
             String selectedOption = langChoiceBox.getValue();
@@ -804,7 +804,7 @@ public class GUIController implements Initializable {
         text3.setWrappingWidth(90.13671875);
 
         ChoiceBox<String> typeChoiceBox = new ChoiceBox<>();
-        typeChoiceBox.getItems().setAll("json","html","docx");
+        typeChoiceBox.getItems().setAll("JSON","HTML ","WORD");
         typeChoiceBox.setLayoutX(135.0);
         typeChoiceBox.setLayoutY(37.0);
         typeChoiceBox.setPrefWidth(150);
@@ -834,7 +834,7 @@ public class GUIController implements Initializable {
         bottomAnchorPane.setPrefHeight(23);
         bottomAnchorPane.setPrefWidth(600);
 
-        Button exportButton = new Button("Button");
+        Button exportButton = new Button("Export");
         exportButton.setLayoutX(511.0);
         exportButton.setLayoutY(-12.0);
         exportButton.setPrefHeight(25);

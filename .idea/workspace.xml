@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="A quick fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7d91f551-c209-4191-8a83-45d4638074c9" name="Changes" comment="Buttons changed">
       <change beforePath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +145,7 @@
       <workItem from="1703334029350" duration="4974000" />
       <workItem from="1703342000011" duration="4121000" />
       <workItem from="1703349518166" duration="6134000" />
-      <workItem from="1703399868278" duration="307000" />
+      <workItem from="1703399868278" duration="696000" />
     </task>
     <task id="LOCAL-00001" summary="Import functions">
       <option name="closed" value="true" />
@@ -201,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703335180679</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Buttons changed">
+      <created>1703400267126</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703400267126</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +221,8 @@
     <MESSAGE value="Gui and controller updates" />
     <MESSAGE value="JSON to HTML Table conversion for exporting" />
     <MESSAGE value="A quick fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="A quick fix" />
+    <MESSAGE value="Buttons changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Buttons changed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
