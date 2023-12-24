@@ -156,36 +156,89 @@ public class Controllers extends FileManager{
         try {
 
             JSONParser parser = new JSONParser();
-            Object obj = parser.parse(new FileReader(jsonFilePath));
+            JSONObject obj = (JSONObject)parser.parse(new FileReader(jsonFilePath));
+            Map<ArrayList<String>, ArrayList<String>> orderedMap = new HashMap<>();
+            orderedMap.put(new ArrayList<>(),new ArrayList<>());
+            Collection<JSONArray> value =  obj.values();
+            Object[] objList = value.toArray();
 
-            Map<String, String> jsonData = parseJsonToMap(obj);
+            // [ GI, WSRM, A, ECTS-WT, C-POM ]
+            JSONArray sub1List = (JSONArray) objList[0];
+
+            for (Object sub1ListElements : sub1List) {
 
 
-            exportToDocx(jsonData, docxFilePath);
+                Collection<JSONArray> value1 =  ((JSONObject) sub1ListElements).values();
+                Object[] objList1 = value1.toArray();
+
+                for (int i = 0; i < objList1.length; i++) {
+                    // [ sub1, ... , sub1, ... , Participation, ... , Course-Hours, ..., sub1 ]
+
+                    JSONArray sub2List = (JSONArray) objList1[i];
+
+                    for (Object sub2ListElements : sub2List) {
+
+                        Collection<JSONArray> value2 =  ((JSONObject) sub2ListElements).values();
+                        Object[] objList2 = value2.toArray();
+
+                        for (int j = 0; j < objList2.length; j++) {
+
+                            JSONArray sub3List = (JSONArray) objList2[i];
+
+                            for (Object sub3ListElements : sub3List) {
+
+                                JSONObject lastValue = (JSONObject) sub3ListElements;
+
+                                for (Map.Entry<ArrayList<String>, ArrayList<String>> entry : orderedMap.entrySet()) {
+
+                                    for (Object key : lastValue.keySet()) {
+
+                                        String keyValue = (String) key;
+                                        String value5 = (String) lastValue.get(keyValue);
+                                        entry.getKey().add(keyValue);
+                                        entry.getValue().add(value5);
+
+
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+
+
+
+
+            exportToDocx(orderedMap, docxFilePath);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
 
-    private void exportToDocx(Map<String, String> jsonData, String outputFile) {
+    private void exportToDocx(Map<ArrayList<String>, ArrayList<String>> jsonData, String outputFile) {
         XWPFDocument document = new XWPFDocument();
-        for (Map.Entry<String, String> entry : jsonData.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            String[] keyParts = key.split("\\.");
-            String lastKeyPart = keyParts[keyParts.length - 1];
-
-            System.out.println("LastKey"+lastKeyPart);
+        for (Map.Entry<ArrayList<String>, ArrayList<String>> entry : jsonData.entrySet()) {
+            for (int i = 0; i < entry.getKey().size(); i++) {
 
 
+                String key = entry.getKey().get(i);
+                String value = entry.getValue().get(i);
+                String[] keyParts = key.split("\\.");
+                String lastKeyPart = keyParts[keyParts.length - 1];
 
-            XWPFParagraph paragraph = document.createParagraph();
-            XWPFRun run = paragraph.createRun();
-            run.setBold(true);
-            run.setText(lastKeyPart +": ");
-            run.setColor("FF0000");
-            run = paragraph.createRun();
-            run.setText(value);
+                System.out.println("LastKey" + lastKeyPart);
+
+
+                XWPFParagraph paragraph = document.createParagraph();
+                XWPFRun run = paragraph.createRun();
+                run.setBold(true);
+                run.setText(lastKeyPart + ": ");
+                run.setColor("FF0000");
+                run = paragraph.createRun();
+                run.setText(value);
+            }
         }
         try (FileOutputStream out = new FileOutputStream(outputFile)) {
             document.write(out);
