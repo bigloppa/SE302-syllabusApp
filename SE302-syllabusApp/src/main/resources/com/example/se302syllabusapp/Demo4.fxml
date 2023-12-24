@@ -62,10 +62,11 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Help" />
-                        <MenuItem mnemonicParsing="false" text="About Syllabus App" />
+                        <MenuItem mnemonicParsing="false" text="Help" onAction="#showHelpPopUp"/>
+                        <MenuItem mnemonicParsing="false" text="About" />
                     </items>
                 </Menu>
+
             </menus>
         </MenuBar>
     </children>
