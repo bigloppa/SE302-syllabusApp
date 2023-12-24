@@ -45,6 +45,8 @@ public class GUIController implements Initializable {
     @FXML
     public TextArea descriptionValue;
     @FXML
+    public Label pathLabel;
+    @FXML
     public VBox page1;
     public VBox page2;
     public VBox page3;
@@ -142,6 +144,13 @@ public class GUIController implements Initializable {
                     ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
 
                     passValuesToSyllabusSheet(scrollPane.getContent(),data, borderPane.getRight() , selectedFile.getPath().replace(".json",".txt"));
+
+                    int startIndex = selectedFile.getPath().indexOf("V");
+                    int endIndex = selectedFile.getPath().indexOf("\\" ,startIndex);
+                    String version = selectedFile.getPath().substring(startIndex, endIndex);
+
+                    ((Label)((AnchorPane) borderPane.getRight()).getChildren().get(6)).setText(selectedFile.getPath());
+                    ((Text)((AnchorPane) borderPane.getRight()).getChildren().get(5)).setText("Description of " + version + ": ");
 
                     INDEX_FOR_DATA_PASSING = 0;
 
@@ -899,14 +908,24 @@ public class GUIController implements Initializable {
 
         System.out.println(syllabusData);
         System.out.println(syllabusData.size());
+
+        String version = "";
+
+        if (!pathLabel.getText().equals("a")){
+        String path = pathLabel.getText();
+        int startIndex = path.indexOf("V");
+        int endIndex = path.indexOf("\\" ,startIndex);
+        version = path.substring(startIndex, endIndex);
+        }
+
         String selectedValue = comboBox.getValue();
         Button saveButton = (Button) event.getSource();
         AnchorPane parent = (AnchorPane) saveButton.getParent();
         CheckBox editLastVersionCheckBox = (CheckBox) parent.getChildren().get(3);
         if (selectedValue.equals("English")) {
-            controllers.saveFromUserEntry(syllabusData, "en", editLastVersionCheckBox.isSelected(),descriptionValue.getText());
+            controllers.saveFromUserEntry(syllabusData, "en", editLastVersionCheckBox.isSelected(),descriptionValue.getText(), version);
         }else if (selectedValue.equals("Turkish")){
-            controllers.saveFromUserEntry(syllabusData, "tr", editLastVersionCheckBox.isSelected(),descriptionValue.getText());
+            controllers.saveFromUserEntry(syllabusData, "tr", editLastVersionCheckBox.isSelected(),descriptionValue.getText(), version);
         }
 
 

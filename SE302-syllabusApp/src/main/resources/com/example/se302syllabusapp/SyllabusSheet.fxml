@@ -41,6 +41,7 @@
                         <Font size="15"/>
                     </font>
                 </Text>
+                <Label fx:id="pathLabel" text="a" visible="false" wrapText="true" maxWidth="30"/>
             </children>
         </AnchorPane>
     </right>

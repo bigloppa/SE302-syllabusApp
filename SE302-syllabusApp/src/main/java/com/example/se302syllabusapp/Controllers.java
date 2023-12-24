@@ -218,15 +218,17 @@ public class Controllers extends FileManager{
 
     }
 
-    public void saveFromUserEntry(ArrayList<String>syllabusData, String language, boolean isEditLastVersionSelected,String description) {
+    public void saveFromUserEntry(ArrayList<String>syllabusData, String language, boolean isEditLastVersionSelected,String description, String versionForEdit) {
         GUIController guiController = new GUIController();
 
         String lecture = syllabusData.get(1).trim();
         int version = createDir(language,lecture, isEditLastVersionSelected);
-        String filepath = "storage/" + language+ "/" + lecture+ "/V"+ --version+"/" + lecture+".json";
+        String filepath = "storage/" + language+ "/" + lecture+ "/V"+ --version +"/" + lecture+".json";
         String filepathDes = "storage/" + language+ "/" + lecture+ "/V" + version+"/" + lecture+".txt";
 
         if (isEditLastVersionSelected) {
+            filepath = "storage/" + language+ "/" + lecture+ "/"+ versionForEdit +"/" + lecture+".json";
+            filepathDes = "storage/" + language+ "/" + lecture+ "/" + versionForEdit+"/" + lecture+".txt";
             delete(filepath, lecture);
         }
 
