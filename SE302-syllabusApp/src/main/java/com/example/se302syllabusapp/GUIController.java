@@ -1,11 +1,9 @@
 package com.example.se302syllabusapp;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -442,7 +440,7 @@ public class GUIController implements Initializable {
         bottomAnchorPane.setPrefHeight(23);
         bottomAnchorPane.setPrefWidth(600);
 
-        Button compareButton = new Button("Button");
+        Button compareButton = new Button("Compare");
         compareButton.setLayoutX(511.0);
         compareButton.setLayoutY(-12.0);
         compareButton.setPrefHeight(25);
@@ -766,7 +764,7 @@ public class GUIController implements Initializable {
         anchorPane3.prefHeight(100);
         anchorPane3.prefWidth(607);
 
-        Text text2 = new Text("First chosen version: ");
+        Text text2 = new Text("Version: ");
         text2.setFont(new Font(14));
         text2.setLayoutX(51);
         text2.setLayoutY(46);

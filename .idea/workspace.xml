@@ -114,7 +114,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -144,8 +144,9 @@
       <workItem from="1703190225002" duration="3764000" />
       <workItem from="1703248087024" duration="6888000" />
       <workItem from="1703334029350" duration="4974000" />
-      <workItem from="1703342000011" duration="10044000" />
-      <workItem from="1703352617012" duration="580000" />
+      <workItem from="1703342000011" duration="4121000" />
+      <workItem from="1703349518166" duration="6134000" />
+      <workItem from="1703399868278" duration="307000" />
     </task>
     <task id="LOCAL-00001" summary="Import functions">
       <option name="closed" value="true" />
@@ -217,6 +218,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="A quick fix" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/SE302-syllabusApp/src/main/java/com/example/se302syllabusapp/GUIController.java</url>
+          <line>1035</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
