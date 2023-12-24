@@ -151,6 +151,7 @@ public class GUIController implements Initializable {
 
                     ((Label)((AnchorPane) borderPane.getRight()).getChildren().get(6)).setText(selectedFile.getPath());
                     ((Text)((AnchorPane) borderPane.getRight()).getChildren().get(5)).setText("Description of " + version + ": ");
+                    ((CheckBox)((AnchorPane) borderPane.getRight()).getChildren().get(3)).setText("Edit " + version );
 
                     INDEX_FOR_DATA_PASSING = 0;
 
@@ -176,6 +177,8 @@ public class GUIController implements Initializable {
         try {
             Node syllabusSheet = syllabusLoader.load();
 
+            BorderPane borderPane = (BorderPane) syllabusSheet;
+
             ScrollPane scrollPane = (ScrollPane) (((BorderPane) syllabusSheet).getChildren().get(1));
             HBox hBox = (HBox) scrollPane.getContent();
 
@@ -185,7 +188,8 @@ public class GUIController implements Initializable {
             ((CheckBox) hBox.lookup("#faceToFace")).setSelected(true);
             ((CheckBox) hBox.lookup("#coreCourse")).setSelected(true);
 
-
+            ((CheckBox)((AnchorPane) borderPane.getRight()).getChildren().get(3)).setDisable(true);
+            ((CheckBox)((AnchorPane) borderPane.getRight()).getChildren().get(3)).setText("Edit Version");
 
 
             if (!parentVBox.getChildren().isEmpty())
@@ -201,7 +205,7 @@ public class GUIController implements Initializable {
 
     }
 
-    public void compareVersions(VBox parentVBox, String path1, String path2) {
+    public void compareVersions(VBox parentVBox, String path1, String path2, String v1, String v2) {
         if (popup != null) {
             System.out.println(popup.getTitle());
             popup.close();
@@ -239,6 +243,9 @@ public class GUIController implements Initializable {
             HBox hBox = (HBox) scrollPane.getContent();
             VBox syllabus1 = (VBox) hBox.getChildren().get(0);
             VBox syllabus2 = (VBox) hBox.getChildren().get(1);
+
+            ((Label)((AnchorPane)syllabusSheet.getRight()).getChildren().get(1)).setText("Description of the left side(" + v1 + "):  ");
+            ((Label)((AnchorPane)syllabusSheet.getRight()).getChildren().get(3)).setText("Description of the right side(" + v2 + "):  ");
 
             ContributionLevelValuesList = new ArrayList<>();
             ContributionLevelValuesList.addAll(List.of(ContributionLevelValues));
@@ -466,7 +473,7 @@ public class GUIController implements Initializable {
             }else {
                 String firstFilePath = "storage\\" + langChoiceBox.getValue() + "\\" + courseChoiceBox.getValue() + "\\" + versionChoiceBox1.getValue() + "\\" + courseChoiceBox.getValue() + ".json";
                 String secondFilePath = "storage\\" + langChoiceBox.getValue() + "\\" + courseChoiceBox.getValue() + "\\" + versionChoiceBox2.getValue() + "\\" + courseChoiceBox.getValue() + ".json";
-                compareVersions(parentVBox, firstFilePath, secondFilePath);
+                compareVersions(parentVBox, firstFilePath, secondFilePath, versionChoiceBox1.getValue(), versionChoiceBox2.getValue());
                 popup.close();
             }
         });

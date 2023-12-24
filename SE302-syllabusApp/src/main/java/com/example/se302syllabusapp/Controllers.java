@@ -226,7 +226,7 @@ public class Controllers extends FileManager{
         String filepath = "storage/" + language+ "/" + lecture+ "/V"+ --version +"/" + lecture+".json";
         String filepathDes = "storage/" + language+ "/" + lecture+ "/V" + version+"/" + lecture+".txt";
 
-        if (isEditLastVersionSelected) {
+        if (isEditLastVersionSelected ) {
             filepath = "storage/" + language+ "/" + lecture+ "/"+ versionForEdit +"/" + lecture+".json";
             filepathDes = "storage/" + language+ "/" + lecture+ "/" + versionForEdit+"/" + lecture+".txt";
             delete(filepath, lecture);
