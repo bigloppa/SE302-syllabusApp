@@ -11,12 +11,16 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Objects;
 
 public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        createFolders();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("demo4.fxml"));
         Parent root = loader.load();
 
@@ -37,6 +41,34 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
+
+    private static void createFolders() {
+        String storageFolderPath = "/storage";
+        Path storagePath = Paths.get(storageFolderPath);
+
+        if (!Files.exists(storagePath)) {
+            try {
+                Files.createDirectories(storagePath);
+                System.out.println("Storage folder created successfully.");
+
+                String enFolderPath = storageFolderPath + "/en";
+                Path enPath = Paths.get(enFolderPath);
+                Files.createDirectories(enPath);
+                System.out.println("en folder created successfully.");
+
+                String trFolderPath = storageFolderPath + "/tr";
+                Path trPath = Paths.get(trFolderPath);
+                Files.createDirectories(trPath);
+                System.out.println("tr folder created successfully.");
+
+            } catch (Exception e) {
+                System.err.println("Error creating folders: " + e.getMessage());
+            }
+        } else {
+            System.out.println("Storage folder already exists.");
+        }
+    }
+
 }

@@ -1176,11 +1176,12 @@ public class GUIController implements Initializable {
         guideAlert.getDialogPane().setPrefHeight(700);
         guideAlert.setTitle("Guide");
         guideAlert.setHeaderText("HOW TO USE SYLLABUS APP");
-        guideAlert.setContentText("-OPEN & IMPORT-\n1. To open or import a syllabus file, click on Open in the File Menu.\n2. Direct to the desired JSON File from the File chooser that opens and click on Open.\n3. The desired syllabus can be viewed on the screen. On right, the description of the syllabus is noted." +
-                " \n\n-CREATE SYLLABUS & ADD VERSION-\n1. Click on New in the File Menu.\n2. Fill out the syllabus information from the template and add a description.\n3. Select a language (to indicate whether Turkish or English version of the syllabus) from the dropdown menu.\n4. Choose 'Select As New Version' (the default option). If there exists a folder with the same course code it will be added as a new version. Otherwise, it will be added as new syllabus for the entered course code." +
-                "\n\n-COMPARE SYLLABUS VERSIONS-\n1. To compare two versions, click on Compare in the File Menu.\n2. From the pop up that opens, select the language, course name and the versions you want to compare from the dropdown menus.\n3. Click on Compare. On the screen, both selected versions will be displayed. On the right, the descriptions included while creating syllabi can be checked." +
-                "\n\n-DELETE SYLLABUS-\n1. Click on Delete in the File Menu.\n2. Choose language, course code and the version you want to delete and click on Delete." +
-                "\n\n-EXPORT SYLLABUS-\n1. To export a syllabus, click on Export in the File Menu.\n2. Select the language, course code, version from the dropdown menu.\n3. Select the file type you want to export as and click on export.\n4. Navigate to the directory you desire to save, and click on Save.");
+        guideAlert.setContentText("-OPEN & IMPORT-\n1. To open or import a syllabus file, click on 'Open' in the File Menu.\n2. Direct to the desired JSON File from the File chooser that opens and click on Open.\n3. The desired syllabus can be viewed on the screen. On right, the description of the syllabus is noted." +
+                "\n\n-CREATE SYLLABUS & ADD VERSION-\n1. Click on 'New' in the File Menu.\n2. Fill out the syllabus information from the template and add a description.\n3. Select a language (to indicate whether Turkish or English version of the syllabus) from the dropdown menu.\n4. Choose 'Select As New Version' (the default option). If there exists a folder with the same course code it will be added as a new version. Otherwise, it will be added as new syllabus for the entered course code." +
+                "\n\n-EDIT SYLLABUS-\n1. After opening a syllabus as stated above, make the necessary changes.\n2. Click on 'Edit Version' on the right panel and click on 'Save' button." +
+                "\n\n-COMPARE SYLLABUS VERSIONS-\n1. To compare two versions, click on 'Compare' in the File Menu.\n2. From the pop up that opens, select the language, course name and the versions you want to compare from the dropdown menus.\n3. Click on 'Compare' button. On the screen, both selected versions will be displayed. On the right, the descriptions included while creating syllabi can be checked." +
+                "\n\n-DELETE SYLLABUS-\n1. Click on 'Delete' in the File Menu.\n2. Choose language, course code and the version you want to delete and click on 'Delete'." +
+                "\n\n-EXPORT SYLLABUS-\n1. To export a syllabus, click on 'Export' in the File Menu.\n2. Select the language, course code, version from the dropdown menu.\n3. Select the file type you want to export as and click on export.\n4. Navigate to the directory you desire to save, and click on 'Save'.");
         guideAlert.showAndWait();
     }
     public void showAboutPopUp() {
@@ -1189,7 +1190,7 @@ public class GUIController implements Initializable {
         guideAlert.getDialogPane().setPrefHeight(700);
         guideAlert.setTitle("About");
         guideAlert.setHeaderText("Software Development Team");
-        guideAlert.setContentText("- Ali Boztepe\n- Beyza Altuner\n- Ege Deniz YaÅŸar\n- Harun Onur\n- Nihan YÃ¼ksel" +
+        guideAlert.setContentText("- Ali Boztepe\n- Beyza Altuner\n- Ege Deniz Yasar\n- Harun Onur\n- Nihan Yuksel" +
                 "\n\nThis application is development in the scope of SE 302 - Principles of Software Engineering as the  course project.");
         guideAlert.showAndWait();
     }
