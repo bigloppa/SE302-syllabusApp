@@ -29,7 +29,6 @@ public class VersionController extends FileManager {
                 for (int k = 0; k < grandChildren1.size(); k++) {
 
                     if (!grandChildren1.get(k).getValue().equals(grandChildren2.get(k).getValue())){
-                        System.out.println(counter+". " + grandChildren1.get(k).getValue() + " --- " + grandChildren2.get(k).getValue() );
                     }
                     counter++;
 

@@ -6,9 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
@@ -21,7 +24,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         createFolders();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("demo4.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/se302syllabusapp/Demo4.fxml"));
         Parent root = loader.load();
 
         // FXML controller has been set.
@@ -34,6 +37,10 @@ public class App extends Application {
 
         // The width and height can be changed.
         Scene scene = new Scene(root,1400,750);
+        File file = new File("desktop.png");
+
+        Image image = new Image(new FileInputStream(file.getAbsolutePath()));
+        stage.getIcons().add(image);
         stage.setTitle("SyllabusApp");
         stage.setScene(scene);
         stage.show();

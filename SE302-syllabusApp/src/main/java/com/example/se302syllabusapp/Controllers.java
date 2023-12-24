@@ -183,7 +183,10 @@ public class Controllers extends FileManager{
         if (!storage.exists()) {
             flag = false;
             if (!isEditLastVersionSelected) {
-                storage.mkdir();
+                if (storage.mkdir()) {
+
+                }
+                ;
                 System.out.println("Directory created successfully.");
             } else {
                 System.out.println("Failed to create directory!");
@@ -194,7 +197,7 @@ public class Controllers extends FileManager{
     }
 
     public void saveDescription(String description, String filePath){
-        try(FileWriter fileWriter = new FileWriter(new File(filePath))){
+        try(FileWriter fileWriter = new FileWriter(filePath)){
             fileWriter.write(description);
 
         }catch (IOException e){
@@ -255,7 +258,7 @@ public class Controllers extends FileManager{
 
                                 JSONObject lastValue = (JSONObject) sub3ListElements;
                                 String keyName = lastValue.keySet().toString().split("[\\[\\]]")[1];
-
+                                System.out.println(lastValue.keySet());
                                 lastValue.put(keyName,syllabusData.get(counter));
                                 counter++;
                             }
@@ -390,7 +393,6 @@ public class Controllers extends FileManager{
                 String[] keyParts = key.split("\\.");
                 String lastKeyPart = keyParts[keyParts.length - 1];
 
-                System.out.println("LastKey" + lastKeyPart);
 
 
                 XWPFParagraph paragraph = document.createParagraph();

@@ -107,7 +107,6 @@ public class FileManager {
                     // [ sub1, ... , sub1, ... , Participation, ... , Course-Hours, ..., sub1 ]
 
                     JSONArray sub2List = (JSONArray) objList1[i];
-                    //System.out.println(sub2List);
 
                     for (Object sub2ListElements : sub2List) {
 
@@ -146,7 +145,6 @@ public class FileManager {
         } catch (IOException | ParseException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(counter);
         return root;
     }
 

@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -21,10 +22,7 @@ import javafx.stage.Modality;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -129,9 +127,6 @@ public class GUIController implements Initializable {
 
                 FXMLLoader syllabusLoader = new FXMLLoader(getClass().getResource("SyllabusSheet.fxml"));
                 ArrayList<String> data = syllabusData.getAttributes(new ArrayList<>());
-                System.out.println(data);
-                System.out.println(data.size());
-
 
                 try {
                     Node syllabusSheet = syllabusLoader.load();
@@ -160,6 +155,14 @@ public class GUIController implements Initializable {
                     ((Label)((AnchorPane) borderPane.getRight()).getChildren().get(6)).setText(selectedFile.getPath());
                     ((Text)((AnchorPane) borderPane.getRight()).getChildren().get(5)).setText("Description of " + version + ": ");
                     ((CheckBox)((AnchorPane) borderPane.getRight()).getChildren().get(3)).setText("Edit " + version );
+
+                    if (selectedFile.getPath().split("storage\\\\")[1].startsWith("en")) {
+                        ((ComboBox)((AnchorPane) borderPane.getRight()).getChildren().get(1)).setValue("English");
+                    }
+                    else {
+                        ((ComboBox)((AnchorPane) borderPane.getRight()).getChildren().get(1)).setValue("Turkish");
+                    }
+                    ((ComboBox)((AnchorPane) borderPane.getRight()).getChildren().get(1)).setDisable(true);
 
                     INDEX_FOR_DATA_PASSING = 0;
 
@@ -215,7 +218,6 @@ public class GUIController implements Initializable {
 
     public void compareVersions(VBox parentVBox, String path1, String path2, String v1, String v2) {
         if (popup != null) {
-            System.out.println(popup.getTitle());
             popup.close();
         }
 
@@ -224,14 +226,13 @@ public class GUIController implements Initializable {
         getControllers().setJsonFile(new File(path1));
         syllabusData1 = getControllers().read();
         ArrayList<String> data1 = syllabusData1.getAttributes(new ArrayList<>());
-        System.out.println(data1);
 
         SyllabusData syllabusData2;
         setControllers(new Controllers(new SyllabusData(), new SyllabusData()));
         getControllers().setJsonFile(new File(path2));
         syllabusData2 = getControllers().read();
         ArrayList<String> data2 = syllabusData2.getAttributes(new ArrayList<>());
-        System.out.println(data2);
+
         ArrayList<Integer> indexDifferences = new ArrayList<>();
 
         for (int i = 0; i < data1.size(); i++) {
@@ -239,8 +240,6 @@ public class GUIController implements Initializable {
                 indexDifferences.add(i);
             }
         }
-
-        System.out.println(indexDifferences);
 
 
         FXMLLoader compareLoader = new FXMLLoader(getClass().getResource("ComparePage.fxml"));
@@ -278,7 +277,6 @@ public class GUIController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        //System.out.println(parentVBox);
 
 
     }
@@ -379,7 +377,6 @@ public class GUIController implements Initializable {
                         .forEach(path -> {
                             String fileName = path.getFileName().toString();
                             versionChoiceBox1.getItems().add(fileName);
-                            System.out.println(path);
                         });
             } catch (IOException ignore) {
 
@@ -772,7 +769,6 @@ public class GUIController implements Initializable {
                         .forEach(path -> {
                             String fileName = path.getFileName().toString();
                             versionChoiceBox1.getItems().add(fileName);
-                            System.out.println(path);
                         });
             } catch (IOException ignore) {
 
@@ -888,6 +884,7 @@ public class GUIController implements Initializable {
         Scene scene = new Scene(borderPane, 600, 400);
         // Scene
         setPopup(new Stage());
+
         popup.initOwner(getPrimaryStage());
         popup.initModality(Modality.APPLICATION_MODAL);
         popup.setTitle("Export File");
@@ -925,9 +922,6 @@ public class GUIController implements Initializable {
         filterInput(page3);
         filterInput(page4);
         filterInput(page5);
-
-        System.out.println(syllabusData);
-        System.out.println(syllabusData.size());
 
         String version = "";
 

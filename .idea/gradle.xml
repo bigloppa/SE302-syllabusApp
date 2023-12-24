@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/SE302-syllabusApp" />
+            <option value="$PROJECT_DIR$/SE302-syllabusApp/SE302-syllabusApp" />
           </set>
         </option>
       </GradleProjectSettings>
