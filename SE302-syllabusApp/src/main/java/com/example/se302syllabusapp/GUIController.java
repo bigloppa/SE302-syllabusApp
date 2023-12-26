@@ -147,22 +147,26 @@ public class GUIController implements Initializable {
 
                     passDescription(node1,paths);
 
+                    try {
+                        int startIndex = selectedFile.getPath().indexOf("V");
+                        int endIndex = selectedFile.getPath().indexOf("\\" ,startIndex);
+                        String version = selectedFile.getPath().substring(startIndex, endIndex);
 
-                    int startIndex = selectedFile.getPath().indexOf("V");
-                    int endIndex = selectedFile.getPath().indexOf("\\" ,startIndex);
-                    String version = selectedFile.getPath().substring(startIndex, endIndex);
+                        ((Label)((AnchorPane) borderPane.getRight()).getChildren().get(6)).setText(selectedFile.getPath());
+                        ((Text)((AnchorPane) borderPane.getRight()).getChildren().get(5)).setText("Description of " + version + ": ");
+                        ((CheckBox)((AnchorPane) borderPane.getRight()).getChildren().get(3)).setText("Edit " + version );
 
-                    ((Label)((AnchorPane) borderPane.getRight()).getChildren().get(6)).setText(selectedFile.getPath());
-                    ((Text)((AnchorPane) borderPane.getRight()).getChildren().get(5)).setText("Description of " + version + ": ");
-                    ((CheckBox)((AnchorPane) borderPane.getRight()).getChildren().get(3)).setText("Edit " + version );
+                        if (selectedFile.getPath().split("storage\\\\")[1].startsWith("en")) {
+                            ((ComboBox)((AnchorPane) borderPane.getRight()).getChildren().get(1)).setValue("English");
+                        }
+                        else {
+                            ((ComboBox)((AnchorPane) borderPane.getRight()).getChildren().get(1)).setValue("Turkish");
+                        }
+                        ((ComboBox)((AnchorPane) borderPane.getRight()).getChildren().get(1)).setDisable(true);
+                    }catch (Exception ignore){
 
-                    if (selectedFile.getPath().split("storage\\\\")[1].startsWith("en")) {
-                        ((ComboBox)((AnchorPane) borderPane.getRight()).getChildren().get(1)).setValue("English");
                     }
-                    else {
-                        ((ComboBox)((AnchorPane) borderPane.getRight()).getChildren().get(1)).setValue("Turkish");
-                    }
-                    ((ComboBox)((AnchorPane) borderPane.getRight()).getChildren().get(1)).setDisable(true);
+
 
                     INDEX_FOR_DATA_PASSING = 0;
 
